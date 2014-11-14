@@ -4,5 +4,10 @@
     <string name="app_name">Img_Mic_Helper</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="could_not_open_album">无法打开相册</string>
+    <string name="could_not_open_camera">无法打开相机</string>
+    <string name="fail_photo_created">创建照片失败</string>
+    <string name="no_sdcard">SD没有插入</string>
+    <string name="choose_image_again">请重新选择图片</string>
 
 </resources>

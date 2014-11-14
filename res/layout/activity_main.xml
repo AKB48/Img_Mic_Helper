@@ -9,9 +9,58 @@
     tools:context="com.app.img_mic_helper.MainActivity" 
     android:background="@drawable/main_bg">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/mediate_linearlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:id="@+id/main_firstlayer"
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content">
+       		
+            <Button 
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/from_album"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/album"/>
+            
+            <Button 
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/from_camera"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/camera"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/main_secondlayer"
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:layout_marginTop="20dp">
+            
+            <Button 
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/to_music"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/album"/>
+            
+            <Button 
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/about"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/camera"/>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
 
 </RelativeLayout>
