@@ -31,9 +31,9 @@ import com.config.ActivityFlag;
  */
 public class MainActivity extends Activity {
 	
-	Button from_album, from_camera, to_music, about; 
-	Bitmap bitmap = null;
-	String filePath = null;
+	private Button from_album, from_camera, to_music, about; 
+	private Bitmap bitmap = null;
+	private String filePath = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

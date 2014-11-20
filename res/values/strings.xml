@@ -9,5 +9,7 @@
     <string name="fail_photo_created">创建照片失败</string>
     <string name="no_sdcard">SD没有插入</string>
     <string name="choose_image_again">请重新选择图片</string>
+    <string name="style">格调</string>
+    <string name="black_white">黑白</string>
 
 </resources>
