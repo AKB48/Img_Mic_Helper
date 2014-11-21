@@ -12,7 +12,7 @@ import android.graphics.BitmapFactory;
  * @author Willam
  *
  */
-public class ImageCompressor extends Processor{
+public class ImageCompressor implements Processor{
 	
 	private volatile static ImageCompressor uniqueInstance = null;
 	

@@ -7,13 +7,13 @@ import android.graphics.Bitmap;
  * @author Willam
  *
  */
-public abstract class Processor {
+public interface Processor {
 	
 	/**
 	 * This is the concrete process method of this processor
 	 * @param bitmap the image to be processed
 	 * @return Bitmap the image after being processed
 	 */
-	public abstract Bitmap process(Bitmap bitmap);
+	public Bitmap process(Bitmap bitmap);
 
 }
