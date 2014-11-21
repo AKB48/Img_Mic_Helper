@@ -233,6 +233,7 @@ public class ImageProcessActivity extends Activity {
 		    }
 			mProgressDialog.dismiss();
 		}
+		
     }
 
 }
