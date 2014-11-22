@@ -7,11 +7,18 @@ import java.util.List;
 import java.util.Map;
 
 import com.config.ActivityFlag;
-import com.utils.FlowerProgressDialog;
+import com.custom_widget.FlowerProgressDialog;
+import com.utils.BlackWhiteProcessor;
+import com.utils.ColdProcessor;
+import com.utils.FilmProcessor;
+import com.utils.GothicProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
+import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
+import com.utils.PinkProcessor;
 import com.utils.Processor;
+import com.utils.RainbowProcessor;
 
 
 import android.app.Activity;
@@ -97,7 +104,7 @@ public class ImageProcessActivity extends Activity {
        // initialize the title of each function bar item
        for (int i = 0; i < 5; i++) {
     	   HashMap<String, Object> map = new HashMap<String, Object>();
-    	   map.put("itemName", getString(R.string.style));
+    	   map.put("itemName", getString(com.config.Config.function_list[i]));
     	   func_bar_items.add(map);
        }
        
@@ -128,14 +135,16 @@ public class ImageProcessActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
+			subfunc_bar_items = null;
 			switch(position) {
 			case 0:
 				subfunc_bar_items = com.config.Config.style_list;
-				loadSubfuncbarContent();
 				break;
 			case 1:
+				subfunc_bar_items = com.config.Config.art_list;
 				break;
 			case 2:
+				subfunc_bar_items = com.config.Config.fashion_list;
 				break;
 			case 3:
 				break;
@@ -143,6 +152,10 @@ public class ImageProcessActivity extends Activity {
 				break;
 			default:
 				break;
+			}
+			if (subfunc_bar_items != null)
+			{
+				loadSubfuncbarContent();
 			}
 			
 		}
@@ -170,11 +183,33 @@ public class ImageProcessActivity extends Activity {
 				public void onClick(View v) {
 					processor = null;
 					switch (methodId) {
-					case R.string.black_white:
+					case R.string.gray:
 						processor = GrayProcessor.getInstance();
 						break;
 					case R.string.nostalgia:
 						processor = NostalgiaProcessor.getInstance();
+						break;
+					case R.string.black_white:
+						processor = BlackWhiteProcessor.getInstance();
+						break;
+					case R.string.gothic:
+						processor = GothicProcessor.getInstance();
+						break;
+					case R.string.pink:
+						processor = PinkProcessor.getInstance();
+						break;
+					case R.string.cold:
+						processor = ColdProcessor.getInstance();
+						break;
+					case R.string.negative:
+						processor = NegativeProcessor.getInstance();
+						break;
+					case R.string.film:
+						processor = FilmProcessor.getInstance();
+						break;
+					case R.string.rainbow:
+						processor = RainbowProcessor.getInstance();
+						break;
 					default:
 						break;
 					}

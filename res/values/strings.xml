@@ -12,5 +12,14 @@
     <string name="style">格调</string>
     <string name="black_white">黑白</string>
     <string name="nostalgia">怀旧</string>
+    <string name="gray">老电影</string>
+    <string name="gothic">歌德风</string>
+    <string name="pink">粉红佳人</string>
+    <string name="cold">冷艳</string>
+    <string name="art">艺术</string>
+    <string name="fashion">时尚</string>
+    <string name="negative">底片</string>
+    <string name="film">电影海报</string>
+    <string name="rainbow">霓虹</string>
 
 </resources>

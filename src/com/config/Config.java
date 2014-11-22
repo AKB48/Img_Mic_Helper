@@ -8,6 +8,9 @@ import com.app.img_mic_helper.R;
  *
  */
 public class Config {
-	public static int[] function_list = {R.string.style, R.string.style, R.string.style, R.string.style, R.string.style};
-	public static int[] style_list = {R.string.black_white, R.string.nostalgia, R.string.black_white};
+	public static int[] function_list = {R.string.style, R.string.art, R.string.fashion, R.string.style, R.string.style};
+	public static int[] style_list = {R.string.gray, R.string.nostalgia, R.string.black_white, R.string.gothic,
+			R.string.pink, R.string.cold};
+	public static int[] art_list = {R.string.negative, R.string.film, R.string.rainbow};
+	public static int[] fashion_list = {};
 }

@@ -1,41 +1,40 @@
 package com.utils;
 
-import android.R.integer;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 
 /**
- * This is a singleton class.
- * This processor transform an image into a nostalgia/sepia style.
- * This algorithm is that:
- * r= max(0, min(255, 0.393*r + 0.769*g + 0.189*b));
- * g= max(0, min(255, 0.349*r + 0.686*g + 0.168*b));
- * b= max(0, min(255, 0.272*r + 0.534*g + 0.131*b));
+ *  This is a singleton class.
+ *  It is used to transform an image into a pink style image.
+ *  The pink style color is (215, 126, 172).
  * @author Willam
  *
  */
-public class NostalgiaProcessor implements Processor {
+public class PinkProcessor implements Processor {
 
-	private volatile static NostalgiaProcessor uniqueInstance = null;
+	private volatile static PinkProcessor uniqueInstance = null;
+	private int[] pink = {215, 126, 172};
+	private double alpha = 0.25;
 	
-	private NostalgiaProcessor(){
+	private PinkProcessor(){
 	}
 	
 	/**
 	 * the public method to get the unique instance
-	 * @return NostalgiaProcessor the unique instance of this class
+	 * @return PinkProcessor the unique instance of this class
 	 */
-	public static NostalgiaProcessor getInstance(){
+	public static PinkProcessor getInstance(){
         if(uniqueInstance == null){
-            synchronized(NostalgiaProcessor.class) {
+            synchronized(PinkProcessor.class) {
                 if(uniqueInstance == null) {
-                    uniqueInstance = new NostalgiaProcessor();
+                    uniqueInstance = new PinkProcessor();
                 }
             }
         }
         
         return uniqueInstance;       
     }
+	
 	
 	@Override
 	public Bitmap process(Bitmap bitmap) {
@@ -49,19 +48,20 @@ public class NostalgiaProcessor implements Processor {
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				int oldPixel = bitmap.getPixel(j, i); 
-				a = (oldPixel >> 24) & 0xff;
-				r = (oldPixel >> 16) & 0xff;
-                g = (oldPixel >> 8) & 0xff;
-                b = oldPixel & 0xff;
-                r= max(0, min(255, (int)(0.393*r + 0.769*g + 0.189*b) ) );
-                g= max(0, min(255, (int)(0.349*r + 0.686*g + 0.168*b) ) );
-                b= max(0, min(255, (int)(0.272*r + 0.534*g + 0.131*b) ) );
+				a = (oldPixel & 0xff000000) >> 24;
+				r = (oldPixel & 0x00ff0000) >>16;
+                g = (oldPixel & 0x0000ff00) >> 8;
+                b = oldPixel & 0x000000ff;
+                r = min(255, max(0, (int)((alpha+0.1) * pink[0] + (1-alpha-0.1) * r) ) );
+                g = min(255, max(0, (int)(alpha * pink[1] + (1-alpha) * g) ) );
+                b = min(255, max(0, (int)(alpha * pink[2] + (1-alpha) * b) ) );
 				newPixel = (a << 24) | (r << 16) | (g << 8) | b;
 				tempBitmap.setPixel(j, i, newPixel);
 			}
 		}
 		return tempBitmap;
 	}
+
 	
 	/**
 	 * return the smaller one of two integer
@@ -83,5 +83,5 @@ public class NostalgiaProcessor implements Processor {
 	{
 		return a>b?a:b;
 	}
-
+	
 }
