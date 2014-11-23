@@ -6,7 +6,7 @@ import android.graphics.Bitmap.Config;
 /**
  * This is a singleton class.
  * The processor transform an image into a rainbow style.
- * @author Willam
+ * @author William
  *
  */
 public class RainbowProcessor implements Processor {

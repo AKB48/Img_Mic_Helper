@@ -11,7 +11,7 @@ import android.graphics.Bitmap.Config;
  * r= max(0, min(255, 0.393*r + 0.769*g + 0.189*b));
  * g= max(0, min(255, 0.349*r + 0.686*g + 0.168*b));
  * b= max(0, min(255, 0.272*r + 0.534*g + 0.131*b));
- * @author Willam
+ * @author William
  *
  */
 public class NostalgiaProcessor implements Processor {

@@ -7,7 +7,7 @@ import android.graphics.Bitmap.Config;
  * This is a singleton class
  * The processor transform an image into film post style
  * If pixel >= 128, new pixel = 192, 64 otherwise.
- * @author Willam
+ * @author William
  *
  */
 public class FilmProcessor implements Processor {

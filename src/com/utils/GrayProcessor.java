@@ -7,7 +7,7 @@ import android.graphics.Bitmap.Config;
 /**
  *  This is a singleton class.
  *  It is used to transform a colorful image into a gray image.
- * @author Willam
+ * @author William
  *
  */
 public class GrayProcessor implements Processor {

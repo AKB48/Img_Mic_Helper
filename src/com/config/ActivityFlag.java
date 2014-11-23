@@ -2,7 +2,7 @@ package com.config;
 
 /**
  * This class contains the constants that are used to indicate each activities.
- * @author Willam
+ * @author William
  *
  */
 public class ActivityFlag {

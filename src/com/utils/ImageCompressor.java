@@ -9,7 +9,7 @@ import android.graphics.BitmapFactory;
 /**
  * This is a singleton class.
  * It is used to compress an image.
- * @author Willam
+ * @author William
  *
  */
 public class ImageCompressor implements Processor{

@@ -26,7 +26,7 @@ import com.config.ActivityFlag;
  * Two of them are image processing. 
  * One of them is music player.
  * The last is information about the app.
- * @author Willam
+ * @author William
  *
  */
 public class MainActivity extends Activity {

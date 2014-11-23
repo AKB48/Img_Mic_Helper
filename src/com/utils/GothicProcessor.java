@@ -8,7 +8,7 @@ import android.graphics.Bitmap.Config;
  *  This is a singleton class.
  *  It is used to transform an image into a gothic style image.
  *  The gothic style color is (143,122,16).
- * @author Willam
+ * @author William
  *
  */
 public class GothicProcessor implements Processor {

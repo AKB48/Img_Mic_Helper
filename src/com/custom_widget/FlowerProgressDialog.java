@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 /**
  * The DIY progress dialog displays when processing image.
- * @author Willam
+ * @author William
  *
  */
 public class FlowerProgressDialog extends Dialog{

@@ -10,15 +10,21 @@ import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
 import com.utils.ColdProcessor;
+import com.utils.ErodeProcessor;
+import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
 import com.utils.GothicProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
+import com.utils.InlayProcessor;
+import com.utils.MosaicProcessor;
 import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
 import com.utils.PinkProcessor;
 import com.utils.Processor;
 import com.utils.RainbowProcessor;
+import com.utils.ShadowProcessor;
+import com.utils.WindProcessor;
 
 
 import android.app.Activity;
@@ -209,6 +215,24 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.rainbow:
 						processor = RainbowProcessor.getInstance();
+						break;
+					case R.string.inlay:
+						processor = InlayProcessor.getInstance();
+						break;
+					case R.string.mosaic:
+						processor = MosaicProcessor.getInstance();
+						break;
+					case R.string.erode:
+						processor = ErodeProcessor.getInstance();
+						break;
+					case R.string.wind:
+						processor = WindProcessor.getInstance();
+						break;
+					case R.string.shadow:
+						processor = ShadowProcessor.getInstance();
+						break;
+					case R.string.exposure:
+						processor = ExposureProcessor.getInstance();
 						break;
 					default:
 						break;

@@ -7,7 +7,7 @@ import android.graphics.Bitmap.Config;
  *  This is a singleton class.
  *  It is used to transform an image into a pink style image.
  *  The pink style color is (215, 126, 172).
- * @author Willam
+ * @author William
  *
  */
 public class PinkProcessor implements Processor {

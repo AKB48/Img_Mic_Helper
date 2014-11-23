@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 /**
  * This is a basic parent class for all kinds of image processor
- * @author Willam
+ * @author William
  *
  */
 public interface Processor {

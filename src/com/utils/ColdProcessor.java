@@ -7,7 +7,7 @@ import android.graphics.Bitmap.Config;
  *  This is a singleton class.
  *  It is used to transform an image into a cold style image.
  *  The cold style color is (6, 177, 248).
- * @author Willam
+ * @author William
  *
  */
 public class ColdProcessor implements Processor {

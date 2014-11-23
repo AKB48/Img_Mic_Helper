@@ -6,7 +6,7 @@ import android.graphics.Bitmap.Config;
 /**
  *  This is a singleton class.
  *  This processor transform an image into its negative colors.
- * @author Willam
+ * @author William
  *
  */
 public class NegativeProcessor implements Processor {

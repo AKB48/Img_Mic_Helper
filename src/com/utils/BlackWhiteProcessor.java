@@ -8,7 +8,7 @@ import android.graphics.Bitmap.Config;
  * This processor transform an image into a black white two colors style.
  * If the pixel is bigger than 128, it would be set to 255, 
  * otherwise 0.
- * @author Willam
+ * @author William
  *
  */
 public class BlackWhiteProcessor implements Processor {

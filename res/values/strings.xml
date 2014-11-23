@@ -21,5 +21,11 @@
     <string name="negative">底片</string>
     <string name="film">电影海报</string>
     <string name="rainbow">霓虹</string>
+    <string name="inlay">镶嵌</string>
+    <string name="mosaic">马赛克</string>
+    <string name="erode">侵蚀</string>
+    <string name="wind">风</string>
+    <string name="shadow">阴影</string>
+    <string name="exposure">曝光</string>
 
 </resources>
