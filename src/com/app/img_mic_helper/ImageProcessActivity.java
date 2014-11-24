@@ -10,6 +10,8 @@ import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
 import com.utils.ColdProcessor;
+import com.utils.ComicProcessor;
+import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
@@ -20,10 +22,13 @@ import com.utils.InlayProcessor;
 import com.utils.MosaicProcessor;
 import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
+import com.utils.OilPaintingProcessor;
+import com.utils.PaperCutProcessor;
 import com.utils.PinkProcessor;
 import com.utils.Processor;
 import com.utils.RainbowProcessor;
 import com.utils.ShadowProcessor;
+import com.utils.SketchProcessor;
 import com.utils.WindProcessor;
 
 
@@ -34,6 +39,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.EmbossMaskFilter;
 import android.graphics.Bitmap.Config;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -189,32 +195,32 @@ public class ImageProcessActivity extends Activity {
 				public void onClick(View v) {
 					processor = null;
 					switch (methodId) {
-					case R.string.gray:
-						processor = GrayProcessor.getInstance();
-						break;
-					case R.string.nostalgia:
-						processor = NostalgiaProcessor.getInstance();
-						break;
 					case R.string.black_white:
 						processor = BlackWhiteProcessor.getInstance();
-						break;
-					case R.string.gothic:
-						processor = GothicProcessor.getInstance();
-						break;
-					case R.string.pink:
-						processor = PinkProcessor.getInstance();
 						break;
 					case R.string.cold:
 						processor = ColdProcessor.getInstance();
 						break;
-					case R.string.negative:
-						processor = NegativeProcessor.getInstance();
+					case R.string.comic:
+						processor = ComicProcessor.getInstance();
+						break;
+					case R.string.emboss:
+						processor = EmbossProcessor.getInstance();
+						break;
+					case R.string.erode:
+						processor = ErodeProcessor.getInstance();
+						break;
+					case R.string.exposure:
+						processor = ExposureProcessor.getInstance();
 						break;
 					case R.string.film:
 						processor = FilmProcessor.getInstance();
 						break;
-					case R.string.rainbow:
-						processor = RainbowProcessor.getInstance();
+					case R.string.gothic:
+						processor = GothicProcessor.getInstance();
+						break;
+					case R.string.gray:
+						processor = GrayProcessor.getInstance();
 						break;
 					case R.string.inlay:
 						processor = InlayProcessor.getInstance();
@@ -222,18 +228,33 @@ public class ImageProcessActivity extends Activity {
 					case R.string.mosaic:
 						processor = MosaicProcessor.getInstance();
 						break;
-					case R.string.erode:
-						processor = ErodeProcessor.getInstance();
+					case R.string.negative:
+						processor = NegativeProcessor.getInstance();
 						break;
-					case R.string.wind:
-						processor = WindProcessor.getInstance();
+					case R.string.nostalgia:
+						processor = NostalgiaProcessor.getInstance();
+						break;			
+					case R.string.oil_painting:
+						processor = OilPaintingProcessor.getInstance();
+						break;
+					case R.string.paper_cut:
+						processor = PaperCutProcessor.getInstance();
+						break;
+					case R.string.pink:
+						processor = PinkProcessor.getInstance();
+						break;
+					case R.string.rainbow:
+						processor = RainbowProcessor.getInstance();
 						break;
 					case R.string.shadow:
 						processor = ShadowProcessor.getInstance();
+						break;		
+					case R.string.sketch:
+						processor = SketchProcessor.getInstance();
 						break;
-					case R.string.exposure:
-						processor = ExposureProcessor.getInstance();
-						break;
+					case R.string.wind:
+						processor = WindProcessor.getInstance();
+						break;				
 					default:
 						break;
 					}

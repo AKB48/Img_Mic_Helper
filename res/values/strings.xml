@@ -27,5 +27,10 @@
     <string name="wind">风</string>
     <string name="shadow">阴影</string>
     <string name="exposure">曝光</string>
+    <string name="comic">连环画</string>
+    <string name="paper_cut">剪纸</string>
+    <string name="sketch">素描</string>
+    <string name="emboss">浮雕</string>
+    <string name="oil_painting">油画</string>
 
 </resources>

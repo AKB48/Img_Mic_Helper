@@ -505,8 +505,10 @@ public final class R {
         public static final int black_white=0x7f070009;
         public static final int choose_image_again=0x7f070007;
         public static final int cold=0x7f07000e;
+        public static final int comic=0x7f07001a;
         public static final int could_not_open_album=0x7f070003;
         public static final int could_not_open_camera=0x7f070004;
+        public static final int emboss=0x7f07001d;
         public static final int erode=0x7f070016;
         public static final int exposure=0x7f070019;
         public static final int fail_photo_created=0x7f070005;
@@ -520,9 +522,12 @@ public final class R {
         public static final int negative=0x7f070011;
         public static final int no_sdcard=0x7f070006;
         public static final int nostalgia=0x7f07000a;
+        public static final int oil_painting=0x7f07001e;
+        public static final int paper_cut=0x7f07001b;
         public static final int pink=0x7f07000d;
         public static final int rainbow=0x7f070013;
         public static final int shadow=0x7f070018;
+        public static final int sketch=0x7f07001c;
         public static final int style=0x7f070008;
         public static final int wind=0x7f070017;
     }
