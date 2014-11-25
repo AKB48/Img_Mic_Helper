@@ -16,9 +16,11 @@ import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
 import com.utils.GothicProcessor;
+import com.utils.GouacheProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
 import com.utils.InlayProcessor;
+import com.utils.MistProcessor;
 import com.utils.MosaicProcessor;
 import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
@@ -219,11 +221,17 @@ public class ImageProcessActivity extends Activity {
 					case R.string.gothic:
 						processor = GothicProcessor.getInstance();
 						break;
+					case R.string.gouache:
+						processor = GouacheProcessor.getInstance();
+						break;
 					case R.string.gray:
 						processor = GrayProcessor.getInstance();
 						break;
 					case R.string.inlay:
 						processor = InlayProcessor.getInstance();
+						break;
+					case R.string.mist:
+						processor = MistProcessor.getInstance();
 						break;
 					case R.string.mosaic:
 						processor = MosaicProcessor.getInstance();

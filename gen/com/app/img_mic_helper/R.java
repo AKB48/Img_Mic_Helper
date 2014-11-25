@@ -515,9 +515,11 @@ public final class R {
         public static final int fashion=0x7f070010;
         public static final int film=0x7f070012;
         public static final int gothic=0x7f07000c;
+        public static final int gouache=0x7f070020;
         public static final int gray=0x7f07000b;
         public static final int hello_world=0x7f070001;
         public static final int inlay=0x7f070014;
+        public static final int mist=0x7f07001f;
         public static final int mosaic=0x7f070015;
         public static final int negative=0x7f070011;
         public static final int no_sdcard=0x7f070006;
