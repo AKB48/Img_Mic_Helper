@@ -15,7 +15,7 @@ public class BlackWhiteProcessor implements Processor {
 
 	
 	private volatile static BlackWhiteProcessor uniqueInstance = null;
-	private int threshold = 128;
+	private double threshold = 128.0f;
 	
 	private BlackWhiteProcessor(){
 	}
@@ -44,27 +44,50 @@ public class BlackWhiteProcessor implements Processor {
 		
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-		int newPixel = 0, tempPixel = 0, a, r, g, b;
+		int newPixel = 0;
+		int image_size = width*height;
+		int r, g, b;
+		int[][] rgb = new int[image_size][2];
+		
 		Bitmap tempBitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
+		
+		threshold = 0.0f;
+		for (int i = 0; i < height; i++) 
+		{
+			for (int j = 0; j < width; j++) 
+			{
+				int index = i*width+j;
 				int oldPixel = bitmap.getPixel(j, i); 
-				a = (oldPixel >> 24) & 0xff;
+				rgb[index][0] = (oldPixel >> 24) & 0xff;
 				r = (oldPixel >> 16) & 0xff;
                 g = (oldPixel >> 8) & 0xff;
                 b = oldPixel & 0xff;
-                tempPixel = pixelChoose( (int)( (r*0.3)+(b*0.59)+(g*0.11) ) );
-                newPixel = (a << 24) | (tempPixel << 16) | (tempPixel << 8) | tempPixel;
+                rgb[index][1] = (int)( (r*0.3)+(b*0.59)+(g*0.11) );
+                threshold += rgb[index][1] * 1.0 / image_size;
+
+			}
+		}
+		
+		
+		for (int i = 0; i < height; i++) 
+		{
+			for (int j = 0; j < width; j++) 
+			{
+				int index = i*width+j;				
+                newPixel = pixelChoose(rgb[index][1]);
+                               
+                newPixel = (rgb[index][0] << 24) | (newPixel << 16) | (newPixel << 8) | newPixel;
 				tempBitmap.setPixel(j, i, newPixel);
 			}
 		}
+		
 		return tempBitmap;
 	}
 	
 	
 	private int pixelChoose(int oldPixel)
 	{
-		return oldPixel<threshold?0:255;
+		return oldPixel < threshold ? 0 : 255;
 	}
 
 }

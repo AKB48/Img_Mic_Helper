@@ -9,8 +9,10 @@ import java.util.Map;
 import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
+import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
+import com.utils.CrossProcessingProcessor;
 import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
@@ -29,6 +31,7 @@ import com.utils.PaperCutProcessor;
 import com.utils.PinkProcessor;
 import com.utils.Processor;
 import com.utils.RainbowProcessor;
+import com.utils.ReflectionProcessor;
 import com.utils.ShadowProcessor;
 import com.utils.SketchProcessor;
 import com.utils.WindProcessor;
@@ -200,11 +203,17 @@ public class ImageProcessActivity extends Activity {
 					case R.string.black_white:
 						processor = BlackWhiteProcessor.getInstance();
 						break;
+					case R.string.ceramic:
+						processor = CeramicProcessor.getInstance();
+						break;
 					case R.string.cold:
 						processor = ColdProcessor.getInstance();
 						break;
 					case R.string.comic:
 						processor = ComicProcessor.getInstance();
+						break;
+					case R.string.cross_processing:
+						processor = CrossProcessingProcessor.getInstance();
 						break;
 					case R.string.emboss:
 						processor = EmbossProcessor.getInstance();
@@ -253,6 +262,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.rainbow:
 						processor = RainbowProcessor.getInstance();
+						break;
+					case R.string.reflection:
+						processor = ReflectionProcessor.getInstance();
 						break;
 					case R.string.shadow:
 						processor = ShadowProcessor.getInstance();

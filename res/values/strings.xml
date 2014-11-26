@@ -34,5 +34,8 @@
     <string name="oil_painting">油画</string>
     <string name="mist">雾化</string>
     <string name="gouache">水粉画</string>
+    <string name="reflection">倒影</string>
+    <string name="cross_processing">交叉冲印</string>
+    <string name="ceramic">瓷砖块</string>
 
 </resources>

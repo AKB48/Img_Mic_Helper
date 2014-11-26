@@ -14,5 +14,5 @@ public class Config {
 	public static int[] art_list = {R.string.negative, R.string.film, R.string.rainbow, R.string.inlay, R.string.mosaic,
 			R.string.erode, R.string.wind, R.string.shadow, R.string.exposure, R.string.paper_cut, R.string.sketch,
 			R.string.emboss, R.string.oil_painting, R.string.gouache};
-	public static int[] fashion_list = {R.string.mist};
+	public static int[] fashion_list = {R.string.mist, R.string.reflection, R.string.cross_processing, R.string.ceramic};
 }
