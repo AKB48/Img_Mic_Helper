@@ -17,6 +17,8 @@ import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
+import com.utils.GaussianBlurProcessor;
+import com.utils.GeneralBlurProcessor;
 import com.utils.GothicProcessor;
 import com.utils.GouacheProcessor;
 import com.utils.GrayProcessor;
@@ -164,6 +166,7 @@ public class ImageProcessActivity extends Activity {
 				subfunc_bar_items = com.config.Config.fashion_list;
 				break;
 			case 3:
+				subfunc_bar_items = com.config.Config.classic_list;
 				break;
 			case 4:
 				break;
@@ -226,6 +229,12 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.film:
 						processor = FilmProcessor.getInstance();
+						break;
+					case R.string.gaussian_blur:
+						processor = GaussianBlurProcessor.getInstance();
+						break;
+					case R.string.blur:
+						processor = GeneralBlurProcessor.getInstance();
 						break;
 					case R.string.gothic:
 						processor = GothicProcessor.getInstance();

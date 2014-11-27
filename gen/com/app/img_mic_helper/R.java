@@ -503,8 +503,10 @@ public final class R {
         public static final int app_name=0x7f070000;
         public static final int art=0x7f07000f;
         public static final int black_white=0x7f070009;
+        public static final int blur=0x7f070024;
         public static final int ceramic=0x7f070023;
         public static final int choose_image_again=0x7f070007;
+        public static final int classic=0x7f070025;
         public static final int cold=0x7f07000e;
         public static final int comic=0x7f07001a;
         public static final int could_not_open_album=0x7f070003;
@@ -516,6 +518,7 @@ public final class R {
         public static final int fail_photo_created=0x7f070005;
         public static final int fashion=0x7f070010;
         public static final int film=0x7f070012;
+        public static final int gaussian_blur=0x7f070026;
         public static final int gothic=0x7f07000c;
         public static final int gouache=0x7f070020;
         public static final int gray=0x7f07000b;

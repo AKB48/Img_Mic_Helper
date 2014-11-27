@@ -37,5 +37,8 @@
     <string name="reflection">倒影</string>
     <string name="cross_processing">交叉冲印</string>
     <string name="ceramic">瓷砖块</string>
+    <string name="blur">模糊</string>
+    <string name="classic">经典</string>
+    <string name="gaussian_blur">高斯模糊</string>
 
 </resources>
