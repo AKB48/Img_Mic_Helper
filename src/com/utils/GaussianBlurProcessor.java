@@ -6,12 +6,18 @@ import android.hardware.Camera.Size;
 import android.util.Log;
 
 
-
+/**
+ * This is a singleton class.
+ * The processor transforms an image into a blur style.
+ * The blur operator is gaussian.
+ * @author William
+ *
+ */
 public class GaussianBlurProcessor implements Processor {
 
 	
 	private volatile static GaussianBlurProcessor uniqueInstance = null;
-	private int raduis = 7;
+	private int raduis = 5;
 	private double sigma = 10.0;
 	private double[] gaussianWeightMatrix;
 	
@@ -22,7 +28,7 @@ public class GaussianBlurProcessor implements Processor {
 	 * the public method to get the unique instance
 	 * @return GaussianBlurProcessor the unique instance of this class
 	 */
-	public static GaussianBlurProcessor getInstance(){
+	public static GaussianBlurProcessor getInstance() {
         if(uniqueInstance == null){
             synchronized(GaussianBlurProcessor.class) {
                 if(uniqueInstance == null) {
@@ -103,6 +109,7 @@ public class GaussianBlurProcessor implements Processor {
 				index += height;
 				
 			}
+			
 		}
 		
 		
@@ -130,8 +137,9 @@ public class GaussianBlurProcessor implements Processor {
 		for (int i = 0; i <gaussianWeightMatrix.length; i++)
 		{
 			gaussianWeightMatrix[i] /= sum;
-			Log.i("aa", ""+gaussianWeightMatrix[i]);
+			
 		}
+		
 	}
 	
 

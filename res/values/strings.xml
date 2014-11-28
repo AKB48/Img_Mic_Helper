@@ -40,5 +40,11 @@
     <string name="blur">模糊</string>
     <string name="classic">经典</string>
     <string name="gaussian_blur">高斯模糊</string>
+    <string name="soft_light">柔光</string>
+    <string name="bright">亮光</string>
+    <string name="vignette">晕影</string>
+    <string name="dark_corner">暗角</string>
+    <string name="sharpen">锐化</string>
+    <string name="pen">钢笔画</string>
 
 </resources>

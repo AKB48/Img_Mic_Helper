@@ -9,10 +9,12 @@ import java.util.Map;
 import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
+import com.utils.BrightProcessor;
 import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
 import com.utils.CrossProcessingProcessor;
+import com.utils.DarkCornerProcessor;
 import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
@@ -30,12 +32,16 @@ import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
 import com.utils.OilPaintingProcessor;
 import com.utils.PaperCutProcessor;
+import com.utils.PenProcessor;
 import com.utils.PinkProcessor;
 import com.utils.Processor;
 import com.utils.RainbowProcessor;
 import com.utils.ReflectionProcessor;
 import com.utils.ShadowProcessor;
+import com.utils.SharpenProcessor;
 import com.utils.SketchProcessor;
+import com.utils.SoftlightProcessor;
+import com.utils.VignetteProcessor;
 import com.utils.WindProcessor;
 
 
@@ -206,6 +212,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.black_white:
 						processor = BlackWhiteProcessor.getInstance();
 						break;
+					case R.string.bright:
+						processor = BrightProcessor.getInstance();
+						break;
 					case R.string.ceramic:
 						processor = CeramicProcessor.getInstance();
 						break;
@@ -217,6 +226,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.cross_processing:
 						processor = CrossProcessingProcessor.getInstance();
+						break;
+					case R.string.dark_corner:
+						processor = DarkCornerProcessor.getInstance();
 						break;
 					case R.string.emboss:
 						processor = EmbossProcessor.getInstance();
@@ -266,6 +278,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.paper_cut:
 						processor = PaperCutProcessor.getInstance();
 						break;
+					case R.string.pen:
+						processor = PenProcessor.getInstance();
+						break;
 					case R.string.pink:
 						processor = PinkProcessor.getInstance();
 						break;
@@ -278,8 +293,17 @@ public class ImageProcessActivity extends Activity {
 					case R.string.shadow:
 						processor = ShadowProcessor.getInstance();
 						break;		
+					case R.string.sharpen:
+						processor = SharpenProcessor.getInstance();
+						break;
 					case R.string.sketch:
 						processor = SketchProcessor.getInstance();
+						break;
+					case R.string.soft_light:
+						processor = SoftlightProcessor.getInstance();
+						break;
+					case R.string.vignette:
+						processor = VignetteProcessor.getInstance();
 						break;
 					case R.string.wind:
 						processor = WindProcessor.getInstance();
