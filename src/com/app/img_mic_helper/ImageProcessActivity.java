@@ -13,8 +13,10 @@ import com.utils.BrightProcessor;
 import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
+import com.utils.ContrastProcessor;
 import com.utils.CrossProcessingProcessor;
 import com.utils.DarkCornerProcessor;
+import com.utils.DistortingMirrorProcessor;
 import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
@@ -26,6 +28,7 @@ import com.utils.GouacheProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
 import com.utils.InlayProcessor;
+import com.utils.MagnifierProcessor;
 import com.utils.MistProcessor;
 import com.utils.MosaicProcessor;
 import com.utils.NegativeProcessor;
@@ -40,7 +43,9 @@ import com.utils.ReflectionProcessor;
 import com.utils.ShadowProcessor;
 import com.utils.SharpenProcessor;
 import com.utils.SketchProcessor;
+import com.utils.SmartSharpenProcessor;
 import com.utils.SoftlightProcessor;
+import com.utils.SymmetryProcessor;
 import com.utils.VignetteProcessor;
 import com.utils.WindProcessor;
 
@@ -221,6 +226,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.cold:
 						processor = ColdProcessor.getInstance();
 						break;
+					case R.string.contrast_enhancement:
+						processor = ContrastProcessor.getInstance();
+						break;
 					case R.string.comic:
 						processor = ComicProcessor.getInstance();
 						break;
@@ -229,6 +237,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.dark_corner:
 						processor = DarkCornerProcessor.getInstance();
+						break;
+					case R.string.distorting_mirror:
+						processor = DistortingMirrorProcessor.getInstance();
 						break;
 					case R.string.emboss:
 						processor = EmbossProcessor.getInstance();
@@ -259,6 +270,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.inlay:
 						processor = InlayProcessor.getInstance();
+						break;
+					case R.string.magnifier:
+						processor = MagnifierProcessor.getInstance();
 						break;
 					case R.string.mist:
 						processor = MistProcessor.getInstance();
@@ -299,8 +313,14 @@ public class ImageProcessActivity extends Activity {
 					case R.string.sketch:
 						processor = SketchProcessor.getInstance();
 						break;
+					case R.string.smart_sharpen:
+						processor = SmartSharpenProcessor.getInstance();
+						break;
 					case R.string.soft_light:
 						processor = SoftlightProcessor.getInstance();
+						break;
+					case R.string.symmetry:
+						processor = SymmetryProcessor.getInstance();
 						break;
 					case R.string.vignette:
 						processor = VignetteProcessor.getInstance();

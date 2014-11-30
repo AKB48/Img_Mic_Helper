@@ -26,12 +26,13 @@ public class SharpenProcessor implements Processor {
 
 	private volatile static SharpenProcessor uniqueInstance = null;
 	private int radius = 1;
-	private double laplacian[] = {0.0, -1.0, 0.0, -1.0, 5.0, -1.0, 0.0, -1.0, 0.0};
+	private double laplacian[] = {-1.0, -1.0, -1.0, -1.0, 9.0, -1.0, -1.0, -1.0, -1.0};
 	
 	private SharpenProcessor()
 	{
 		
 	}
+	
 	
 	/**
 	 * the public method to get the unique instance

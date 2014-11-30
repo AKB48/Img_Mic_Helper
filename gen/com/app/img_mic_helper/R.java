@@ -510,10 +510,12 @@ public final class R {
         public static final int classic=0x7f070025;
         public static final int cold=0x7f07000e;
         public static final int comic=0x7f07001a;
+        public static final int contrast_enhancement=0x7f070030;
         public static final int could_not_open_album=0x7f070003;
         public static final int could_not_open_camera=0x7f070004;
         public static final int cross_processing=0x7f070022;
         public static final int dark_corner=0x7f07002a;
+        public static final int distorting_mirror=0x7f07002f;
         public static final int emboss=0x7f07001d;
         public static final int erode=0x7f070016;
         public static final int exposure=0x7f070019;
@@ -526,6 +528,7 @@ public final class R {
         public static final int gray=0x7f07000b;
         public static final int hello_world=0x7f070001;
         public static final int inlay=0x7f070014;
+        public static final int magnifier=0x7f07002e;
         public static final int mist=0x7f07001f;
         public static final int mosaic=0x7f070015;
         public static final int negative=0x7f070011;
@@ -540,8 +543,10 @@ public final class R {
         public static final int shadow=0x7f070018;
         public static final int sharpen=0x7f07002b;
         public static final int sketch=0x7f07001c;
+        public static final int smart_sharpen=0x7f070031;
         public static final int soft_light=0x7f070027;
         public static final int style=0x7f070008;
+        public static final int symmetry=0x7f07002d;
         public static final int vignette=0x7f070029;
         public static final int wind=0x7f070017;
     }

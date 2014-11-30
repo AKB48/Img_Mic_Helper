@@ -46,5 +46,10 @@
     <string name="dark_corner">暗角</string>
     <string name="sharpen">锐化</string>
     <string name="pen">钢笔画</string>
+    <string name="symmetry">对称</string>
+    <string name="magnifier">放大镜</string>
+    <string name="distorting_mirror">哈哈镜</string>
+    <string name="contrast_enhancement">对比度增强</string>
+    <string name="smart_sharpen">智能锐化</string>
 
 </resources>

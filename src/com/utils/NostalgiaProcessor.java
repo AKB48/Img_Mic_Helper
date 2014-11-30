@@ -74,6 +74,7 @@ public class NostalgiaProcessor implements Processor {
 		return a<b?a:b;
 	}
 	
+	
 	/**
 	 * return the bigger one of two integer
 	 * @param a the first integer
