@@ -13,6 +13,7 @@ import com.utils.BrightProcessor;
 import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
+import com.utils.Contrast2Processor;
 import com.utils.ContrastProcessor;
 import com.utils.CrossProcessingProcessor;
 import com.utils.DarkCornerProcessor;
@@ -28,6 +29,7 @@ import com.utils.GouacheProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
 import com.utils.InlayProcessor;
+import com.utils.LOMOProcessor;
 import com.utils.MagnifierProcessor;
 import com.utils.MistProcessor;
 import com.utils.MosaicProcessor;
@@ -229,6 +231,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.contrast_enhancement:
 						processor = ContrastProcessor.getInstance();
 						break;
+					case R.string.contrast_enhancement2:
+						processor = Contrast2Processor.getInstance();
+						break;
 					case R.string.comic:
 						processor = ComicProcessor.getInstance();
 						break;
@@ -270,6 +275,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.inlay:
 						processor = InlayProcessor.getInstance();
+						break;
+					case R.string.lomo:
+						processor = LOMOProcessor.getInstance();
 						break;
 					case R.string.magnifier:
 						processor = MagnifierProcessor.getInstance();

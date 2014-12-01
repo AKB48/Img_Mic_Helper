@@ -51,5 +51,7 @@
     <string name="distorting_mirror">哈哈镜</string>
     <string name="contrast_enhancement">对比度增强</string>
     <string name="smart_sharpen">智能锐化</string>
+    <string name="lomo">LOMO</string>
+    <string name="contrast_enhancement2">对比度增强2</string>
 
 </resources>

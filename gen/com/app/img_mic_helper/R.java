@@ -511,6 +511,7 @@ public final class R {
         public static final int cold=0x7f07000e;
         public static final int comic=0x7f07001a;
         public static final int contrast_enhancement=0x7f070030;
+        public static final int contrast_enhancement2=0x7f070033;
         public static final int could_not_open_album=0x7f070003;
         public static final int could_not_open_camera=0x7f070004;
         public static final int cross_processing=0x7f070022;
@@ -528,6 +529,7 @@ public final class R {
         public static final int gray=0x7f07000b;
         public static final int hello_world=0x7f070001;
         public static final int inlay=0x7f070014;
+        public static final int lomo=0x7f070032;
         public static final int magnifier=0x7f07002e;
         public static final int mist=0x7f07001f;
         public static final int mosaic=0x7f070015;
