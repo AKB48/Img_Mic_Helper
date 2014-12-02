@@ -10,6 +10,7 @@ import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
 import com.utils.BrightProcessor;
+import com.utils.BubbleProcessor;
 import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
@@ -47,6 +48,7 @@ import com.utils.SharpenProcessor;
 import com.utils.SketchProcessor;
 import com.utils.SmartSharpenProcessor;
 import com.utils.SoftlightProcessor;
+import com.utils.SudokuProcessor;
 import com.utils.SymmetryProcessor;
 import com.utils.VignetteProcessor;
 import com.utils.WindProcessor;
@@ -182,6 +184,7 @@ public class ImageProcessActivity extends Activity {
 				subfunc_bar_items = com.config.Config.classic_list;
 				break;
 			case 4:
+				subfunc_bar_items = com.config.Config.effects_list;
 				break;
 			default:
 				break;
@@ -221,6 +224,10 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.bright:
 						processor = BrightProcessor.getInstance();
+						break;
+					case R.string.bubble:
+						BubbleProcessor.getInstance().setContext(getApplicationContext());
+						processor = BubbleProcessor.getInstance();
 						break;
 					case R.string.ceramic:
 						processor = CeramicProcessor.getInstance();
@@ -326,6 +333,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.soft_light:
 						processor = SoftlightProcessor.getInstance();
+						break;
+					case R.string.sudoku:
+						processor = SudokuProcessor.getInstance();
 						break;
 					case R.string.symmetry:
 						processor = SymmetryProcessor.getInstance();

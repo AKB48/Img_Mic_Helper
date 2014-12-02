@@ -53,5 +53,8 @@
     <string name="smart_sharpen">智能锐化</string>
     <string name="lomo">LOMO</string>
     <string name="contrast_enhancement2">对比度增强2</string>
+    <string name="effects">特效</string>
+    <string name="sudoku">九宫格</string>
+    <string name="bubble">泡泡</string>
 
 </resources>

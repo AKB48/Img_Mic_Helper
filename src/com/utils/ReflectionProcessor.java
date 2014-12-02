@@ -99,6 +99,13 @@ public class ReflectionProcessor implements Processor {
 	}
 	
 	
+	/**
+	 * Scale a bitmap to a specific size.
+	 * @param source the original bitmap to be scaled.
+	 * @param new_width the width of new bitmap.
+	 * @param new_height the height of new bitmap.
+	 * @return the bitmap that after scaling.
+	 */
 	private Bitmap scaleBitmap(Bitmap source, int new_width, int new_height)
 	{	
 		int width = source.getWidth();

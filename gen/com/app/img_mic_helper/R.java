@@ -464,10 +464,11 @@ public final class R {
     }
     public static final class drawable {
         public static final int album=0x7f020000;
-        public static final int camera=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int main_bg=0x7f020003;
-        public static final int progress_bar=0x7f020004;
+        public static final int bubble=0x7f020001;
+        public static final int camera=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int main_bg=0x7f020004;
+        public static final int progress_bar=0x7f020005;
     }
     public static final class id {
         public static final int about=0x7f0a000c;
@@ -505,6 +506,7 @@ public final class R {
         public static final int black_white=0x7f070009;
         public static final int blur=0x7f070024;
         public static final int bright=0x7f070028;
+        public static final int bubble=0x7f070036;
         public static final int ceramic=0x7f070023;
         public static final int choose_image_again=0x7f070007;
         public static final int classic=0x7f070025;
@@ -517,6 +519,7 @@ public final class R {
         public static final int cross_processing=0x7f070022;
         public static final int dark_corner=0x7f07002a;
         public static final int distorting_mirror=0x7f07002f;
+        public static final int effects=0x7f070034;
         public static final int emboss=0x7f07001d;
         public static final int erode=0x7f070016;
         public static final int exposure=0x7f070019;
@@ -548,6 +551,7 @@ public final class R {
         public static final int smart_sharpen=0x7f070031;
         public static final int soft_light=0x7f070027;
         public static final int style=0x7f070008;
+        public static final int sudoku=0x7f070035;
         public static final int symmetry=0x7f07002d;
         public static final int vignette=0x7f070029;
         public static final int wind=0x7f070017;
