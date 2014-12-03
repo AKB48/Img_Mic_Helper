@@ -18,6 +18,6 @@ public class Config {
 			R.string.soft_light, R.string.bright, R.string.vignette, R.string.dark_corner, R.string.magnifier, 
 			R.string.distorting_mirror, R.string.lomo};
 	public static int[] classic_list = {R.string.blur, R.string.gaussian_blur, R.string.sharpen, R.string.smart_sharpen, 
-			R.string.contrast_enhancement, R.string.contrast_enhancement2};
-	public static int[] effects_list = {R.string.symmetry, R.string.sudoku, R.string.bubble};
+			R.string.contrast_enhancement, R.string.contrast_enhancement2, R.string.white_balance};
+	public static int[] effects_list = {R.string.symmetry, R.string.sudoku, R.string.bubble, R.string.frame};
 }

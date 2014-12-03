@@ -56,5 +56,7 @@
     <string name="effects">特效</string>
     <string name="sudoku">九宫格</string>
     <string name="bubble">泡泡</string>
+    <string name="frame">相框</string>
+    <string name="white_balance">白平衡</string>
 
 </resources>

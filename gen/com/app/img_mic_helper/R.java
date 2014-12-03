@@ -466,9 +466,10 @@ public final class R {
         public static final int album=0x7f020000;
         public static final int bubble=0x7f020001;
         public static final int camera=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int main_bg=0x7f020004;
-        public static final int progress_bar=0x7f020005;
+        public static final int frame=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int main_bg=0x7f020005;
+        public static final int progress_bar=0x7f020006;
     }
     public static final class id {
         public static final int about=0x7f0a000c;
@@ -526,6 +527,7 @@ public final class R {
         public static final int fail_photo_created=0x7f070005;
         public static final int fashion=0x7f070010;
         public static final int film=0x7f070012;
+        public static final int frame=0x7f070037;
         public static final int gaussian_blur=0x7f070026;
         public static final int gothic=0x7f07000c;
         public static final int gouache=0x7f070020;
@@ -554,6 +556,7 @@ public final class R {
         public static final int sudoku=0x7f070035;
         public static final int symmetry=0x7f07002d;
         public static final int vignette=0x7f070029;
+        public static final int white_balance=0x7f070038;
         public static final int wind=0x7f070017;
     }
     public static final class style {

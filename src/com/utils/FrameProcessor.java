@@ -1,48 +1,47 @@
 package com.utils;
 
-
 import com.app.img_mic_helper.R;
 
-import android.R.integer;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.Bitmap.Config;
+import android.util.Log;
 
 
 /**
  * This is a singleton class.
- * The processor adds a bubble effect onto the original image.
+ * The processor adds a beautiful photo frame onto the image.
  * @author William
  *
  */
-public class BubbleProcessor implements Processor {
+public class FrameProcessor implements Processor {
 
 	
-	private volatile static BubbleProcessor uniqueInstance = null;
-	private double opacity = 0.5;
+	private volatile static FrameProcessor uniqueInstance = null;
+	private double opacity  = 0.5;
 	private Context context = null;
 	
 	
-	private BubbleProcessor()
+	private FrameProcessor()
 	{
 		
 	}
 	
 	/**
 	 * the public method to get the unique instance
-	 * @return BubbleProcessor the unique instance of this class
+	 * @return FrameProcessor the unique instance of this class
 	 */
-	public static BubbleProcessor getInstance()
+	public static FrameProcessor getInstance()
 	{
         if(uniqueInstance == null)
         {
-            synchronized(BubbleProcessor.class) 
+            synchronized(FrameProcessor.class) 
             {
                 if(uniqueInstance == null) 
                 {
-                    uniqueInstance = new BubbleProcessor();
+                    uniqueInstance = new FrameProcessor();
                 }
             }
         }
@@ -115,73 +114,70 @@ public class BubbleProcessor implements Processor {
 	
 	@Override
 	public Bitmap process(Bitmap bitmap) {
-		
+
 		if (bitmap == null)
 		{
 			return null;
 		}
 		
-		if (this.context == null)
-		{
-			return bitmap.copy(Config.ARGB_8888, false);
-		}
-		
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-			
-		Bitmap tempBitmap = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.bubble);
-		Bitmap bubbleBitmap = scaleBitmap(tempBitmap, width, height);
+		
+		Bitmap tempBitmap = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.frame);
+		Bitmap frameBitmap = scaleBitmap(tempBitmap, width, height);
 		tempBitmap.recycle();
 		tempBitmap = null;
 		
 		tempBitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
-	
 		
+		int oldPixel1;
+		int oldPixel2;
 		int r, g, b;
 		int r1, g1, b1;
 		int r2, g2, b2;
-		int oldPixel1, oldPixel2;
-		int newPixel = 0;
-		
+		int newPixel;
 		
 		for (int i = 0; i < height; i++)
 		{
 			for (int j = 0; j < width; j++)
 			{
-				oldPixel1 = bubbleBitmap.getPixel(j, i);
+				oldPixel1 = frameBitmap.getPixel(j, i);
+				
 				r1 = (oldPixel1 >> 16) & 0xff;
 				g1 = (oldPixel1 >> 8) & 0xff;
 				b1 = oldPixel1 & 0xff;
-				
+				if (r1 > 200 && g1 > 200 && b1 > 200)
+				{
+					opacity = 0;
+				}
+				else 
+				{
+					opacity = 0.7;
+				}
+					
 				oldPixel2 = bitmap.getPixel(j, i);
 				r2 = (oldPixel2 >> 16) & 0xff;
 				g2 = (oldPixel2 >> 8) & 0xff;
 				b2 = oldPixel2 & 0xff;
-				
-               
-				r = pixelChoose(r2, r1);
-				r = (int) (opacity * r + (1 - opacity) * r2);
+					
+				r = (int) (opacity * r1 + (1 - opacity) * r2);
 				r = r > 255 ? 255 : r;
 				r = r < 0 ? 0 : r;
-				g = pixelChoose(g2, g1);
-				g = (int) (opacity * g + (1 - opacity) * g2);
+				g = (int) (opacity * g1 + (1 - opacity) * g2);
 				g = g > 255 ? 255 : g;
 				g = g < 0 ? 0 : g;
-				b = pixelChoose(b2, b1);
-				b = (int) (opacity * b + (1 - opacity) * b2);
+				b = (int) (opacity * b1 + (1 - opacity) * b2);
 				b = b > 255 ? 255 : b;
 				b = b < 0 ? 0 : b;
-				
-				
+					
 				newPixel = 0xff000000 | (r << 16) | (g << 8) | b;
 				tempBitmap.setPixel(j, i, newPixel);
+			
 				
 			}
 		}
 		
-		
 		return tempBitmap;
-		
 	}
 	
 	
@@ -208,20 +204,5 @@ public class BubbleProcessor implements Processor {
 	    return dest;
 	
 	} 
-	
-	
-	private int pixelChoose(int v1, int v2) 
-	{
-		  if ( v1 > 127.5 )
-		  {
-		      return (int)(v2 + (255.0 - v2) * ((v1 - 127.5) / 127.5) * (0.5 - Math.abs(v2-127.5)/255.0));
-		   }
-		  else
-		  {
-		      return (int)(v2 - v2 * ((127.5 -  v1) / 127.5) * (0.5 - Math.abs(v2-127.5)/255.0));
-		   }
-		  
-	}
-
 
 }

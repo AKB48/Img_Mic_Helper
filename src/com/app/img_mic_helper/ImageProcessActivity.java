@@ -23,6 +23,7 @@ import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
+import com.utils.FrameProcessor;
 import com.utils.GaussianBlurProcessor;
 import com.utils.GeneralBlurProcessor;
 import com.utils.GothicProcessor;
@@ -51,6 +52,7 @@ import com.utils.SoftlightProcessor;
 import com.utils.SudokuProcessor;
 import com.utils.SymmetryProcessor;
 import com.utils.VignetteProcessor;
+import com.utils.WhiteBalanceProcessor;
 import com.utils.WindProcessor;
 
 
@@ -265,6 +267,10 @@ public class ImageProcessActivity extends Activity {
 					case R.string.film:
 						processor = FilmProcessor.getInstance();
 						break;
+					case R.string.frame:
+						FrameProcessor.getInstance().setContext(getApplicationContext());
+						processor = FrameProcessor.getInstance();
+						break;
 					case R.string.gaussian_blur:
 						processor = GaussianBlurProcessor.getInstance();
 						break;
@@ -342,6 +348,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.vignette:
 						processor = VignetteProcessor.getInstance();
+						break;
+					case R.string.white_balance:
+						processor = WhiteBalanceProcessor.getInstance();
 						break;
 					case R.string.wind:
 						processor = WindProcessor.getInstance();
