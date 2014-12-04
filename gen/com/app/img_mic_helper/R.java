@@ -519,6 +519,7 @@ public final class R {
         public static final int could_not_open_camera=0x7f070004;
         public static final int cross_processing=0x7f070022;
         public static final int dark_corner=0x7f07002a;
+        public static final int dermabrasion=0x7f07003b;
         public static final int distorting_mirror=0x7f07002f;
         public static final int effects=0x7f070034;
         public static final int emboss=0x7f07001d;
@@ -536,6 +537,7 @@ public final class R {
         public static final int inlay=0x7f070014;
         public static final int lomo=0x7f070032;
         public static final int magnifier=0x7f07002e;
+        public static final int marble=0x7f07003a;
         public static final int mist=0x7f07001f;
         public static final int mosaic=0x7f070015;
         public static final int negative=0x7f070011;
@@ -556,6 +558,7 @@ public final class R {
         public static final int sudoku=0x7f070035;
         public static final int symmetry=0x7f07002d;
         public static final int vignette=0x7f070029;
+        public static final int water_ripple=0x7f070039;
         public static final int white_balance=0x7f070038;
         public static final int wind=0x7f070017;
     }

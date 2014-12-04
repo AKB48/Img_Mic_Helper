@@ -58,5 +58,8 @@
     <string name="bubble">泡泡</string>
     <string name="frame">相框</string>
     <string name="white_balance">白平衡</string>
+    <string name="water_ripple">涟漪</string>
+    <string name="marble">大理石花纹</string>
+    <string name="dermabrasion">磨皮</string>
 
 </resources>

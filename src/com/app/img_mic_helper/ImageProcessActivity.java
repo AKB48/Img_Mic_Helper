@@ -18,6 +18,7 @@ import com.utils.Contrast2Processor;
 import com.utils.ContrastProcessor;
 import com.utils.CrossProcessingProcessor;
 import com.utils.DarkCornerProcessor;
+import com.utils.DermabrasionProcessor;
 import com.utils.DistortingMirrorProcessor;
 import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
@@ -33,6 +34,7 @@ import com.utils.ImageCompressor;
 import com.utils.InlayProcessor;
 import com.utils.LOMOProcessor;
 import com.utils.MagnifierProcessor;
+import com.utils.MarbleProcessor;
 import com.utils.MistProcessor;
 import com.utils.MosaicProcessor;
 import com.utils.NegativeProcessor;
@@ -52,6 +54,7 @@ import com.utils.SoftlightProcessor;
 import com.utils.SudokuProcessor;
 import com.utils.SymmetryProcessor;
 import com.utils.VignetteProcessor;
+import com.utils.WaterRippleProcessor;
 import com.utils.WhiteBalanceProcessor;
 import com.utils.WindProcessor;
 
@@ -252,6 +255,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.dark_corner:
 						processor = DarkCornerProcessor.getInstance();
 						break;
+					case R.string.dermabrasion:
+						processor = DermabrasionProcessor.getInstance();
+						break;
 					case R.string.distorting_mirror:
 						processor = DistortingMirrorProcessor.getInstance();
 						break;
@@ -294,6 +300,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.magnifier:
 						processor = MagnifierProcessor.getInstance();
+						break;
+					case R.string.marble:
+						processor = MarbleProcessor.getInstance();
 						break;
 					case R.string.mist:
 						processor = MistProcessor.getInstance();
@@ -348,6 +357,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.vignette:
 						processor = VignetteProcessor.getInstance();
+						break;
+					case R.string.water_ripple:
+						processor = WaterRippleProcessor.getInstance();
 						break;
 					case R.string.white_balance:
 						processor = WhiteBalanceProcessor.getInstance();
