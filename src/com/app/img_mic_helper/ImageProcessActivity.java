@@ -25,6 +25,7 @@ import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
 import com.utils.FrameProcessor;
+import com.utils.GammaProcessor;
 import com.utils.GaussianBlurProcessor;
 import com.utils.GeneralBlurProcessor;
 import com.utils.GothicProcessor;
@@ -54,8 +55,10 @@ import com.utils.SoftlightProcessor;
 import com.utils.SudokuProcessor;
 import com.utils.SymmetryProcessor;
 import com.utils.VignetteProcessor;
+import com.utils.WaterProcessor;
 import com.utils.WaterRippleProcessor;
 import com.utils.WhiteBalanceProcessor;
+import com.utils.WhiteningProcessor;
 import com.utils.WindProcessor;
 
 
@@ -277,6 +280,9 @@ public class ImageProcessActivity extends Activity {
 						FrameProcessor.getInstance().setContext(getApplicationContext());
 						processor = FrameProcessor.getInstance();
 						break;
+					case R.string.gamma_correction:
+						processor = GammaProcessor.getInstance();
+						break;
 					case R.string.gaussian_blur:
 						processor = GaussianBlurProcessor.getInstance();
 						break;
@@ -358,11 +364,17 @@ public class ImageProcessActivity extends Activity {
 					case R.string.vignette:
 						processor = VignetteProcessor.getInstance();
 						break;
+					case R.string.water:
+						processor = WaterProcessor.getInstance();
+						break;
 					case R.string.water_ripple:
 						processor = WaterRippleProcessor.getInstance();
 						break;
 					case R.string.white_balance:
 						processor = WhiteBalanceProcessor.getInstance();
+						break;
+					case R.string.whitening:
+						processor = WhiteningProcessor.getInstance();
 						break;
 					case R.string.wind:
 						processor = WindProcessor.getInstance();

@@ -61,5 +61,8 @@
     <string name="water_ripple">涟漪</string>
     <string name="marble">大理石花纹</string>
     <string name="dermabrasion">磨皮</string>
+    <string name="whitening">美白</string>
+    <string name="water">水纹</string>
+    <string name="gamma_correction">伽马校正</string>
 
 </resources>

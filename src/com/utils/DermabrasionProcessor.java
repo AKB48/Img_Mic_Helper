@@ -172,6 +172,7 @@ public class DermabrasionProcessor implements Processor {
                 g = (inPixels[index] >> 8) & 0xff;  
                 b = inPixels[index] & 0xff; 
                 
+                
                 int new_i = 0, new_j = 0;  
                 int temp_index = 0;  
                 int temp_a = 0, temp_r = 0, temp_g = 0, temp_b = 0;  

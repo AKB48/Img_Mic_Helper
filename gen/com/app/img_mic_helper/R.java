@@ -529,6 +529,7 @@ public final class R {
         public static final int fashion=0x7f070010;
         public static final int film=0x7f070012;
         public static final int frame=0x7f070037;
+        public static final int gamma_correction=0x7f07003e;
         public static final int gaussian_blur=0x7f070026;
         public static final int gothic=0x7f07000c;
         public static final int gouache=0x7f070020;
@@ -558,8 +559,10 @@ public final class R {
         public static final int sudoku=0x7f070035;
         public static final int symmetry=0x7f07002d;
         public static final int vignette=0x7f070029;
+        public static final int water=0x7f07003d;
         public static final int water_ripple=0x7f070039;
         public static final int white_balance=0x7f070038;
+        public static final int whitening=0x7f07003c;
         public static final int wind=0x7f070017;
     }
     public static final class style {
