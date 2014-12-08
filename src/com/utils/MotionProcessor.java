@@ -5,6 +5,7 @@ package com.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.util.Log;
 
 /**
  * This is a singleton class.
@@ -22,7 +23,7 @@ public class MotionProcessor implements Processor {
 
     
     private volatile static MotionProcessor uniqueInstance = null;
-    private float distance = 0;
+    private float distance = 0.0f;
     private float angle = 0.0f;  
     private float zoom = 0.4f; 
     

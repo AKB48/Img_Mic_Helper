@@ -24,20 +24,24 @@ import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
 import com.utils.FilmProcessor;
+import com.utils.FocusProcessor;
 import com.utils.FrameProcessor;
 import com.utils.GammaProcessor;
 import com.utils.GaussianBlurProcessor;
 import com.utils.GeneralBlurProcessor;
+import com.utils.GlassProcessor;
 import com.utils.GothicProcessor;
 import com.utils.GouacheProcessor;
 import com.utils.GrayProcessor;
 import com.utils.ImageCompressor;
 import com.utils.InlayProcessor;
 import com.utils.LOMOProcessor;
+import com.utils.LaserProcessor;
 import com.utils.MagnifierProcessor;
 import com.utils.MarbleProcessor;
 import com.utils.MistProcessor;
 import com.utils.MosaicProcessor;
+import com.utils.MotionProcessor;
 import com.utils.NegativeProcessor;
 import com.utils.NostalgiaProcessor;
 import com.utils.OilPaintingProcessor;
@@ -76,6 +80,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.FocusFinder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -276,6 +281,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.film:
 						processor = FilmProcessor.getInstance();
 						break;
+					case R.string.focus:
+						processor = FocusProcessor.getInstance();
+						break;
 					case R.string.frame:
 						FrameProcessor.getInstance().setContext(getApplicationContext());
 						processor = FrameProcessor.getInstance();
@@ -289,6 +297,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.blur:
 						processor = GeneralBlurProcessor.getInstance();
 						break;
+					case R.string.glass:
+						processor = GlassProcessor.getInstance();
+						break;
 					case R.string.gothic:
 						processor = GothicProcessor.getInstance();
 						break;
@@ -297,6 +308,9 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.gray:
 						processor = GrayProcessor.getInstance();
+						break;
+					case R.string.laser:
+						processor = LaserProcessor.getInstance();
 						break;
 					case R.string.inlay:
 						processor = InlayProcessor.getInstance();
@@ -315,6 +329,12 @@ public class ImageProcessActivity extends Activity {
 						break;
 					case R.string.mosaic:
 						processor = MosaicProcessor.getInstance();
+						break;
+					case R.string.motion_blur:
+						MotionProcessor.getInstance().setDistance(0.0f);
+						MotionProcessor.getInstance().setAngle(0.0f);
+						MotionProcessor.getInstance().setZoom(0.4f);
+						processor = MotionProcessor.getInstance();
 						break;
 					case R.string.negative:
 						processor = NegativeProcessor.getInstance();

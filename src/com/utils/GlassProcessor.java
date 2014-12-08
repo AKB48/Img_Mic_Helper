@@ -22,7 +22,7 @@ public class GlassProcessor implements Processor {
     
     private volatile static GlassProcessor uniqueInstance = null;
     private int aasamples = 17;
-    private int angle = 45;
+    private int angle = 15;
     private int square_size = 20;
     private int curvature = 8;
     private int[][] m_aapoint = null;
@@ -251,8 +251,8 @@ public class GlassProcessor implements Processor {
                     continue;
                 }
                 
-                int x = (int)(i - half_width);
-                int y = (int)(j - half_height);
+                int x = (int)(j - half_width);
+                int y = (int)(i - half_height);
                 r = 0;
                 g = 0;
                 b = 0;

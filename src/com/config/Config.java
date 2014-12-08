@@ -15,10 +15,11 @@ public class Config {
 			R.string.erode, R.string.wind, R.string.shadow, R.string.exposure, R.string.paper_cut, R.string.sketch,
 			R.string.emboss, R.string.oil_painting, R.string.gouache, R.string.pen};
 	public static int[] fashion_list = {R.string.mist, R.string.reflection, R.string.cross_processing, R.string.ceramic, 
-			R.string.soft_light, R.string.bright, R.string.vignette, R.string.dark_corner, R.string.magnifier, 
+			R.string.soft_light, R.string.bright, R.string.vignette, R.string.focus, R.string.dark_corner, R.string.magnifier, 
 			R.string.distorting_mirror, R.string.lomo, R.string.dermabrasion, R.string.whitening};
 	public static int[] classic_list = {R.string.blur, R.string.gaussian_blur, R.string.sharpen, R.string.smart_sharpen, 
-			R.string.contrast_enhancement, R.string.contrast_enhancement2, R.string.white_balance, R.string.gamma_correction};
+			R.string.contrast_enhancement, R.string.contrast_enhancement2, R.string.white_balance, R.string.gamma_correction, 
+			R.string.motion_blur};
 	public static int[] effects_list = {R.string.symmetry, R.string.sudoku, R.string.bubble, R.string.frame, R.string.water_ripple, 
-			R.string.marble, R.string.water};
+			R.string.marble, R.string.water, R.string.laser, R.string.glass};
 }

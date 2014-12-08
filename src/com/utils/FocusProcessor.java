@@ -17,7 +17,7 @@ public class FocusProcessor implements Processor {
 
     
     private volatile static FocusProcessor uniqueInstance = null;
-    private float Size = 0.5f;    
+    private float Size = 0.7f;    
     
     
     private FocusProcessor()

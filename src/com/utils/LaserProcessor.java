@@ -1,5 +1,6 @@
 package com.utils;
 
+import android.R.integer;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 
@@ -128,9 +129,12 @@ public class LaserProcessor implements Processor {
         int _3threshold = (int)(threshold * 3 * 255);  
         int a, r, g, b;
         int _a, _r, _g, _b;
-        int oldPixel;
-        int _oldPixel;
+        int[] oldPixels = new int[width*height];
+        int[] _oldPixels = new int[width*height];
         int newPixel = 0xff000000;
+        
+        int index;
+        bitmap.getPixels(oldPixels, 0, width, 0, 0, width, height);
         
         
         for ( int i = 0; i < height; i++ ) 
@@ -139,12 +143,12 @@ public class LaserProcessor implements Processor {
             for ( int j = 0; j < width; j++ ) 
             {  
                 
-                oldPixel = bitmap.getPixel(j, i); 
+                index = i * width + j; 
                 
-                a = (oldPixel  >> 24) & 0xff;  
-                r = (oldPixel >> 16) & 0xff;  
-                g = (oldPixel >> 8) & 0xff;  
-                b = oldPixel & 0xff;  
+                a = (oldPixels[index]  >> 24) & 0xff;  
+                r = (oldPixels[index] >> 16) & 0xff;  
+                g = (oldPixels[index] >> 8) & 0xff;  
+                b = oldPixels[index] & 0xff;  
                 
                 int sum = r + g + b;  
                 if (sum < _3threshold)  
@@ -154,17 +158,23 @@ public class LaserProcessor implements Processor {
                 else 
                 {  
                     sum /= 3;  
-                    newPixel = a | (sum << 16) | (sum << 8) | sum;  
+                    newPixel = (a << 24) | (sum << 16) | (sum << 8) | sum;  
                 }  
                 
                 tempBitmap.setPixel(j, i, newPixel);
             }  
         }  
   
+        
+        MotionProcessor.getInstance().setDistance(0.0f);
+		MotionProcessor.getInstance().setAngle(30.0f);
+		MotionProcessor.getInstance().setZoom(0.4f);
         Bitmap destBitmap = MotionProcessor.getInstance().process(tempBitmap);
         tempBitmap.recycle();
         tempBitmap = null;
         tempBitmap = Bitmap.createBitmap(destBitmap);
+        
+        tempBitmap.getPixels(_oldPixels, 0, width, 0, 0, width, height);
         
           
         for ( int i = 0; i < height; i++ ) 
@@ -173,17 +183,17 @@ public class LaserProcessor implements Processor {
             for ( int j = 0; j < width; j++ ) 
             {  
                 
-                oldPixel = tempBitmap.getPixel(j, i);  
-                a = (oldPixel  >> 24) & 0xff;  
-                r = (oldPixel >> 16) & 0xff;  
-                g = (oldPixel >> 8) & 0xff;  
-                b = oldPixel & 0xff;  
-                  
-                _oldPixel = bitmap.getPixel(j, i);  
-                _a = (_oldPixel >> 24) & 0xff;  
-                _r = (_oldPixel >> 16) & 0xff;  
-                _g = (_oldPixel >> 8) & 0xff;  
-                _b = _oldPixel & 0xff;  
+            	index = i * width + j;
+
+                a = (_oldPixels[index]  >> 24) & 0xff;  
+                r = (_oldPixels[index] >> 16) & 0xff;  
+                g = (_oldPixels[index] >> 8) & 0xff;  
+                b = _oldPixels[index] & 0xff;  
+                     
+                _a = (oldPixels[index] >> 24) & 0xff;  
+                _r = (oldPixels[index] >> 16) & 0xff;  
+                _g = (oldPixels[index] >> 8) & 0xff;  
+                _b = oldPixels[index] & 0xff;  
                   
                 if ( r > 0 ) 
                 {  
@@ -198,7 +208,7 @@ public class LaserProcessor implements Processor {
                     b = _b;  
                 }  
   
-                newPixel = a | (r << 16) | (g << 8) | b;  
+                newPixel = (a << 24) | (r << 16) | (g << 8) | b;  
                 destBitmap.setPixel(j, i, newPixel);
                 
             }  

@@ -64,5 +64,9 @@
     <string name="whitening">美白</string>
     <string name="water">水纹</string>
     <string name="gamma_correction">伽马校正</string>
+    <string name="motion_blur">移动模糊</string>
+    <string name="laser">光束</string>
+    <string name="focus">聚焦</string>
+    <string name="glass">玻璃</string>
 
 </resources>
