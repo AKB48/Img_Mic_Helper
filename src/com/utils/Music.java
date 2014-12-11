@@ -6,6 +6,9 @@ package com.utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.R.integer;
+import android.util.Log;
+
 /**
  * This is a basic object class.
  * This class is used to describe a music.
@@ -19,6 +22,7 @@ import org.json.JSONObject;
  */
 public class Music {
 	
+	private int song_id = 0;
 	private String name = null;
 	private String player = null;
 	private String url = null;
@@ -35,14 +39,16 @@ public class Music {
 	
 	
 	/**
-	 * The constructor with four full parameters.
+	 * The constructor with five full parameters.
+	 * @param song_id the id of the music.
 	 * @param name the name of the music.
 	 * @param player the name of the player.
 	 * @param url the url of the music.
 	 * @param cover the url of the music front cover.
 	 */
-	public Music(String name, String player, String url, String cover)
+	public Music(int song_id, String name, String player, String url, String cover)
 	{
+		this.song_id = song_id;
 		this.name = name;
 		this.player = player;
 		this.url = url;
@@ -51,25 +57,38 @@ public class Music {
 	
 	
 	/**
-	 * The constructor with three parameters except music front conver.
+	 * The constructor with four parameters except music front conver.
+	 * @param song_id the id of the music.
 	 * @param name the name of the music.
 	 * @param player the name of the player.
 	 * @param url the url of the music.
 	 */
-	public Music(String name, String player, String url)
+	public Music(int song_id, String name, String player, String url)
 	{
-		this(name, player, url, null);
+		this(song_id, name, player, url, null);
 	}
 	
 	
 	/**
-	 * The constructor with two parameters except music player and front cover.
+	 * The constructor with three parameters except music player and front cover.
+	 * @param song_id the id of the music.
 	 * @param name the name of the music.
 	 * @param url the url of the music.
 	 */
-	public Music(String name, String url)
+	public Music(int song_id, String name, String url)
 	{
-		this(name, null, url, null);
+		this(song_id, name, null, url, null);
+	}
+	
+	
+	/**
+	 * The constructor with two parameters except music name, music player and front cover.
+	 * @param song_id the id of the music.
+	 * @param url the url of the music.
+	 */
+	public Music(int song_id, String url)
+	{
+		this(song_id, null, null, url, null);
 	}
 	
 	
@@ -79,7 +98,7 @@ public class Music {
 	 */
 	public Music(String url)
 	{
-		this(null, null, url, null);
+		this(0, null, null, url, null);
 	}
 	
 	
@@ -89,6 +108,7 @@ public class Music {
 	 */
 	public Music(JSONObject json)
 	{
+		int song_id = 0;
 		String name = null;
 		String player = null;
 		String url = null;
@@ -96,16 +116,56 @@ public class Music {
 		
 		try 
 		{
-			name = json.getString("Name");
-			player = json.getString("player");
+			song_id = json.getInt("sid");
+			name = json.getString("title");
+			player = json.getString("artist");
 			url = json.getString("url");
-			cover = json.getString("cover");
+			cover = json.getString("picture");
 		} 
 		catch (JSONException e)
 		{
 			e.printStackTrace();
 		}
+		finally
+		{
+			this.song_id = song_id;
+			this.name = name;
+			this.player = player;
+			this.url = url;
+			this.cover = cover;
+		}
 		
+	}
+	
+	
+	/**
+	 * Set the id of the music.
+	 * @param song_id id of music.
+	 * @return true if the parameter is successfully set.
+	 *            false if the parameter is less than zero, which is illegal.
+	 */
+	public Boolean setId(int song_id)
+	{
+		if (song_id < 0)
+		{
+			return false;
+		}
+		else
+		{
+			this.song_id = song_id;
+		}
+		
+		return true;
+	}
+	
+	
+	/**
+	 * Get the id of the music.
+	 * @return the id of the music.
+	 */
+	public int getId()
+	{
+		return this.song_id;
 	}
 	
 	

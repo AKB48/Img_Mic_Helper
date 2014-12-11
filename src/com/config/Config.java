@@ -22,4 +22,6 @@ public class Config {
 			R.string.motion_blur};
 	public static int[] effects_list = {R.string.symmetry, R.string.sudoku, R.string.bubble, R.string.frame, R.string.water_ripple, 
 			R.string.marble, R.string.water, R.string.laser, R.string.glass};
+	public static int[] radios_list = {R.string.chinese, R.string.western, R.string.cantonese, R.string.eighty, R.string.ninty, 
+			R.string.new_music, R.string.fresh, R.string.cartoon, R.string.light_music, R.string.rock};
 }

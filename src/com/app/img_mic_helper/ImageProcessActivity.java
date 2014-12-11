@@ -149,7 +149,8 @@ public class ImageProcessActivity extends Activity {
        image.setImageBitmap(bitmap);
        
        // initialize the title of each function bar item
-       for (int i = 0; i < 5; i++) {
+       for (int i = 0; i < 5; i++) 
+       {
     	   HashMap<String, Object> map = new HashMap<String, Object>();
     	   map.put("itemName", getString(com.config.Config.function_list[i]));
     	   func_bar_items.add(map);

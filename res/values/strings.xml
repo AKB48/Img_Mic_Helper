@@ -68,5 +68,16 @@
     <string name="laser">光束</string>
     <string name="focus">聚焦</string>
     <string name="glass">玻璃</string>
+    <string name="chinese">华语</string>
+    <string name="western">欧美</string>
+    <string name="eighty">八零</string>
+    <string name="ninty">九零</string>
+    <string name="cantonese">粤语</string>
+    <string name="light_music">轻音乐</string>
+    <string name="new_music">新歌</string>
+    <string name="rock">摇滚</string>
+    <string name="fresh">小清新</string>
+    <string name="cartoon">动漫</string>
+    <string name="operation_error">操作有误</string>
 
 </resources>

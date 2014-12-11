@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
         from_camera.setOnClickListener(click_into_camera);
         // to_music button is to use the music player function
         to_music = (Button)this.findViewById(R.id.to_music);
+        to_music.setOnClickListener(click_into_music);
         // about button is to show the information about this app
         about = (Button)this.findViewById(R.id.about);
     }
@@ -119,6 +120,29 @@ public class MainActivity extends Activity {
       		
 		}	
     };
+    
+    
+    // to_music button click event
+    private OnClickListener click_into_music = new OnClickListener(){
+    	/**
+    	 * Enter the media player function when this button is pressed.
+    	 */
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent();  
+			intent.setClass(MainActivity.this, MusicPlayerActivity.class);
+	        try 
+	        {
+	        	startActivityForResult(intent, ActivityFlag.LISTEN_TO_MUSIC);  
+	        }
+	        catch (ActivityNotFoundException e) 
+	        {  
+	        	Toast.makeText(MainActivity.this, R.string.operation_error,  Toast.LENGTH_LONG).show();
+	        }   
+	        
+		}
+    }; 
+    
     
     /**
      * call back function
