@@ -68,10 +68,7 @@ public class HttpSender {
 	 */
 	public void Httpget(String url, int requestCode, Handler mHandler)
     {
-		RequestThread mThread = new RequestThread();
-		mThread.url = url;
-		mThread.mHandler = mHandler;
-		mThread.requestCode = requestCode;
+		RequestThread mThread = new RequestThread(requestCode, url, mHandler);
         mThread.start();
         
     }
@@ -122,6 +119,13 @@ public class HttpSender {
 		private String url = null;
 		private Handler mHandler = null;
 		private int requestCode = 0;
+		
+		public RequestThread(int requestCode, String url, Handler mHandler)
+		{
+		    this.url = url;
+		    this.requestCode = requestCode;
+		    this.mHandler = mHandler;
+		}
 		
     	public void run() {
     		get(url, requestCode, mHandler);

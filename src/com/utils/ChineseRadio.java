@@ -6,7 +6,7 @@ package com.utils;
 /**
  * This is a concrete radio class the extends from parent class radio.
  * This is a Chinese radio.
- * All music in this radio is sung by Chinese.
+ * All music in this radio are sung by Chinese.
  * @author William
  *
  */
@@ -14,6 +14,7 @@ public class ChineseRadio extends Radio {
 	
 	private int start_song_id = 1454902;
 
+	
 	/**
 	 * The default constructor.
 	 */

@@ -8,17 +8,28 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.config.Config;
+import com.utils.CantoneseRadio;
+import com.utils.CartoonRadio;
 import com.utils.ChineseRadio;
 import com.utils.DiscShapeProcessor;
+import com.utils.EightyRadio;
+import com.utils.FreshRadio;
 import com.utils.HttpSender;
+import com.utils.LightMusicRadio;
 import com.utils.Music;
+import com.utils.NewMusicRadio;
+import com.utils.NinetyRadio;
 import com.utils.Radio;
+import com.utils.RockRadio;
+import com.utils.WesternRadio;
 
 import android.R.integer;
 import android.app.Activity;
@@ -34,6 +45,8 @@ import android.provider.MediaStore.MediaColumns;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.MediaController.MediaPlayerControl;
@@ -51,7 +64,7 @@ import android.widget.TextView;
  *
  */
 public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPreparedListener,
-		MediaPlayer.OnCompletionListener{
+		MediaPlayer.OnCompletionListener, MediaPlayer.OnBufferingUpdateListener{
 	
 	private MediaPlayer musicPlayer = null;
 	private Radio radio = null;
@@ -61,13 +74,15 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	private Bitmap music_cover = null;
 	private int currentChannel = 0;
 	private Music currentMusic = null;
+	private int current_song_id = 0;
 	private MusicHandler musicHandler = null;
+	private Timer musicProgressTimer = null;
+	private Animation rotateAnimation;
 	
 	private ImageView front_cover_iv = null;
 	private TextView music_name_tv = null;
 	private TextView player_name_tv = null;
 	private SeekBar music_progress = null;
-	private SeekBar sound_progress = null;
 	private GridView radio_list = null; 
 	private Button play = null;
 	private Button next = null;
@@ -75,6 +90,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	
 	private Boolean isPlay = false;
 	private Boolean isPrepare = false;
+
 	
 
 	@Override
@@ -84,16 +100,86 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         
         musicPlayer = new MediaPlayer();
         musicPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        musicPlayer.setOnPreparedListener(this);
+        musicPlayer.setOnBufferingUpdateListener(this);
+        musicPlayer.setOnCompletionListener(this);
 
         front_cover_iv = (ImageView)this.findViewById(R.id.front_cover);
+        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.disc_rotate);
         music_name_tv = (TextView)this.findViewById(R.id.music_name);
         player_name_tv = (TextView)this.findViewById(R.id.player_name);
         music_progress = (SeekBar)this.findViewById(R.id.music_progress);
-        sound_progress = (SeekBar)this.findViewById(R.id.sound_progress);
+        music_progress.setEnabled(false);
         radio_list = (GridView)this.findViewById(R.id.radio_list);
         play = (Button)this.findViewById(R.id.play);
         next = (Button)this.findViewById(R.id.next);
         ban = (Button)this.findViewById(R.id.ban);
+        setButtonGroupState(false);
+        play.setOnClickListener(new View.OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                if (isPrepare && musicPlayer != null && isPlay && musicPlayer.isPlaying())
+                {
+                    musicPlayer.pause();
+                    isPlay = false;
+                    front_cover_iv.clearAnimation();
+                    v.setBackgroundResource(R.drawable.start);
+                }
+                else if (isPrepare && musicPlayer != null && !isPlay && !musicPlayer.isPlaying())
+                {
+                    musicPlayer.start();
+                    isPlay = true;
+                    front_cover_iv.startAnimation(rotateAnimation);
+                    v.setBackgroundResource(R.drawable.stop);
+                }
+            }
+        });
+        
+        next.setOnClickListener(new View.OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                
+                if (musicPlayer != null)
+                {
+                    if (musicPlayer.isPlaying())
+                    {
+                        play.setBackgroundResource(R.drawable.buffering);
+                        musicPlayer.stop();
+                        front_cover_iv.clearAnimation();
+                    }
+                    
+                    isPrepare = false;
+                    isPlay = false;
+                    radio.setPlayType('s');
+                    prepareMusic();
+                }
+                
+            }
+        });
+        
+        ban.setOnClickListener(new View.OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                if (musicPlayer != null)
+                {
+                    if (musicPlayer.isPlaying())
+                    {
+                        play.setBackgroundResource(R.drawable.buffering);
+                        musicPlayer.stop();
+                        front_cover_iv.clearAnimation();
+                    }
+                    
+                    isPrepare = false;
+                    isPlay = false;
+                    radio.setPlayType('b');
+                    prepareMusic();
+                }
+                
+            }
+        });
         
         musicHandler = new MusicHandler( Looper.myLooper());
         
@@ -129,6 +215,10 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         radio_list.setAdapter(radioListAdapter);  
         radio_list.setOnItemClickListener(new OnRadioChoose());  
         
+        musicProgressTimer = new Timer();
+        musicProgressTimer.schedule(musicProgressTimerTask, 0, 500);
+ 
+            
 	}
 	
 	
@@ -136,38 +226,44 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	{
 		if (radio != null)
 		{
+		    play.setBackgroundResource(R.drawable.buffering);
 			currentMusic = radio.getMusic();
-			GetBitmapThread getBitmapThread = new GetBitmapThread();
-			getBitmapThread.httpUrl = currentMusic.getCover();
-			getBitmapThread.start();
-			music_name_tv.setText(currentMusic.getName());
-			player_name_tv.setText(currentMusic.getPlayer());
-			musicPlayer.stop();
-			musicPlayer.reset();
-			try 
+			if (currentMusic != null)
 			{
-				Log.i("aa", currentMusic.getUrl());
-				musicPlayer.setDataSource(currentMusic.getUrl());
-				isPrepare = true;
-				musicPlayer.prepare();
-				musicPlayer.start();
-			} 
-			catch (IllegalArgumentException e) 
-			{
-				e.printStackTrace();
+			    GetBitmapThread getBitmapThread = new GetBitmapThread(currentMusic.getCover());
+			    getBitmapThread.start();
+			    music_name_tv.setText(currentMusic.getName());
+			    player_name_tv.setText(currentMusic.getPlayer());
+			
+			    musicPlayer.reset();
+			    try 
+			    {
+			        musicPlayer.setDataSource(currentMusic.getUrl());
+			        current_song_id = currentMusic.getId();
+			        musicPlayer.prepare();
+			    } 
+			    catch (IllegalArgumentException e) 
+			    {
+			        e.printStackTrace();
+			    }
+			    catch (SecurityException e) 
+			    {
+			        e.printStackTrace();
+			    } 
+			    catch (IllegalStateException e) 
+			    {
+			        e.printStackTrace();
+			    } 
+			    catch (IOException e) 
+			    {
+			        e.printStackTrace();
+			    }
 			}
-			catch (SecurityException e) 
+			else
 			{
-				e.printStackTrace();
-			} 
-			catch (IllegalStateException e) 
-			{
-				e.printStackTrace();
-			} 
-			catch (IOException e) 
-			{
-				e.printStackTrace();
-			}
+                String requestUrl = radio.constructRadioUrl(current_song_id);
+                HttpSender.getInstance().Httpget(requestUrl, currentChannel, musicHandler);
+            }
 
 		}
 	}
@@ -181,19 +277,55 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 				long id) {
 
 			String requestUrl = null;
+			Radio newRadio = null;
 			
 			switch (position) {
 			case 0:
-				radio = new ChineseRadio();
-				isPrepare = false;
-				requestUrl = radio.constructRadioUrl();
-				currentChannel = radio.getChannel();
+			    newRadio = new ChineseRadio('s');			
 				break;
+			case 1:
+			    newRadio = new WesternRadio('s');
+			    break;
+			case 2:
+			    newRadio = new CantoneseRadio('s');
+			    break;
+			case 3:
+			    newRadio = new EightyRadio('s');
+			    break;
+			case 4:
+			    newRadio = new NinetyRadio('s');
+			    break;
+			case 5:
+			    newRadio = new NewMusicRadio('s');
+			    break;
+			case 6:
+			    newRadio = new FreshRadio('s');
+			    break;
+			case 7:
+			    newRadio = new CartoonRadio('s');
+			    break;
+			case 8:
+			    newRadio = new LightMusicRadio('s');
+			    break;
+			case 9:
+			    newRadio = new RockRadio('s');
+			    break;
 			default:
 				break;
 			}
 			
-			HttpSender.getInstance().Httpget(requestUrl, currentChannel, musicHandler);
+			
+			if (newRadio != null && currentChannel != newRadio.getChannel())
+			{
+			    play.setBackgroundResource(R.drawable.buffering);
+			    isPrepare = false;
+			    radio = newRadio;
+			    requestUrl = radio.constructRadioUrl();
+                currentChannel = radio.getChannel();
+                newRadio = null;
+                HttpSender.getInstance().Httpget(requestUrl, currentChannel, musicHandler);
+			}
+			
 		}
 		
 	}
@@ -230,6 +362,16 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 				tempBitmap.recycle();
 				tempBitmap = null;
 			}
+			else if (msg.what == -2)
+			{
+			    int position = musicPlayer.getCurrentPosition();  
+	            int duration = musicPlayer.getDuration();  
+	              
+	            if (duration > 0) {  
+	                long pos = music_progress.getMax() * position / duration;  
+	                music_progress.setProgress((int)(pos));  
+	            }  
+			}
 			
 		}
 		
@@ -239,6 +381,11 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	class GetBitmapThread extends Thread
 	{
 		private String httpUrl = null;
+		
+		public GetBitmapThread(String url)
+		{
+		    this.httpUrl = url;
+		}
 		
 		public void run() 
 		{
@@ -278,29 +425,66 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 		{
 			musicPlayer.release();
 			musicPlayer = null;
+			front_cover_iv.clearAnimation();
 		}
 		super.onDestroy();
 	}
 
 
 	@Override
-	public void onCompletion(MediaPlayer mp) {
-		// TODO Auto-generated method stub
-		
+	public void onCompletion(MediaPlayer mp) 
+	{	    
+		isPrepare = false;
+		isPlay = false;
+		front_cover_iv.clearAnimation();
+		radio.setPlayType('s');
+		prepareMusic();
 	}
 
 
 	@Override
 	public void onPrepared(MediaPlayer mp) 
 	{
-		Log.i("AA", "outer");
+	    isPrepare = true;
 		if (isPrepare && mp != null)
 		{
-			Log.i("AA", "inner");
 			mp.start();		
 			isPlay = true;
 			play.setBackgroundResource(R.drawable.stop);
+			setButtonGroupState(true);
+			front_cover_iv.startAnimation(rotateAnimation);
+			
 		}
 	}
+
+
+    @Override
+    public void onBufferingUpdate(MediaPlayer mp, int percent)
+    {
+        music_progress.setSecondaryProgress(percent);   
+    }
+    
+    
+    private void setButtonGroupState(Boolean clickable)
+    {
+        play.setClickable(clickable);
+        next.setClickable(clickable);
+        ban.setClickable(clickable);
+    }
+    
+    
+    TimerTask musicProgressTimerTask = new TimerTask() 
+    {  
+        @Override  
+        public void run() 
+        {  
+            if (musicPlayer != null && isPrepare && isPlay && musicPlayer.isPlaying()) 
+            {  
+                Message message = Message.obtain();
+                message.what = -2;
+                musicHandler.sendMessage(message);
+            }  
+        }  
+    };  
 	
 }
