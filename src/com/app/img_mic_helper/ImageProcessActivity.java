@@ -1,5 +1,6 @@
 package com.app.img_mic_helper;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,11 +71,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.Bitmap.Config;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -139,8 +143,14 @@ public class ImageProcessActivity extends Activity {
         	BitmapFactory.Options options = new BitmapFactory.Options();
         	bitmap = BitmapFactory.decodeFile(filePath, options);
         	processor = ImageCompressor.getInstance();
-            bitmap = processor.process(bitmap);
-        	break;
+            bitmap = processor.process(bitmap);            
+            if (bitmap != null)
+            {
+                Matrix matrix = new Matrix();  
+                matrix.postRotate(getCameraPhotoOrientation(filePath));  
+                bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            }
+            break;
         default:
         	break;
         }
@@ -460,5 +470,37 @@ public class ImageProcessActivity extends Activity {
 		}
 		
     }
+    
+    
+    public int getCameraPhotoOrientation(String imagePath){  
+        int rotate = 0;  
+        try {   
+            File imageFile = new File(imagePath);  
+      
+            ExifInterface exif = new ExifInterface(imageFile.getAbsolutePath());  
+            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);  
+      
+            switch (orientation) {  
+            case ExifInterface.ORIENTATION_ROTATE_270:  
+                rotate = 270;  
+                break;  
+            case ExifInterface.ORIENTATION_ROTATE_180:  
+                rotate = 180;  
+                break;  
+            case ExifInterface.ORIENTATION_ROTATE_90:  
+                rotate = 90;  
+                break;  
+            }  
+      
+        } 
+        catch (Exception e)
+        {  
+            e.printStackTrace();  
+        }  
+        
+        return rotate;  
+        
+    }
+    
 
 }

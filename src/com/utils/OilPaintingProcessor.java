@@ -108,11 +108,11 @@ public class OilPaintingProcessor implements Processor {
 					old_I = cur_I;
 					old_Q = cur_Q;
 					
-					double sum_i = 0;
-					double sum_j = 0;
-					double sum_Y = 0;
-					double sum_I = 0;
-					double sum_Q = 0;
+					double sum_i = 0.0d;
+					double sum_j = 0.0d;
+					double sum_Y = 0.0d;
+					double sum_I = 0.0d;
+					double sum_Q = 0.0d;
 					int counter = 0;
 					
 					for (int i_incre = -radius; i_incre <= radius; i_incre++)
@@ -158,6 +158,7 @@ public class OilPaintingProcessor implements Processor {
 					cur_Y = sum_Y / counter;
 					cur_I = sum_I / counter;
 					cur_Q = sum_Q / counter;
+					Log.i("aa", "");
 					cur_i = (int) (sum_i / counter + 0.5);
 					cur_j = (int) (sum_j / counter + 0.5);
 					
@@ -180,6 +181,7 @@ public class OilPaintingProcessor implements Processor {
 				
 			    newPixel = (rgb[index][0] << 24) | (rgb[index][1] << 16) | (rgb[index][2] << 8) | rgb[index][3];
 				tempBitmap.setPixel(j, i, newPixel);
+				
 			}
 		}
 		

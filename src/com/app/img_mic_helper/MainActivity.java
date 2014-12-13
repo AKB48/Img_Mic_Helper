@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -158,6 +159,10 @@ public class MainActivity extends Activity {
         		MainActivity.this.startActivity(data);
         		break;
         	case ActivityFlag.CAMERA_WITH_DATA:
+        	    if (data == null)
+        	    {
+        	        data = new Intent();
+        	    }
         		data.putExtra("ImageSource", ActivityFlag.CAMERA_WITH_DATA);
         		data.putExtra("ImagePath", filePath);
                 data.setClass(MainActivity.this, ImageProcessActivity.class);
