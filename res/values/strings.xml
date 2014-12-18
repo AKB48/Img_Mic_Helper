@@ -79,5 +79,11 @@
     <string name="fresh">小清新</string>
     <string name="cartoon">动漫</string>
     <string name="operation_error">操作有误</string>
+    <string name="image_return">查看原图</string>
+    <string name="image_save">保存当前图片</string>
+    <string name="share">分享到朋友圈</string>
+    <string name="filename_inform">请输入文件名</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
 
 </resources>

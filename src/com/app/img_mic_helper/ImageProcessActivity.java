@@ -2,10 +2,15 @@ package com.app.img_mic_helper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
@@ -67,11 +72,15 @@ import com.utils.WhiteningProcessor;
 import com.utils.WindProcessor;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -82,16 +91,22 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.FocusFinder;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
@@ -114,8 +129,12 @@ public class ImageProcessActivity extends Activity {
 	private LinearLayout subfunction_bar = null;
 	private LayoutInflater mInflater = null;
 	private Processor processor = null;
+	private  ActionBar actionBar = null;
+	private Menu menu = null;
+	private Boolean isProcess = false; 
 	
 	public FlowerProgressDialog mProgressDialog = null;
+	
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,6 +202,9 @@ public class ImageProcessActivity extends Activity {
      	// initialize the progressdialog which is used when process image.
      	mProgressDialog = new FlowerProgressDialog(ImageProcessActivity.this).createDialog();
 		mProgressDialog.setCancelable(false);
+		
+		actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
 		
     }
 
@@ -413,8 +435,11 @@ public class ImageProcessActivity extends Activity {
 					default:
 						break;
 					}
-					if (processor != null) {
+					if (processor != null) 
+					{
 						new processImageTask(ImageProcessActivity.this, processor).execute();
+						isProcess = true;
+						freshMenu();
 					}
 					
 				}
@@ -500,6 +525,116 @@ public class ImageProcessActivity extends Activity {
         
         return rotate;  
         
+    }
+    
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.image_process, menu);
+        this.menu = menu;
+        freshMenu();
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.image_return) 
+        {
+        	image.setImageBitmap(bitmap);
+        	isProcess = false;
+        	freshMenu();
+            return true;
+        }
+        else if (id == R.id.image_save)
+        {
+        	final String SDCardDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+            File fileDir = new File(SDCardDir + "/Img_Mic_Helper" );
+            if(!fileDir.exists())
+                fileDir.mkdirs();
+            
+            Random random = new Random(System.currentTimeMillis());
+            java.util.Date date = new java.util.Date(System.currentTimeMillis()); 
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmmss"); 
+            final String fileName = fmt.format(date)+ Math.abs(random.nextInt()) % 100000;
+            
+            LayoutInflater inflater = LayoutInflater.from(this);  
+            View fileNameView = inflater.inflate(R.layout.save_filename, null);  
+            final EditText fileNameEditText = (EditText)fileNameView.findViewById(R.id.filename);  
+            fileNameEditText.setText(fileName);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);  
+            builder.setCancelable(false);  
+            builder.setTitle(R.string.filename_inform);  
+            builder.setView(fileNameView);  
+            builder.setPositiveButton(R.string.ok,  
+                    new DialogInterface.OnClickListener() {  
+                        public void onClick(DialogInterface dialog, int whichButton) 
+                        {  
+                            String newFileName = fileNameEditText.getText().toString();
+                            if (newFileName.equals(""))
+                            {
+                            	newFileName = fileName;
+                            }
+                            File saveFile = new File(SDCardDir + "/Img_Mic_Helper/" + newFileName + ".png");
+                        	if (saveFile.exists())
+                        	{
+                        		saveFile.delete();
+                        	}
+                        	try 
+                        	{
+                        		FileOutputStream out = new FileOutputStream(saveFile); 
+                        		if (isProcess && destBitmap != null) 
+                        		{
+                        			destBitmap.compress(Bitmap.CompressFormat.PNG, 100, out); 
+                        		}
+                        		else
+                        		{
+                        			bitmap.compress(Bitmap.CompressFormat.PNG, 100, out); 
+								}
+                        		out.flush(); 
+                        		out.close(); 
+                        		dialog.dismiss();
+                        	}
+                        	catch (FileNotFoundException e)
+                        	{ 
+                        		e.printStackTrace(); 
+                        	}
+                        	catch (IOException e) 
+                        	{ 
+                        		e.printStackTrace(); 
+                        	}
+                        }  
+                    });  
+            builder.setNegativeButton(R.string.cancel,  
+                    new DialogInterface.OnClickListener() {  
+                        public void onClick(DialogInterface dialog, int whichButton) {  
+                            dialog.dismiss();  
+                        }  
+                    });  
+            builder.show();  
+        }
+        else if (id == R.id.share)
+        {
+        	
+        }
+        
+        return super.onOptionsItemSelected(item);
+        
+    }
+    
+    
+    private void freshMenu()
+    {
+    	MenuItem menuItem = null;
+    	menuItem = menu.getItem(0);
+    	menuItem.setEnabled(isProcess);
+    	menuItem = menu.getItem(1);
+    	menuItem.setEnabled(isProcess);
+    	
     }
     
 

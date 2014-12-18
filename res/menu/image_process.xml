@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.app.img_mic_helper.ImageProcessActivity" >
+    
+    <item
+        android:id="@+id/image_return"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/image_return"/>
+    
+    <item
+        android:id="@+id/image_save"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/image_save"/>
+    
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/share"/>
+    
+
+</menu>
