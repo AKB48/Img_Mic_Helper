@@ -4,10 +4,16 @@
 package com.app.img_mic_helper;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -15,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.app.img_mic_helper.share.WXShare;
 import com.config.Config;
 import com.utils.CantoneseRadio;
 import com.utils.CartoonRadio;
@@ -32,18 +39,25 @@ import com.utils.RockRadio;
 import com.utils.WesternRadio;
 
 import android.R.integer;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.MediaStore.MediaColumns;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -51,6 +65,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.MediaController.MediaPlayerControl;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -60,6 +75,7 @@ import android.widget.TextView;
 
 
 /**
+ * The activity class provides the function to listen to music.
  * @author William
  *
  */
@@ -78,10 +94,13 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	private MusicHandler musicHandler = null;
 	private Timer musicProgressTimer = null;
 	private Animation rotateAnimation;
+	private Menu menu;
+	private ActionBar actionBar;
 	
 	private ImageView front_cover_iv = null;
 	private TextView music_name_tv = null;
 	private TextView player_name_tv = null;
+	private TextView preparing_tv = null;
 	private SeekBar music_progress = null;
 	private GridView radio_list = null; 
 	private Button play = null;
@@ -108,6 +127,8 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.disc_rotate);
         music_name_tv = (TextView)this.findViewById(R.id.music_name);
         player_name_tv = (TextView)this.findViewById(R.id.player_name);
+        preparing_tv = (TextView)this.findViewById(R.id.preparing);
+        preparing_tv.setVisibility(View.GONE);
         music_progress = (SeekBar)this.findViewById(R.id.music_progress);
         music_progress.setEnabled(false);
         radio_list = (GridView)this.findViewById(R.id.radio_list);
@@ -153,6 +174,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
                     isPrepare = false;
                     isPlay = false;
                     radio.setPlayType('s');
+                    freshMenu();
                     prepareMusic();
                 }
                 
@@ -175,6 +197,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
                     isPrepare = false;
                     isPlay = false;
                     radio.setPlayType('b');
+                    freshMenu();
                     prepareMusic();
                 }
                 
@@ -218,6 +241,8 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         musicProgressTimer = new Timer();
         musicProgressTimer.schedule(musicProgressTimerTask, 0, 500);
  
+        actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
             
 	}
 	
@@ -227,6 +252,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 		if (radio != null)
 		{
 		    play.setBackgroundResource(R.drawable.buffering);
+		    preparing_tv.setVisibility(View.VISIBLE);
 			currentMusic = radio.getMusic();
 			if (currentMusic != null)
 			{
@@ -323,6 +349,8 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 			    requestUrl = radio.constructRadioUrl();
                 currentChannel = radio.getChannel();
                 newRadio = null;
+                freshMenu();
+                preparing_tv.setVisibility(View.VISIBLE);
                 HttpSender.getInstance().Httpget(requestUrl, currentChannel, musicHandler);
 			}
 			
@@ -427,6 +455,15 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 			musicPlayer = null;
 			front_cover_iv.clearAnimation();
 		}
+		if (musicProgressTimer != null)
+		{
+			musicProgressTimer.cancel();
+		}
+		if (musicProgressTimerTask != null)
+		{
+			musicProgressTimerTask.cancel();
+		}
+		
 		super.onDestroy();
 	}
 
@@ -438,6 +475,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 		isPlay = false;
 		front_cover_iv.clearAnimation();
 		radio.setPlayType('s');
+		freshMenu();
 		prepareMusic();
 	}
 
@@ -446,6 +484,8 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
 	public void onPrepared(MediaPlayer mp) 
 	{
 	    isPrepare = true;
+	    freshMenu();
+	    preparing_tv.setVisibility(View.GONE);
 		if (isPrepare && mp != null)
 		{
 			mp.start();		
@@ -486,5 +526,73 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
             }  
         }  
     };  
+    
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+    	setIconEnable(menu, true);
+        getMenuInflater().inflate(R.menu.music_player, menu);
+        this.menu = menu;
+        freshMenu();
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.share)
+        {
+        	try 
+        	{
+        		String text = getString(R.string.i_am_listening) + " " + currentMusic.getName() + "-" + currentMusic.getPlayer();
+				WXShare.getInstance().shareMusictoWX(this.getApplicationContext(), currentMusic.getUrl(), text);
+			} 
+        	catch (Exception e) 
+        	{
+				e.printStackTrace();
+			}
+        	
+        }
+        else if (id == android.R.id.home)
+        {
+        	onBackPressed();
+        	return true;
+        }
+        
+        return super.onOptionsItemSelected(item);
+        
+    }
+    
+    
+    private void freshMenu()
+    {
+    	MenuItem menuItem = null;
+    	menuItem = menu.getItem(0);
+    	menuItem.setEnabled(isPrepare); 	
+    }
+    
+    
+    private void setIconEnable(Menu menu, boolean enable)  
+    {  
+        try   
+        {  
+            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");  
+            Method method = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);  
+            method.setAccessible(true);  
+               
+            method.invoke(menu, enable);  
+              
+        }
+        catch (Exception e)   
+        {  
+            e.printStackTrace();  
+        }  
+        
+    }  
+    
 	
 }

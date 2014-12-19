@@ -52,6 +52,7 @@ public class MainActivity extends Activity {
         to_music.setOnClickListener(click_into_music);
         // about button is to show the information about this app
         about = (Button)this.findViewById(R.id.about);
+        about.setOnClickListener(click_into_about);
     }
 
     // from_album button click event
@@ -145,13 +146,36 @@ public class MainActivity extends Activity {
     }; 
     
     
+    // about button click event
+    private OnClickListener click_into_about = new OnClickListener(){
+    	/**
+    	 * Enter the application about page when this button is pressed.
+    	 */
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent();  
+			intent.setClass(MainActivity.this, AboutActivity.class);
+	        try 
+	        {
+	        	startActivityForResult(intent, ActivityFlag.APPLICATION_INFORMATION);  
+	        }
+	        catch (ActivityNotFoundException e) 
+	        {  
+	        	Toast.makeText(MainActivity.this, R.string.operation_error,  Toast.LENGTH_LONG).show();
+	        }   
+	        
+		}
+    }; 
+    
+    
     /**
      * call back function
      * deal with both pick images from album and camera.
      */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
         super.onActivityResult(requestCode, resultCode, data);  
-        if(resultCode == RESULT_OK){  
+        if(resultCode == RESULT_OK)
+        {  
         	switch(requestCode) {
         	case ActivityFlag.ALBUM_WITH_DATA:
         		data.putExtra("ImageSource", ActivityFlag.ALBUM_WITH_DATA);
@@ -171,7 +195,9 @@ public class MainActivity extends Activity {
         	default:
         		break;
         	}
-        }else{  
+        }
+        else if (requestCode != ActivityFlag.LISTEN_TO_MUSIC && requestCode != ActivityFlag.APPLICATION_INFORMATION)
+        {  
             Toast.makeText(MainActivity.this, R.string.choose_image_again, Toast.LENGTH_SHORT).show();  
         }  
               

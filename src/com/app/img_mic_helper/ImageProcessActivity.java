@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import com.app.img_mic_helper.share.WXShare;
 import com.config.ActivityFlag;
 import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
@@ -61,6 +63,7 @@ import com.utils.ShadowProcessor;
 import com.utils.SharpenProcessor;
 import com.utils.SketchProcessor;
 import com.utils.SmartSharpenProcessor;
+import com.utils.SmearProcessor;
 import com.utils.SoftlightProcessor;
 import com.utils.SudokuProcessor;
 import com.utils.SymmetryProcessor;
@@ -115,6 +118,12 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+/**
+ * The activity class provides the function to process images.
+ * @author William
+ *
+ */
 public class ImageProcessActivity extends Activity {
 	
 	private ImageView image = null;
@@ -405,6 +414,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.smart_sharpen:
 						processor = SmartSharpenProcessor.getInstance();
 						break;
+					case R.string.smear:
+						processor = SmearProcessor.getInstance();
+						break;
 					case R.string.soft_light:
 						processor = SoftlightProcessor.getInstance();
 						break;
@@ -531,6 +543,7 @@ public class ImageProcessActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+    	setIconEnable(menu, true);
         getMenuInflater().inflate(R.menu.image_process, menu);
         this.menu = menu;
         freshMenu();
@@ -619,7 +632,54 @@ public class ImageProcessActivity extends Activity {
         }
         else if (id == R.id.share)
         {
+        	final String SDCardDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+            File fileDir = new File(SDCardDir + "/Img_Mic_Helper" );
+            if(!fileDir.exists())
+                fileDir.mkdirs();
+            
+            File shareFile = new File(SDCardDir + "/Img_Mic_Helper/share.png");
+        	if (shareFile.exists())
+        	{
+        		shareFile.delete();
+        	}
+        	try 
+        	{
+        		FileOutputStream out = new FileOutputStream(shareFile); 
+        		if (isProcess && destBitmap != null) 
+        		{
+        			destBitmap.compress(Bitmap.CompressFormat.PNG, 100, out); 
+        		}
+        		else
+        		{
+        			bitmap.compress(Bitmap.CompressFormat.PNG, 100, out); 
+				}
+        		out.flush(); 
+        		out.close(); 
+        		
+        	}
+        	catch (FileNotFoundException e)
+        	{ 
+        		e.printStackTrace(); 
+        	}
+        	catch (IOException e) 
+        	{ 
+        		e.printStackTrace(); 
+        	}
+       
+        	try 
+        	{
+				WXShare.getInstance().shareImagetoWX(this.getApplicationContext(), shareFile);
+			} 
+        	catch (Exception e) 
+        	{
+				e.printStackTrace();
+			}
         	
+        }
+        else if (id == android.R.id.home)
+        {
+        	onBackPressed();
+        	return true;
         }
         
         return super.onOptionsItemSelected(item);
@@ -633,9 +693,27 @@ public class ImageProcessActivity extends Activity {
     	menuItem = menu.getItem(0);
     	menuItem.setEnabled(isProcess);
     	menuItem = menu.getItem(1);
-    	menuItem.setEnabled(isProcess);
-    	
+    	menuItem.setEnabled(isProcess);  	
     }
+    
+    
+    private void setIconEnable(Menu menu, boolean enable)  
+    {  
+        try   
+        {  
+            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");  
+            Method method = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);  
+            method.setAccessible(true);  
+               
+            method.invoke(menu, enable);  
+              
+        }
+        catch (Exception e)   
+        {  
+            e.printStackTrace();  
+        }  
+        
+    }  
     
 
 }

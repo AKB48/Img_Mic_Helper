@@ -468,23 +468,28 @@ public final class R {
         public static final int ban=0x7f020001;
         public static final int bubble=0x7f020002;
         public static final int buffering=0x7f020003;
-        public static final int camera=0x7f020004;
-        public static final int frame=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int main_bg=0x7f020007;
-        public static final int next=0x7f020008;
-        public static final int progress_bar=0x7f020009;
-        public static final int radio=0x7f02000a;
-        public static final int slide=0x7f02000b;
-        public static final int start=0x7f02000c;
-        public static final int stop=0x7f02000d;
-        public static final int thumb=0x7f02000e;
+        public static final int button=0x7f020004;
+        public static final int camera=0x7f020005;
+        public static final int frame=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int icon_high=0x7f020008;
+        public static final int image_return=0x7f020009;
+        public static final int main_bg=0x7f02000a;
+        public static final int next=0x7f02000b;
+        public static final int progress_bar=0x7f02000c;
+        public static final int radio=0x7f02000d;
+        public static final int save=0x7f02000e;
+        public static final int slide=0x7f02000f;
+        public static final int start=0x7f020010;
+        public static final int stop=0x7f020011;
+        public static final int thumb=0x7f020012;
+        public static final int wechat=0x7f020013;
     }
     public static final class id {
         public static final int about=0x7f0a000c;
-        public static final int action_settings=0x7f0a001d;
+        public static final int action_settings=0x7f0a001e;
         public static final int ban=0x7f0a0017;
-        public static final int filename=0x7f0a0019;
+        public static final int filename=0x7f0a001a;
         public static final int flower_progress_bar_container=0x7f0a000d;
         public static final int from_album=0x7f0a0008;
         public static final int from_camera=0x7f0a0009;
@@ -492,8 +497,8 @@ public final class R {
         public static final int function_bar=0x7f0a0003;
         public static final int function_bar_container=0x7f0a0002;
         public static final int image_container=0x7f0a0000;
-        public static final int image_return=0x7f0a001a;
-        public static final int image_save=0x7f0a001b;
+        public static final int image_return=0x7f0a001b;
+        public static final int image_save=0x7f0a001c;
         public static final int image_to_process=0x7f0a0001;
         public static final int item_name=0x7f0a0010;
         public static final int loadingImageView=0x7f0a000e;
@@ -506,23 +511,26 @@ public final class R {
         public static final int next=0x7f0a0016;
         public static final int play=0x7f0a0015;
         public static final int player_name=0x7f0a0013;
+        public static final int preparing=0x7f0a0019;
         public static final int radio_list=0x7f0a0018;
-        public static final int share=0x7f0a001c;
+        public static final int share=0x7f0a001d;
         public static final int subfunction_bar=0x7f0a0005;
         public static final int subfunction_bar_container=0x7f0a0004;
         public static final int to_music=0x7f0a000b;
     }
     public static final class layout {
-        public static final int activity_image_process=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int flower_progress_bar=0x7f030002;
-        public static final int function_bar_content=0x7f030003;
-        public static final int music_player=0x7f030004;
-        public static final int save_filename=0x7f030005;
+        public static final int about=0x7f030000;
+        public static final int activity_image_process=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int flower_progress_bar=0x7f030003;
+        public static final int function_bar_content=0x7f030004;
+        public static final int music_player=0x7f030005;
+        public static final int save_filename=0x7f030006;
     }
     public static final class menu {
         public static final int image_process=0x7f090000;
         public static final int main=0x7f090001;
+        public static final int music_player=0x7f090002;
     }
     public static final class string {
         public static final int action_settings=0x7f070002;
@@ -543,6 +551,7 @@ public final class R {
         public static final int comic=0x7f07001a;
         public static final int contrast_enhancement=0x7f070030;
         public static final int contrast_enhancement2=0x7f070033;
+        public static final int copyright=0x7f07005b;
         public static final int could_not_open_album=0x7f070003;
         public static final int could_not_open_camera=0x7f070004;
         public static final int cross_processing=0x7f070022;
@@ -553,6 +562,10 @@ public final class R {
         public static final int eighty=0x7f070045;
         public static final int emboss=0x7f07001d;
         public static final int erode=0x7f070016;
+        public static final int errcode_cancel=0x7f070055;
+        public static final int errcode_deny=0x7f070056;
+        public static final int errcode_success=0x7f070054;
+        public static final int errcode_unknown=0x7f070057;
         public static final int exposure=0x7f070019;
         public static final int fail_photo_created=0x7f070005;
         public static final int fashion=0x7f070010;
@@ -568,6 +581,7 @@ public final class R {
         public static final int gouache=0x7f070020;
         public static final int gray=0x7f07000b;
         public static final int hello_world=0x7f070001;
+        public static final int i_am_listening=0x7f07005a;
         public static final int image_return=0x7f07004e;
         public static final int image_save=0x7f07004f;
         public static final int inlay=0x7f070014;
@@ -590,6 +604,7 @@ public final class R {
         public static final int paper_cut=0x7f07001b;
         public static final int pen=0x7f07002c;
         public static final int pink=0x7f07000d;
+        public static final int preparing=0x7f07005c;
         public static final int rainbow=0x7f070013;
         public static final int reflection=0x7f070021;
         public static final int rock=0x7f07004a;
@@ -598,10 +613,12 @@ public final class R {
         public static final int sharpen=0x7f07002b;
         public static final int sketch=0x7f07001c;
         public static final int smart_sharpen=0x7f070031;
+        public static final int smear=0x7f07005d;
         public static final int soft_light=0x7f070027;
         public static final int style=0x7f070008;
         public static final int sudoku=0x7f070035;
         public static final int symmetry=0x7f07002d;
+        public static final int version_too_low=0x7f070058;
         public static final int vignette=0x7f070029;
         public static final int water=0x7f07003d;
         public static final int water_ripple=0x7f070039;
@@ -609,6 +626,7 @@ public final class R {
         public static final int white_balance=0x7f070038;
         public static final int whitening=0x7f07003c;
         public static final int wind=0x7f070017;
+        public static final int wxapp_uninstall=0x7f070059;
     }
     public static final class style {
         /** 

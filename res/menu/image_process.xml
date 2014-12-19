@@ -7,19 +7,22 @@
         android:id="@+id/image_return"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/image_return"/>
+        android:title="@string/image_return"
+        android:icon="@drawable/image_return"/>
     
     <item
         android:id="@+id/image_save"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/image_save"/>
+        android:title="@string/image_save"
+        android:icon="@drawable/save"/>
     
     <item
         android:id="@+id/share"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/share"/>
+        android:title="@string/share"
+        android:icon="@drawable/wechat"/>
     
 
 </menu>
