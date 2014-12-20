@@ -17,7 +17,7 @@ public class DiscShapeProcessor implements Processor {
 	private volatile static DiscShapeProcessor uniqueInstance = null;
 	private int resultWidth = 0;
 	private int resultHeight = 0;
-	private int background_color = 0xff000000;
+	private int background_color = 0xffda9ca1;
 	
 	
 	private DiscShapeProcessor()

@@ -5,8 +5,8 @@ import com.app.img_mic_helper.R;
 import com.config.Config;
 
 
-import com.tencent.mm.sdk.modelbase.BaseReq;
-import com.tencent.mm.sdk.modelbase.BaseResp;
+import com.tencent.mm.sdk.openapi.BaseReq;
+import com.tencent.mm.sdk.openapi.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;

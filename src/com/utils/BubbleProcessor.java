@@ -128,9 +128,17 @@ public class BubbleProcessor implements Processor {
 		
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-			
+		
+		
 		Bitmap tempBitmap = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.bubble);
-		Bitmap bubbleBitmap = scaleBitmap(tempBitmap, width, height);
+		Bitmap bubbleBitmap;
+		if (height > width)
+		{
+			bubbleBitmap = rotateBitmap(tempBitmap);
+			tempBitmap.recycle();
+			tempBitmap = bubbleBitmap;
+		}
+		bubbleBitmap = scaleBitmap(tempBitmap, width, height);
 		tempBitmap.recycle();
 		tempBitmap = null;
 		
@@ -202,6 +210,26 @@ public class BubbleProcessor implements Processor {
 
 	    Matrix matrix = new Matrix();
 	    matrix.postScale(width_ratio, height_ratio);
+	        
+	    Bitmap dest = Bitmap.createBitmap(source, 0, 0, width, height, matrix, true);
+	    
+	    return dest;
+	
+	} 
+	
+	
+	/**
+	 * Rotate bitmap 90 degree.
+	 * @param source the bitmap to rotate.
+	 * @return the bitmap after rotating.
+	 */
+	private Bitmap rotateBitmap(Bitmap source)
+	{
+		int width = source.getWidth();
+		int height = source.getHeight();
+		
+	    Matrix matrix = new Matrix();
+	    matrix.postRotate(90.0f);
 	        
 	    Bitmap dest = Bitmap.createBitmap(source, 0, 0, width, height, matrix, true);
 	    

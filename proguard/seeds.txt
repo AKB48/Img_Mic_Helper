@@ -1,0 +1,512 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost: void setOnTabChangedListener(android.widget.TabHost$OnTabChangeListener)
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.media.MediaMetadataCompat
+android.support.v4.media.MediaMetadataCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.RatingCompat
+android.support.v4.media.RatingCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$Token
+android.support.v4.media.session.MediaSessionCompat$Token: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.PlaybackStateCompat
+android.support.v4.media.session.PlaybackStateCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColor(int)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColorResource(int)
+android.support.v4.view.PagerTabStrip: int getTabIndicatorColor()
+android.support.v4.view.PagerTabStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.PagerTabStrip: void setBackgroundColor(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundResource(int)
+android.support.v4.view.PagerTabStrip: void setDrawFullUnderline(boolean)
+android.support.v4.view.PagerTabStrip: boolean getDrawFullUnderline()
+android.support.v4.view.PagerTabStrip: int getMinHeight()
+android.support.v4.view.PagerTitleStrip: void setSingleLineAllCaps(android.widget.TextView)
+android.support.v4.view.PagerTitleStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTitleStrip: int getTextSpacing()
+android.support.v4.view.PagerTitleStrip: void setNonPrimaryAlpha(float)
+android.support.v4.view.PagerTitleStrip: void setTextColor(int)
+android.support.v4.view.PagerTitleStrip: void setGravity(int)
+android.support.v4.view.PagerTitleStrip: int getMinHeight()
+android.support.v4.view.ViewPager: void setScrollState(int)
+android.support.v4.view.ViewPager: void setAdapter(android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager: android.support.v4.view.PagerAdapter getAdapter()
+android.support.v4.view.ViewPager: void setOnAdapterChangeListener(android.support.v4.view.ViewPager$OnAdapterChangeListener)
+android.support.v4.view.ViewPager: int getClientWidth()
+android.support.v4.view.ViewPager: void setCurrentItem(int)
+android.support.v4.view.ViewPager: int getCurrentItem()
+android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+android.support.v4.view.ViewPager: void setChildrenDrawingOrderEnabledCompat(boolean)
+android.support.v4.view.ViewPager: int getOffscreenPageLimit()
+android.support.v4.view.ViewPager: void setOffscreenPageLimit(int)
+android.support.v4.view.ViewPager: void setPageMargin(int)
+android.support.v4.view.ViewPager: int getPageMargin()
+android.support.v4.view.ViewPager: void setPageMarginDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
+android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.DrawerLayout: void setScrimColor(int)
+android.support.v4.widget.DrawerLayout: void setDrawerListener(android.support.v4.widget.DrawerLayout$DrawerListener)
+android.support.v4.widget.DrawerLayout: void setDrawerLockMode(int)
+android.support.v4.widget.DrawerLayout: void setStatusBarBackground(android.graphics.drawable.Drawable)
+android.support.v4.widget.DrawerLayout: void setStatusBarBackground(int)
+android.support.v4.widget.DrawerLayout: void setStatusBarBackgroundColor(int)
+android.support.v4.widget.DrawerLayout$SavedState
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout: void setParallaxDistance(int)
+android.support.v4.widget.SlidingPaneLayout: int getParallaxDistance()
+android.support.v4.widget.SlidingPaneLayout: void setSliderFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getSliderFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableLeft(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableRight(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResourceLeft(int)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResourceRight(int)
+android.support.v4.widget.SlidingPaneLayout$SavedState
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SwipeRefreshLayout: void setColorViewAlpha(int)
+android.support.v4.widget.SwipeRefreshLayout: void setSize(int)
+android.support.v4.widget.SwipeRefreshLayout: void setOnRefreshListener(android.support.v4.widget.SwipeRefreshLayout$OnRefreshListener)
+android.support.v4.widget.SwipeRefreshLayout: void setRefreshing(boolean)
+android.support.v4.widget.SwipeRefreshLayout: void setAnimationProgress(float)
+android.support.v4.widget.SwipeRefreshLayout: void setProgressBackgroundColor(int)
+android.support.v4.widget.SwipeRefreshLayout: void setColorScheme(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setColorSchemeResources(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setColorSchemeColors(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setDistanceToTriggerSync(int)
+com.app.img_mic_helper.AboutActivity
+com.app.img_mic_helper.AboutActivity: AboutActivity()
+com.app.img_mic_helper.ImageProcessActivity
+com.app.img_mic_helper.ImageProcessActivity: ImageProcessActivity()
+com.app.img_mic_helper.MainActivity
+com.app.img_mic_helper.MainActivity: MainActivity()
+com.app.img_mic_helper.MusicPlayerActivity
+com.app.img_mic_helper.MusicPlayerActivity: MusicPlayerActivity()
+com.app.img_mic_helper.R$anim: int disc_rotate
+com.app.img_mic_helper.R$anim: int progress_rotating
+com.app.img_mic_helper.R$color: int aliceblue
+com.app.img_mic_helper.R$color: int antiquewhite
+com.app.img_mic_helper.R$color: int aqua
+com.app.img_mic_helper.R$color: int aquamarine
+com.app.img_mic_helper.R$color: int azure
+com.app.img_mic_helper.R$color: int beige
+com.app.img_mic_helper.R$color: int bisque
+com.app.img_mic_helper.R$color: int black
+com.app.img_mic_helper.R$color: int blanchedalmond
+com.app.img_mic_helper.R$color: int blue
+com.app.img_mic_helper.R$color: int blueviolet
+com.app.img_mic_helper.R$color: int brown
+com.app.img_mic_helper.R$color: int burlywood
+com.app.img_mic_helper.R$color: int cadetblue
+com.app.img_mic_helper.R$color: int chartreuse
+com.app.img_mic_helper.R$color: int chocolate
+com.app.img_mic_helper.R$color: int coral
+com.app.img_mic_helper.R$color: int cornflowerblue
+com.app.img_mic_helper.R$color: int cornsilk
+com.app.img_mic_helper.R$color: int crimson
+com.app.img_mic_helper.R$color: int cyan
+com.app.img_mic_helper.R$color: int darkblue
+com.app.img_mic_helper.R$color: int darkcyan
+com.app.img_mic_helper.R$color: int darkgoldenrod
+com.app.img_mic_helper.R$color: int darkgray
+com.app.img_mic_helper.R$color: int darkgreen
+com.app.img_mic_helper.R$color: int darkgrey
+com.app.img_mic_helper.R$color: int darkkhaki
+com.app.img_mic_helper.R$color: int darkmagenta
+com.app.img_mic_helper.R$color: int darkolivegreen
+com.app.img_mic_helper.R$color: int darkorange
+com.app.img_mic_helper.R$color: int darkorchid
+com.app.img_mic_helper.R$color: int darkred
+com.app.img_mic_helper.R$color: int darksalmon
+com.app.img_mic_helper.R$color: int darkseagreen
+com.app.img_mic_helper.R$color: int darkslateblue
+com.app.img_mic_helper.R$color: int darkslategray
+com.app.img_mic_helper.R$color: int darkslategrey
+com.app.img_mic_helper.R$color: int darkturquoise
+com.app.img_mic_helper.R$color: int darkviolet
+com.app.img_mic_helper.R$color: int deeppink
+com.app.img_mic_helper.R$color: int deepskyblue
+com.app.img_mic_helper.R$color: int dimgray
+com.app.img_mic_helper.R$color: int dimgrey
+com.app.img_mic_helper.R$color: int dodgerblue
+com.app.img_mic_helper.R$color: int firebrick
+com.app.img_mic_helper.R$color: int floralwhite
+com.app.img_mic_helper.R$color: int forestgreen
+com.app.img_mic_helper.R$color: int fuchsia
+com.app.img_mic_helper.R$color: int gainsboro
+com.app.img_mic_helper.R$color: int ghostwhite
+com.app.img_mic_helper.R$color: int gold
+com.app.img_mic_helper.R$color: int goldenrod
+com.app.img_mic_helper.R$color: int gray
+com.app.img_mic_helper.R$color: int green
+com.app.img_mic_helper.R$color: int greenyellow
+com.app.img_mic_helper.R$color: int grey
+com.app.img_mic_helper.R$color: int honeydew
+com.app.img_mic_helper.R$color: int hotpink
+com.app.img_mic_helper.R$color: int indianred
+com.app.img_mic_helper.R$color: int indigo
+com.app.img_mic_helper.R$color: int ivory
+com.app.img_mic_helper.R$color: int khaki
+com.app.img_mic_helper.R$color: int lavender
+com.app.img_mic_helper.R$color: int lavenderblush
+com.app.img_mic_helper.R$color: int lawngreen
+com.app.img_mic_helper.R$color: int lemonchiffon
+com.app.img_mic_helper.R$color: int lightblue
+com.app.img_mic_helper.R$color: int lightcoral
+com.app.img_mic_helper.R$color: int lightcyan
+com.app.img_mic_helper.R$color: int lightgoldenrodyellow
+com.app.img_mic_helper.R$color: int lightgray
+com.app.img_mic_helper.R$color: int lightgreen
+com.app.img_mic_helper.R$color: int lightgrey
+com.app.img_mic_helper.R$color: int lightpink
+com.app.img_mic_helper.R$color: int lightsalmon
+com.app.img_mic_helper.R$color: int lightseagreen
+com.app.img_mic_helper.R$color: int lightskyblue
+com.app.img_mic_helper.R$color: int lightslategray
+com.app.img_mic_helper.R$color: int lightslategrey
+com.app.img_mic_helper.R$color: int lightsteelblue
+com.app.img_mic_helper.R$color: int lightyellow
+com.app.img_mic_helper.R$color: int lime
+com.app.img_mic_helper.R$color: int limegreen
+com.app.img_mic_helper.R$color: int linen
+com.app.img_mic_helper.R$color: int magenta
+com.app.img_mic_helper.R$color: int maroon
+com.app.img_mic_helper.R$color: int mediumaquamarine
+com.app.img_mic_helper.R$color: int mediumblue
+com.app.img_mic_helper.R$color: int mediumorchid
+com.app.img_mic_helper.R$color: int mediumpurple
+com.app.img_mic_helper.R$color: int mediumseagreen
+com.app.img_mic_helper.R$color: int mediumslateblue
+com.app.img_mic_helper.R$color: int mediumspringgreen
+com.app.img_mic_helper.R$color: int mediumturquoise
+com.app.img_mic_helper.R$color: int mediumvioletred
+com.app.img_mic_helper.R$color: int midnightblue
+com.app.img_mic_helper.R$color: int mintcream
+com.app.img_mic_helper.R$color: int mistyrose
+com.app.img_mic_helper.R$color: int moccasin
+com.app.img_mic_helper.R$color: int navajowhite
+com.app.img_mic_helper.R$color: int navy
+com.app.img_mic_helper.R$color: int oldlace
+com.app.img_mic_helper.R$color: int olive
+com.app.img_mic_helper.R$color: int olivedrab
+com.app.img_mic_helper.R$color: int orange
+com.app.img_mic_helper.R$color: int orangered
+com.app.img_mic_helper.R$color: int orchid
+com.app.img_mic_helper.R$color: int palegoldenrod
+com.app.img_mic_helper.R$color: int palegreen
+com.app.img_mic_helper.R$color: int paleturquoise
+com.app.img_mic_helper.R$color: int palevioletred
+com.app.img_mic_helper.R$color: int papayawhip
+com.app.img_mic_helper.R$color: int peachpuff
+com.app.img_mic_helper.R$color: int peru
+com.app.img_mic_helper.R$color: int pink
+com.app.img_mic_helper.R$color: int plum
+com.app.img_mic_helper.R$color: int powderblue
+com.app.img_mic_helper.R$color: int purple
+com.app.img_mic_helper.R$color: int red
+com.app.img_mic_helper.R$color: int rosybrown
+com.app.img_mic_helper.R$color: int royalblue
+com.app.img_mic_helper.R$color: int saddlebrown
+com.app.img_mic_helper.R$color: int salmon
+com.app.img_mic_helper.R$color: int sandybrown
+com.app.img_mic_helper.R$color: int seaShell
+com.app.img_mic_helper.R$color: int seagreen
+com.app.img_mic_helper.R$color: int sienna
+com.app.img_mic_helper.R$color: int silver
+com.app.img_mic_helper.R$color: int skyblue
+com.app.img_mic_helper.R$color: int slateblue
+com.app.img_mic_helper.R$color: int slategray
+com.app.img_mic_helper.R$color: int slategrey
+com.app.img_mic_helper.R$color: int snow
+com.app.img_mic_helper.R$color: int springgreen
+com.app.img_mic_helper.R$color: int steelblue
+com.app.img_mic_helper.R$color: int tan
+com.app.img_mic_helper.R$color: int teal
+com.app.img_mic_helper.R$color: int thistle
+com.app.img_mic_helper.R$color: int tomato
+com.app.img_mic_helper.R$color: int turquoise
+com.app.img_mic_helper.R$color: int violet
+com.app.img_mic_helper.R$color: int wheat
+com.app.img_mic_helper.R$color: int white
+com.app.img_mic_helper.R$color: int whitesmoke
+com.app.img_mic_helper.R$color: int yellow
+com.app.img_mic_helper.R$dimen: int activity_horizontal_margin
+com.app.img_mic_helper.R$dimen: int activity_vertical_margin
+com.app.img_mic_helper.R$drawable: int about
+com.app.img_mic_helper.R$drawable: int album
+com.app.img_mic_helper.R$drawable: int ban
+com.app.img_mic_helper.R$drawable: int bubble
+com.app.img_mic_helper.R$drawable: int buffering
+com.app.img_mic_helper.R$drawable: int button
+com.app.img_mic_helper.R$drawable: int camera
+com.app.img_mic_helper.R$drawable: int frame
+com.app.img_mic_helper.R$drawable: int ic_launcher
+com.app.img_mic_helper.R$drawable: int icon
+com.app.img_mic_helper.R$drawable: int image_return
+com.app.img_mic_helper.R$drawable: int main_bg
+com.app.img_mic_helper.R$drawable: int music
+com.app.img_mic_helper.R$drawable: int music_background
+com.app.img_mic_helper.R$drawable: int next
+com.app.img_mic_helper.R$drawable: int progress_bar
+com.app.img_mic_helper.R$drawable: int radio
+com.app.img_mic_helper.R$drawable: int save
+com.app.img_mic_helper.R$drawable: int slide
+com.app.img_mic_helper.R$drawable: int start
+com.app.img_mic_helper.R$drawable: int stop
+com.app.img_mic_helper.R$drawable: int thumb
+com.app.img_mic_helper.R$drawable: int wechat
+com.app.img_mic_helper.R$id: int about
+com.app.img_mic_helper.R$id: int action_settings
+com.app.img_mic_helper.R$id: int ban
+com.app.img_mic_helper.R$id: int filename
+com.app.img_mic_helper.R$id: int flower_progress_bar_container
+com.app.img_mic_helper.R$id: int from_album
+com.app.img_mic_helper.R$id: int from_camera
+com.app.img_mic_helper.R$id: int front_cover
+com.app.img_mic_helper.R$id: int function_bar
+com.app.img_mic_helper.R$id: int function_bar_container
+com.app.img_mic_helper.R$id: int image_container
+com.app.img_mic_helper.R$id: int image_return
+com.app.img_mic_helper.R$id: int image_save
+com.app.img_mic_helper.R$id: int image_to_process
+com.app.img_mic_helper.R$id: int item_name
+com.app.img_mic_helper.R$id: int loadingImageView
+com.app.img_mic_helper.R$id: int loadingmsg
+com.app.img_mic_helper.R$id: int main_firstlayer
+com.app.img_mic_helper.R$id: int main_secondlayer
+com.app.img_mic_helper.R$id: int mediate_linearlayout
+com.app.img_mic_helper.R$id: int music_name
+com.app.img_mic_helper.R$id: int music_progress
+com.app.img_mic_helper.R$id: int next
+com.app.img_mic_helper.R$id: int play
+com.app.img_mic_helper.R$id: int player_name
+com.app.img_mic_helper.R$id: int preparing
+com.app.img_mic_helper.R$id: int radio_list
+com.app.img_mic_helper.R$id: int share
+com.app.img_mic_helper.R$id: int subfunction_bar
+com.app.img_mic_helper.R$id: int subfunction_bar_container
+com.app.img_mic_helper.R$id: int to_music
+com.app.img_mic_helper.R$layout: int about
+com.app.img_mic_helper.R$layout: int activity_image_process
+com.app.img_mic_helper.R$layout: int activity_main
+com.app.img_mic_helper.R$layout: int flower_progress_bar
+com.app.img_mic_helper.R$layout: int function_bar_content
+com.app.img_mic_helper.R$layout: int music_player
+com.app.img_mic_helper.R$layout: int save_filename
+com.app.img_mic_helper.R$menu: int image_process
+com.app.img_mic_helper.R$menu: int main
+com.app.img_mic_helper.R$menu: int music_player
+com.app.img_mic_helper.R$string: int action_settings
+com.app.img_mic_helper.R$string: int app_name
+com.app.img_mic_helper.R$string: int art
+com.app.img_mic_helper.R$string: int black_white
+com.app.img_mic_helper.R$string: int blur
+com.app.img_mic_helper.R$string: int bright
+com.app.img_mic_helper.R$string: int bubble
+com.app.img_mic_helper.R$string: int cancel
+com.app.img_mic_helper.R$string: int cantonese
+com.app.img_mic_helper.R$string: int cartoon
+com.app.img_mic_helper.R$string: int cast
+com.app.img_mic_helper.R$string: int ceramic
+com.app.img_mic_helper.R$string: int chinese
+com.app.img_mic_helper.R$string: int choose_image_again
+com.app.img_mic_helper.R$string: int classic
+com.app.img_mic_helper.R$string: int cold
+com.app.img_mic_helper.R$string: int comic
+com.app.img_mic_helper.R$string: int contrast_enhancement
+com.app.img_mic_helper.R$string: int contrast_enhancement2
+com.app.img_mic_helper.R$string: int copyright
+com.app.img_mic_helper.R$string: int could_not_open_album
+com.app.img_mic_helper.R$string: int could_not_open_camera
+com.app.img_mic_helper.R$string: int cross_processing
+com.app.img_mic_helper.R$string: int dark_corner
+com.app.img_mic_helper.R$string: int dermabrasion
+com.app.img_mic_helper.R$string: int distorting_mirror
+com.app.img_mic_helper.R$string: int effects
+com.app.img_mic_helper.R$string: int eighty
+com.app.img_mic_helper.R$string: int emboss
+com.app.img_mic_helper.R$string: int erode
+com.app.img_mic_helper.R$string: int errcode_cancel
+com.app.img_mic_helper.R$string: int errcode_deny
+com.app.img_mic_helper.R$string: int errcode_success
+com.app.img_mic_helper.R$string: int errcode_unknown
+com.app.img_mic_helper.R$string: int exposure
+com.app.img_mic_helper.R$string: int fail_photo_created
+com.app.img_mic_helper.R$string: int fashion
+com.app.img_mic_helper.R$string: int feather
+com.app.img_mic_helper.R$string: int filename_inform
+com.app.img_mic_helper.R$string: int film
+com.app.img_mic_helper.R$string: int focus
+com.app.img_mic_helper.R$string: int frame
+com.app.img_mic_helper.R$string: int freeze
+com.app.img_mic_helper.R$string: int fresh
+com.app.img_mic_helper.R$string: int frosted_glass
+com.app.img_mic_helper.R$string: int gamma_correction
+com.app.img_mic_helper.R$string: int gaussian_blur
+com.app.img_mic_helper.R$string: int glass
+com.app.img_mic_helper.R$string: int gothic
+com.app.img_mic_helper.R$string: int gouache
+com.app.img_mic_helper.R$string: int gray
+com.app.img_mic_helper.R$string: int hello_world
+com.app.img_mic_helper.R$string: int i_am_listening
+com.app.img_mic_helper.R$string: int image_return
+com.app.img_mic_helper.R$string: int image_save
+com.app.img_mic_helper.R$string: int inlay
+com.app.img_mic_helper.R$string: int laser
+com.app.img_mic_helper.R$string: int light_music
+com.app.img_mic_helper.R$string: int lomo
+com.app.img_mic_helper.R$string: int magnifier
+com.app.img_mic_helper.R$string: int marble
+com.app.img_mic_helper.R$string: int mist
+com.app.img_mic_helper.R$string: int mosaic
+com.app.img_mic_helper.R$string: int motion_blur
+com.app.img_mic_helper.R$string: int negative
+com.app.img_mic_helper.R$string: int new_music
+com.app.img_mic_helper.R$string: int ninty
+com.app.img_mic_helper.R$string: int no_sdcard
+com.app.img_mic_helper.R$string: int nostalgia
+com.app.img_mic_helper.R$string: int oil_painting
+com.app.img_mic_helper.R$string: int ok
+com.app.img_mic_helper.R$string: int operation_error
+com.app.img_mic_helper.R$string: int paper_cut
+com.app.img_mic_helper.R$string: int pen
+com.app.img_mic_helper.R$string: int pink
+com.app.img_mic_helper.R$string: int preparing
+com.app.img_mic_helper.R$string: int rainbow
+com.app.img_mic_helper.R$string: int reflection
+com.app.img_mic_helper.R$string: int rock
+com.app.img_mic_helper.R$string: int shadow
+com.app.img_mic_helper.R$string: int share
+com.app.img_mic_helper.R$string: int sharpen
+com.app.img_mic_helper.R$string: int sketch
+com.app.img_mic_helper.R$string: int smart_sharpen
+com.app.img_mic_helper.R$string: int smear
+com.app.img_mic_helper.R$string: int soft_light
+com.app.img_mic_helper.R$string: int style
+com.app.img_mic_helper.R$string: int sudoku
+com.app.img_mic_helper.R$string: int symmetry
+com.app.img_mic_helper.R$string: int version_too_low
+com.app.img_mic_helper.R$string: int vignette
+com.app.img_mic_helper.R$string: int water
+com.app.img_mic_helper.R$string: int water_ripple
+com.app.img_mic_helper.R$string: int western
+com.app.img_mic_helper.R$string: int white_balance
+com.app.img_mic_helper.R$string: int whitening
+com.app.img_mic_helper.R$string: int wind
+com.app.img_mic_helper.R$string: int wxapp_uninstall
+com.app.img_mic_helper.R$style: int AppBaseTheme
+com.app.img_mic_helper.R$style: int AppTheme
+com.app.img_mic_helper.R$style: int CustomDialog
+com.app.img_mic_helper.R$style: int CustomProgressDialog
+com.app.img_mic_helper.wxapi.WXEntryActivity
+com.app.img_mic_helper.wxapi.WXEntryActivity: WXEntryActivity()
+com.tencent.mm.platformtools.SpellMap
+com.tencent.mm.platformtools.SpellMap: java.lang.String spellGetJni(int,int)
+com.tencent.mm.sdk.openapi.WXAppExtendObject
+com.tencent.mm.sdk.openapi.WXAppExtendObject: java.lang.String extInfo
+com.tencent.mm.sdk.openapi.WXAppExtendObject: java.lang.String filePath
+com.tencent.mm.sdk.openapi.WXAppExtendObject: byte[] fileData
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject()
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject(java.lang.String,byte[])
+com.tencent.mm.sdk.openapi.WXAppExtendObject: WXAppExtendObject(java.lang.String,java.lang.String)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXAppExtendObject: int type()
+com.tencent.mm.sdk.openapi.WXAppExtendObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXEmojiObject
+com.tencent.mm.sdk.openapi.WXEmojiObject: byte[] emojiData
+com.tencent.mm.sdk.openapi.WXEmojiObject: java.lang.String emojiPath
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject()
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject(byte[])
+com.tencent.mm.sdk.openapi.WXEmojiObject: WXEmojiObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void setEmojiData(byte[])
+com.tencent.mm.sdk.openapi.WXEmojiObject: void setEmojiPath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXEmojiObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXEmojiObject: int type()
+com.tencent.mm.sdk.openapi.WXEmojiObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXFileObject
+com.tencent.mm.sdk.openapi.WXFileObject: byte[] fileData
+com.tencent.mm.sdk.openapi.WXFileObject: java.lang.String filePath
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject()
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject(byte[])
+com.tencent.mm.sdk.openapi.WXFileObject: WXFileObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXFileObject: void setFileData(byte[])
+com.tencent.mm.sdk.openapi.WXFileObject: void setFilePath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXFileObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXFileObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXFileObject: int type()
+com.tencent.mm.sdk.openapi.WXFileObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXImageObject
+com.tencent.mm.sdk.openapi.WXImageObject: byte[] imageData
+com.tencent.mm.sdk.openapi.WXImageObject: java.lang.String imagePath
+com.tencent.mm.sdk.openapi.WXImageObject: java.lang.String imageUrl
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject()
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject(byte[])
+com.tencent.mm.sdk.openapi.WXImageObject: WXImageObject(android.graphics.Bitmap)
+com.tencent.mm.sdk.openapi.WXImageObject: void setImagePath(java.lang.String)
+com.tencent.mm.sdk.openapi.WXImageObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXImageObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXImageObject: int type()
+com.tencent.mm.sdk.openapi.WXImageObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXMediaMessage
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String ACTION_WXAPPMESSAGE
+com.tencent.mm.sdk.openapi.WXMediaMessage: int sdkVer
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String title
+com.tencent.mm.sdk.openapi.WXMediaMessage: java.lang.String description
+com.tencent.mm.sdk.openapi.WXMediaMessage: byte[] thumbData
+com.tencent.mm.sdk.openapi.WXMediaMessage: com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject mediaObject
+com.tencent.mm.sdk.openapi.WXMediaMessage: WXMediaMessage()
+com.tencent.mm.sdk.openapi.WXMediaMessage: WXMediaMessage(com.tencent.mm.sdk.openapi.WXMediaMessage$IMediaObject)
+com.tencent.mm.sdk.openapi.WXMediaMessage: int getType()
+com.tencent.mm.sdk.openapi.WXMediaMessage: void setThumbImage(android.graphics.Bitmap)
+com.tencent.mm.sdk.openapi.WXMediaMessage: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXMusicObject
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicLowBandUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicDataUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: java.lang.String musicLowBandDataUrl
+com.tencent.mm.sdk.openapi.WXMusicObject: WXMusicObject()
+com.tencent.mm.sdk.openapi.WXMusicObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXMusicObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXMusicObject: int type()
+com.tencent.mm.sdk.openapi.WXMusicObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXTextObject
+com.tencent.mm.sdk.openapi.WXTextObject: java.lang.String text
+com.tencent.mm.sdk.openapi.WXTextObject: WXTextObject()
+com.tencent.mm.sdk.openapi.WXTextObject: WXTextObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXTextObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXTextObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXTextObject: int type()
+com.tencent.mm.sdk.openapi.WXTextObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXVideoObject
+com.tencent.mm.sdk.openapi.WXVideoObject: java.lang.String videoUrl
+com.tencent.mm.sdk.openapi.WXVideoObject: java.lang.String videoLowBandUrl
+com.tencent.mm.sdk.openapi.WXVideoObject: WXVideoObject()
+com.tencent.mm.sdk.openapi.WXVideoObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXVideoObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXVideoObject: int type()
+com.tencent.mm.sdk.openapi.WXVideoObject: boolean checkArgs()
+com.tencent.mm.sdk.openapi.WXWebpageObject
+com.tencent.mm.sdk.openapi.WXWebpageObject: java.lang.String webpageUrl
+com.tencent.mm.sdk.openapi.WXWebpageObject: WXWebpageObject()
+com.tencent.mm.sdk.openapi.WXWebpageObject: WXWebpageObject(java.lang.String)
+com.tencent.mm.sdk.openapi.WXWebpageObject: void serialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXWebpageObject: void unserialize(android.os.Bundle)
+com.tencent.mm.sdk.openapi.WXWebpageObject: int type()
+com.tencent.mm.sdk.openapi.WXWebpageObject: boolean checkArgs()
+com.tencent.mm.sdk.platformtools.FilePathGenerator$DIR_HASH_TYPE: com.tencent.mm.sdk.platformtools.FilePathGenerator$DIR_HASH_TYPE[] values()
+com.tencent.mm.sdk.platformtools.FilePathGenerator$DIR_HASH_TYPE: com.tencent.mm.sdk.platformtools.FilePathGenerator$DIR_HASH_TYPE valueOf(java.lang.String)

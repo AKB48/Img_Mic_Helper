@@ -49,7 +49,7 @@
                 android:id="@+id/to_music"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@drawable/album"/>
+                android:background="@drawable/music"/>
             
             <Button 
                 style="?android:attr/buttonBarButtonStyle"
@@ -57,7 +57,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/camera"/>
+                android:background="@drawable/about"/>
             
         </LinearLayout>
         

@@ -464,26 +464,29 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int album=0x7f020000;
-        public static final int ban=0x7f020001;
-        public static final int bubble=0x7f020002;
-        public static final int buffering=0x7f020003;
-        public static final int button=0x7f020004;
-        public static final int camera=0x7f020005;
-        public static final int frame=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int icon_high=0x7f020008;
-        public static final int image_return=0x7f020009;
-        public static final int main_bg=0x7f02000a;
-        public static final int next=0x7f02000b;
-        public static final int progress_bar=0x7f02000c;
-        public static final int radio=0x7f02000d;
-        public static final int save=0x7f02000e;
-        public static final int slide=0x7f02000f;
-        public static final int start=0x7f020010;
-        public static final int stop=0x7f020011;
-        public static final int thumb=0x7f020012;
-        public static final int wechat=0x7f020013;
+        public static final int about=0x7f020000;
+        public static final int album=0x7f020001;
+        public static final int ban=0x7f020002;
+        public static final int bubble=0x7f020003;
+        public static final int buffering=0x7f020004;
+        public static final int button=0x7f020005;
+        public static final int camera=0x7f020006;
+        public static final int frame=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int icon=0x7f020009;
+        public static final int image_return=0x7f02000a;
+        public static final int main_bg=0x7f02000b;
+        public static final int music=0x7f02000c;
+        public static final int music_background=0x7f02000d;
+        public static final int next=0x7f02000e;
+        public static final int progress_bar=0x7f02000f;
+        public static final int radio=0x7f020010;
+        public static final int save=0x7f020011;
+        public static final int slide=0x7f020012;
+        public static final int start=0x7f020013;
+        public static final int stop=0x7f020014;
+        public static final int thumb=0x7f020015;
+        public static final int wechat=0x7f020016;
     }
     public static final class id {
         public static final int about=0x7f0a000c;
@@ -543,6 +546,7 @@ public final class R {
         public static final int cancel=0x7f070053;
         public static final int cantonese=0x7f070047;
         public static final int cartoon=0x7f07004c;
+        public static final int cast=0x7f07005e;
         public static final int ceramic=0x7f070023;
         public static final int chinese=0x7f070043;
         public static final int choose_image_again=0x7f070007;
@@ -569,11 +573,14 @@ public final class R {
         public static final int exposure=0x7f070019;
         public static final int fail_photo_created=0x7f070005;
         public static final int fashion=0x7f070010;
+        public static final int feather=0x7f070060;
         public static final int filename_inform=0x7f070051;
         public static final int film=0x7f070012;
         public static final int focus=0x7f070041;
         public static final int frame=0x7f070037;
+        public static final int freeze=0x7f07005f;
         public static final int fresh=0x7f07004b;
+        public static final int frosted_glass=0x7f070061;
         public static final int gamma_correction=0x7f07003e;
         public static final int gaussian_blur=0x7f070026;
         public static final int glass=0x7f070042;

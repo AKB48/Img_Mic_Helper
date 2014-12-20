@@ -158,7 +158,7 @@ public class OilPaintingProcessor implements Processor {
 					cur_Y = sum_Y / counter;
 					cur_I = sum_I / counter;
 					cur_Q = sum_Q / counter;
-					//Log.i("aa", "");
+					Log.i("", "");
 					cur_i = (int) (sum_i / counter + 0.5);
 					cur_j = (int) (sum_j / counter + 0.5);
 					

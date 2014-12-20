@@ -11,14 +11,16 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.app.img_mic_helper.R;
 import com.config.Config;
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.modelmsg.WXImageObject;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXMusicObject;
+import com.tencent.mm.sdk.openapi.SendMessageToWX;
+import com.tencent.mm.sdk.openapi.WXImageObject;
+import com.tencent.mm.sdk.openapi.WXMediaMessage;
+import com.tencent.mm.sdk.openapi.WXMusicObject;
+import com.tencent.mm.sdk.openapi.WXWebpageObject;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.utils.BlackWhiteProcessor;
@@ -132,8 +134,8 @@ public class WXShare {
 		WXMediaMessage msg = new WXMediaMessage();
 		if (micUrl != null && !micUrl.equals(""))
 		{
-			WXMusicObject micObj = new WXMusicObject();
-			micObj.musicDataUrl = micUrl;
+			WXWebpageObject micObj = new WXWebpageObject();
+			micObj.webpageUrl = micUrl;
 			msg.mediaObject = micObj;
 		}
 		

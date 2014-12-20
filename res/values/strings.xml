@@ -95,5 +95,9 @@
     <string name="copyright">Copyright © 2014 William Deng All rights reserved.</string>
     <string name="preparing">正在努力为您准备音乐，请稍等......</string>
     <string name="smear">涂抹</string>
+    <string name="cast">熔铸</string>
+    <string name="freeze">冰冻</string>
+    <string name="feather">羽化</string>
+    <string name="frosted_glass">毛玻璃</string>
 
 </resources>

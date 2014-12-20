@@ -19,6 +19,7 @@ import com.custom_widget.FlowerProgressDialog;
 import com.utils.BlackWhiteProcessor;
 import com.utils.BrightProcessor;
 import com.utils.BubbleProcessor;
+import com.utils.CastProcessor;
 import com.utils.CeramicProcessor;
 import com.utils.ColdProcessor;
 import com.utils.ComicProcessor;
@@ -31,9 +32,12 @@ import com.utils.DistortingMirrorProcessor;
 import com.utils.EmbossProcessor;
 import com.utils.ErodeProcessor;
 import com.utils.ExposureProcessor;
+import com.utils.FeatherProcessor;
 import com.utils.FilmProcessor;
 import com.utils.FocusProcessor;
 import com.utils.FrameProcessor;
+import com.utils.FreezeProcessor;
+import com.utils.FrostedGlassProcessor;
 import com.utils.GammaProcessor;
 import com.utils.GaussianBlurProcessor;
 import com.utils.GeneralBlurProcessor;
@@ -284,6 +288,9 @@ public class ImageProcessActivity extends Activity {
 						BubbleProcessor.getInstance().setContext(getApplicationContext());
 						processor = BubbleProcessor.getInstance();
 						break;
+					case R.string.cast:
+						processor = CastProcessor.getInstance();
+						break;
 					case R.string.ceramic:
 						processor = CeramicProcessor.getInstance();
 						break;
@@ -320,6 +327,9 @@ public class ImageProcessActivity extends Activity {
 					case R.string.exposure:
 						processor = ExposureProcessor.getInstance();
 						break;
+					case R.string.feather:
+						processor = FeatherProcessor.getInstance();
+						break;
 					case R.string.film:
 						processor = FilmProcessor.getInstance();
 						break;
@@ -329,6 +339,12 @@ public class ImageProcessActivity extends Activity {
 					case R.string.frame:
 						FrameProcessor.getInstance().setContext(getApplicationContext());
 						processor = FrameProcessor.getInstance();
+						break;
+					case R.string.freeze:
+						processor = FreezeProcessor.getInstance();
+						break;
+					case R.string.frosted_glass:
+						processor = FrostedGlassProcessor.getInstance();
 						break;
 					case R.string.gamma_correction:
 						processor = GammaProcessor.getInstance();

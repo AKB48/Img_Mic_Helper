@@ -45,6 +45,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -135,7 +136,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         play = (Button)this.findViewById(R.id.play);
         next = (Button)this.findViewById(R.id.next);
         ban = (Button)this.findViewById(R.id.ban);
-        setButtonGroupState(false);
+        
         play.setOnClickListener(new View.OnClickListener() {
             
             @Override
@@ -203,6 +204,8 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
                 
             }
         });
+        
+        setButtonGroupState(false);
         
         musicHandler = new MusicHandler( Looper.myLooper());
         
