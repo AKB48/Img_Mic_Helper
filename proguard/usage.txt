@@ -2252,8 +2252,8 @@ com.utils.DermabrasionProcessor:
     110:119:public boolean setRadius(int)
     129:129:public int getRadius()
 com.utils.DiscShapeProcessor:
-    56:56:public int getResultWidth()
-    87:87:public int getResultHeight()
+    72:72:public int getResultWidth()
+    103:103:public int getResultHeight()
 com.utils.FeatherProcessor:
     60:69:public java.lang.Boolean setSize(float)
     79:79:public float getSize()

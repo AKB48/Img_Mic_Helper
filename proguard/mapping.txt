@@ -2161,7 +2161,6 @@ com.utils.DiscShapeProcessor -> com.c.p:
     com.utils.DiscShapeProcessor uniqueInstance -> a
     int resultWidth -> b
     int resultHeight -> c
-    int background_color -> d
     java.lang.Boolean setResultWidth(int) -> a
     java.lang.Boolean setResultHeight(int) -> b
     com.utils.DiscShapeProcessor getInstance() -> a

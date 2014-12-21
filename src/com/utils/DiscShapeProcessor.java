@@ -1,8 +1,25 @@
 package com.utils;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Bitmap.Config;
+import android.os.Environment;
 
 
 /**
@@ -17,7 +34,6 @@ public class DiscShapeProcessor implements Processor {
 	private volatile static DiscShapeProcessor uniqueInstance = null;
 	private int resultWidth = 0;
 	private int resultHeight = 0;
-	private int background_color = 0xffda9ca1;
 	
 	
 	private DiscShapeProcessor()
@@ -117,7 +133,8 @@ public class DiscShapeProcessor implements Processor {
 			return null;
 		}
 		
-		Bitmap destBitmap = scaleBitmap(bitmap, resultWidth, resultHeight);
+
+		Bitmap tempBitmap = scaleBitmap(bitmap, resultWidth, resultHeight);
 		
 		int center_x = resultWidth >> 1;
 		int center_y = resultHeight >> 1;
@@ -130,30 +147,41 @@ public class DiscShapeProcessor implements Processor {
 			outerRadius = (int) (0.5f * resultHeight);
 		}
 		
-		int innerRadius2 = innerRadius * innerRadius;
-		int outerRadius2 = outerRadius * outerRadius;
-		int distance = 0;
-		int dx;
-		int dy;
+		int innerRadius_2 = innerRadius + innerRadius;
+		int outerRadius_2 = outerRadius + outerRadius;
+
 		
-		for (int i = 0; i < resultHeight; i++)
+		Bitmap tempBitmap2 = Bitmap.createBitmap(resultWidth, resultHeight, Config.ARGB_8888);
+		
+		Canvas canvas = new Canvas(tempBitmap2);
+		Paint paint = new Paint();
+		Rect rect= new Rect(0, 0, resultWidth, resultHeight);
+		RectF rectf =  new RectF(rect);
+		paint.setAntiAlias(true);
+		paint.setColor(0xffffffff);
+		canvas.drawRoundRect(rectf, resultWidth, resultHeight, paint);
+		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+		canvas.drawBitmap(tempBitmap, rect, rect, paint);
+		canvas.save();
+		
+		Rect rect2 = new Rect(center_x-innerRadius, center_y-innerRadius, center_x+innerRadius, center_y+innerRadius);
+		rectf = new RectF(rect2);
+		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_OUT));
+		Bitmap destBitmap = Bitmap.createBitmap(resultWidth, resultHeight, Config.ARGB_8888);
+		canvas = new Canvas(destBitmap);
+        canvas.drawRoundRect(rectf, innerRadius_2, innerRadius_2, paint);
+        canvas.drawBitmap(tempBitmap2, rect, rect, paint);
+		canvas.save();
+		
+		if (tempBitmap != null)
 		{
-			
-			for (int j = 0; j < resultWidth; j++)
-			{
-				
-				dx = j - center_x;
-				dy = i - center_y;
-				distance = dx * dx + dy * dy;
-				if (distance <= innerRadius2 || distance >= outerRadius2)
-				{
-					destBitmap.setPixel(j, i, background_color);
-				}
-				else
-				{
-					continue;
-				}
-			}
+			tempBitmap.recycle();
+			tempBitmap = null;
+		}
+		if (tempBitmap2 != null)
+		{
+			tempBitmap2.recycle();
+			tempBitmap2 = null;
 		}
 		
 		return destBitmap;

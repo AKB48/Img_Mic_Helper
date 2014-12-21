@@ -125,6 +125,7 @@ public class MusicPlayerActivity extends Activity implements MediaPlayer.OnPrepa
         musicPlayer.setOnCompletionListener(this);
 
         front_cover_iv = (ImageView)this.findViewById(R.id.front_cover);
+        front_cover_iv.setBackgroundColor(Color.TRANSPARENT);
         rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.disc_rotate);
         music_name_tv = (TextView)this.findViewById(R.id.music_name);
         player_name_tv = (TextView)this.findViewById(R.id.player_name);

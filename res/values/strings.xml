@@ -99,5 +99,6 @@
     <string name="freeze">冰冻</string>
     <string name="feather">羽化</string>
     <string name="frosted_glass">毛玻璃</string>
+    <string name="processing">正在处理中，请稍等</string>
 
 </resources>

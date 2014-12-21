@@ -385,6 +385,7 @@ com.app.img_mic_helper.R$string: int paper_cut
 com.app.img_mic_helper.R$string: int pen
 com.app.img_mic_helper.R$string: int pink
 com.app.img_mic_helper.R$string: int preparing
+com.app.img_mic_helper.R$string: int processing
 com.app.img_mic_helper.R$string: int rainbow
 com.app.img_mic_helper.R$string: int reflection
 com.app.img_mic_helper.R$string: int rock

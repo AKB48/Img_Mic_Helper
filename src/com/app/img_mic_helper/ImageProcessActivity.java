@@ -267,7 +267,8 @@ public class ImageProcessActivity extends Activity {
 		for (int i = 0; i < subfunc_bar_items.length; i++)  
         {  
      		mInflater = LayoutInflater.from(this); 
-            View item_view = mInflater.inflate(R.layout.function_bar_content, subfunction_bar, false); 
+            View item_view = mInflater.inflate(R.layout.function_bar_content, subfunction_bar, false);
+            item_view.setPadding(10, 0, 10, 0);
             TextView item_name = (TextView)item_view.findViewById(R.id.item_name);  
             item_name.setText((String)getText(subfunc_bar_items[i]));
             item_name.setPadding(10, 0, 10, 0);

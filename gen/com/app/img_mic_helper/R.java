@@ -612,6 +612,7 @@ public final class R {
         public static final int pen=0x7f07002c;
         public static final int pink=0x7f07000d;
         public static final int preparing=0x7f07005c;
+        public static final int processing=0x7f070062;
         public static final int rainbow=0x7f070013;
         public static final int reflection=0x7f070021;
         public static final int rock=0x7f07004a;
