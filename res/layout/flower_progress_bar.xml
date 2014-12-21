@@ -20,7 +20,7 @@
             android:layout_gravity="center"  
             android:paddingTop="10dp"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/snow"
             android:text="@string/processing"/>  
     
 
