@@ -62,6 +62,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
             android:progress="0"
             android:background="@drawable/slide"
             android:thumb="@drawable/thumb"/>
@@ -72,6 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
         
         
@@ -79,21 +81,20 @@
             android:id="@+id/play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:background="@drawable/start"/>
         
         <Button 
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:background="@drawable/next"/>
         
         <Button 
             android:id="@+id/ban"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:background="@drawable/ban"/>
         
     </LinearLayout>

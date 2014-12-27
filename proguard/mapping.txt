@@ -1659,11 +1659,11 @@ com.app.img_mic_helper.ImageProcessActivity -> com.app.img_mic_helper.ImageProce
     android.widget.HorizontalScrollView subfunction_bar_container -> j
     android.widget.LinearLayout subfunction_bar -> k
     android.view.LayoutInflater mInflater -> l
-    com.utils.Processor processor -> m
+    com.utils.processor.Processor processor -> m
     android.app.ActionBar actionBar -> n
     android.view.Menu menu -> o
     java.lang.Boolean isProcess -> p
-    com.custom_widget.FlowerProgressDialog mProgressDialog -> a
+    com.custom_widget.ArrowProgressDialog mProgressDialog -> a
     android.widget.AdapterView$OnItemClickListener func_bar_item_clickListener -> q
     void onCreate(android.os.Bundle) -> onCreate
     void loadSubfuncbarContent() -> a
@@ -1682,8 +1682,8 @@ com.app.img_mic_helper.ImageProcessActivity -> com.app.img_mic_helper.ImageProce
     void access$6(com.app.img_mic_helper.ImageProcessActivity,android.graphics.Bitmap) -> b
     android.widget.ImageView access$7(com.app.img_mic_helper.ImageProcessActivity) -> e
     android.graphics.Bitmap access$8(com.app.img_mic_helper.ImageProcessActivity) -> f
-    void access$9(com.app.img_mic_helper.ImageProcessActivity,com.utils.Processor) -> a
-    com.utils.Processor access$10(com.app.img_mic_helper.ImageProcessActivity) -> g
+    void access$9(com.app.img_mic_helper.ImageProcessActivity,com.utils.processor.Processor) -> a
+    com.utils.processor.Processor access$10(com.app.img_mic_helper.ImageProcessActivity) -> g
     void access$11(com.app.img_mic_helper.ImageProcessActivity,java.lang.Boolean) -> a
     void access$12(com.app.img_mic_helper.ImageProcessActivity) -> h
     java.lang.Boolean access$13(com.app.img_mic_helper.ImageProcessActivity) -> i
@@ -1706,7 +1706,7 @@ com.app.img_mic_helper.ImageProcessActivity$5 -> com.app.img_mic_helper.e:
     com.app.img_mic_helper.ImageProcessActivity this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.app.img_mic_helper.ImageProcessActivity$processImageTask -> com.app.img_mic_helper.f:
-    com.utils.Processor processor -> b
+    com.utils.processor.Processor processor -> b
     android.app.Activity activity -> c
     com.app.img_mic_helper.ImageProcessActivity this$0 -> a
     void onPreExecute() -> onPreExecute
@@ -1721,10 +1721,11 @@ com.app.img_mic_helper.MainActivity -> com.app.img_mic_helper.MainActivity:
     android.widget.Button about -> e
     android.graphics.Bitmap bitmap -> f
     java.lang.String filePath -> g
-    android.view.View$OnClickListener click_into_album -> h
+    android.app.ActionBar actionBar -> h
+    android.view.View$OnClickListener click_into_album -> i
     android.view.View$OnClickListener click_into_camera -> a
-    android.view.View$OnClickListener click_into_music -> i
-    android.view.View$OnClickListener click_into_about -> j
+    android.view.View$OnClickListener click_into_music -> j
+    android.view.View$OnClickListener click_into_about -> k
     void onCreate(android.os.Bundle) -> onCreate
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
@@ -1745,13 +1746,13 @@ com.app.img_mic_helper.MainActivity$4 -> com.app.img_mic_helper.j:
     void onClick(android.view.View) -> onClick
 com.app.img_mic_helper.MusicPlayerActivity -> com.app.img_mic_helper.MusicPlayerActivity:
     android.media.MediaPlayer musicPlayer -> b
-    com.utils.Radio radio -> c
+    com.utils.radio.Radio radio -> c
     java.util.ArrayList radio_name_list -> d
     int screenWidth -> e
     int screenHeight -> f
     android.graphics.Bitmap music_cover -> g
     int currentChannel -> h
-    com.utils.Music currentMusic -> i
+    com.utils.radio.Music currentMusic -> i
     int current_song_id -> j
     com.app.img_mic_helper.MusicPlayerActivity$MusicHandler musicHandler -> k
     java.util.Timer musicProgressTimer -> l
@@ -1788,8 +1789,8 @@ com.app.img_mic_helper.MusicPlayerActivity -> com.app.img_mic_helper.MusicPlayer
     int access$4(com.app.img_mic_helper.MusicPlayerActivity) -> e
     android.widget.Button access$5(com.app.img_mic_helper.MusicPlayerActivity) -> f
     void access$6(com.app.img_mic_helper.MusicPlayerActivity,java.lang.Boolean) -> a
-    void access$7(com.app.img_mic_helper.MusicPlayerActivity,com.utils.Radio) -> a
-    com.utils.Radio access$8(com.app.img_mic_helper.MusicPlayerActivity) -> g
+    void access$7(com.app.img_mic_helper.MusicPlayerActivity,com.utils.radio.Radio) -> a
+    com.utils.radio.Radio access$8(com.app.img_mic_helper.MusicPlayerActivity) -> g
     void access$9(com.app.img_mic_helper.MusicPlayerActivity,int) -> a
     void access$10(com.app.img_mic_helper.MusicPlayerActivity) -> h
     android.widget.TextView access$11(com.app.img_mic_helper.MusicPlayerActivity) -> i
@@ -1823,19 +1824,19 @@ com.app.img_mic_helper.MusicPlayerActivity$MusicHandler -> com.app.img_mic_helpe
 com.app.img_mic_helper.MusicPlayerActivity$OnRadioChoose -> com.app.img_mic_helper.q:
     com.app.img_mic_helper.MusicPlayerActivity this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.app.img_mic_helper.share.WXShare -> com.app.img_mic_helper.a.a:
-    com.app.img_mic_helper.share.WXShare uniqueInstance -> a
-    com.tencent.mm.sdk.openapi.IWXAPI mWXApi -> b
-    com.app.img_mic_helper.share.WXShare getInstance() -> a
-    void shareImagetoWX(android.content.Context,java.io.File) -> a
-    void shareMusictoWX(android.content.Context,java.lang.String,java.lang.String) -> a
-    byte[] bmpToByteArray(android.graphics.Bitmap,boolean) -> a
 com.app.img_mic_helper.wxapi.WXEntryActivity -> com.app.img_mic_helper.wxapi.WXEntryActivity:
     com.tencent.mm.sdk.openapi.IWXAPI api -> a
     void onCreate(android.os.Bundle) -> onCreate
     void onNewIntent(android.content.Intent) -> onNewIntent
     void onReq(com.tencent.mm.sdk.openapi.BaseReq) -> a
     void onResp(com.tencent.mm.sdk.openapi.BaseResp) -> a
+com.app.img_mic_helper.wxapi.WXShare -> com.app.img_mic_helper.wxapi.a:
+    com.app.img_mic_helper.wxapi.WXShare uniqueInstance -> a
+    com.tencent.mm.sdk.openapi.IWXAPI mWXApi -> b
+    com.app.img_mic_helper.wxapi.WXShare getInstance() -> a
+    void shareImagetoWX(android.content.Context,java.io.File) -> a
+    void shareMusictoWX(android.content.Context,java.lang.String,java.lang.String) -> a
+    byte[] bmpToByteArray(android.graphics.Bitmap,boolean) -> a
 com.config.Config -> com.a.a:
     int[] function_list -> a
     int[] style_list -> b
@@ -1846,13 +1847,13 @@ com.config.Config -> com.a.a:
     int[] radios_list -> g
     java.lang.String APP_ID -> h
     int THUMB_SIZE -> i
-com.custom_widget.FlowerProgressDialog -> com.b.a:
+com.custom_widget.ArrowProgressDialog -> com.b.a:
     android.content.Context context -> a
-    com.custom_widget.FlowerProgressDialog mDialog -> b
+    com.custom_widget.ArrowProgressDialog mDialog -> b
     android.view.animation.Animation animation -> c
     android.widget.ImageView progressImage -> d
     android.widget.TextView progressMsg -> e
-    com.custom_widget.FlowerProgressDialog createDialog() -> a
+    com.custom_widget.ArrowProgressDialog createDialog() -> a
     void show() -> show
 com.tencent.mm.algorithm.MD5 -> com.tencent.mm.a.a:
     java.lang.String getMessageDigest(byte[]) -> a
@@ -2074,250 +2075,220 @@ com.tencent.mm.sdk.plugin.MMPluginProviderConstants$Resolver -> com.tencent.mm.s
     java.lang.Object resolveObj(int,java.lang.String) -> a
 com.tencent.mm.sdk.plugin.MMPluginProviderConstants$SharedPref -> com.tencent.mm.sdk.c.c:
     android.net.Uri CONTENT_URI -> a
-com.utils.BlackWhiteProcessor -> com.c.a:
-    com.utils.BlackWhiteProcessor uniqueInstance -> a
+com.utils.processor.BlackWhiteProcessor -> com.c.a.a:
+    com.utils.processor.BlackWhiteProcessor uniqueInstance -> a
     double threshold -> b
-    com.utils.BlackWhiteProcessor getInstance() -> a
+    com.utils.processor.BlackWhiteProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int pixelChoose(int) -> a
-com.utils.BrightProcessor -> com.c.b:
-    com.utils.BrightProcessor uniqueInstance -> a
-    com.utils.BrightProcessor getInstance() -> a
+com.utils.processor.BrightProcessor -> com.c.a.b:
+    com.utils.processor.BrightProcessor uniqueInstance -> a
+    com.utils.processor.BrightProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.BubbleProcessor -> com.c.c:
-    com.utils.BubbleProcessor uniqueInstance -> a
+com.utils.processor.BubbleProcessor -> com.c.a.c:
+    com.utils.processor.BubbleProcessor uniqueInstance -> a
     double opacity -> b
     android.content.Context context -> c
-    com.utils.BubbleProcessor getInstance() -> a
+    com.utils.processor.BubbleProcessor getInstance() -> a
     boolean setContext(android.content.Context) -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
     android.graphics.Bitmap rotateBitmap(android.graphics.Bitmap) -> b
     int pixelChoose(int,int) -> a
-com.utils.CantoneseRadio -> com.c.d:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.CartoonRadio -> com.c.e:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.CastProcessor -> com.c.f:
-    com.utils.CastProcessor uniqueInstance -> a
-    com.utils.CastProcessor getInstance() -> a
+com.utils.processor.CastProcessor -> com.c.a.d:
+    com.utils.processor.CastProcessor uniqueInstance -> a
+    com.utils.processor.CastProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int clamp(int) -> a
-com.utils.CeramicProcessor -> com.c.g:
-    com.utils.CeramicProcessor uniqueInstance -> a
+com.utils.processor.CeramicProcessor -> com.c.a.e:
+    com.utils.processor.CeramicProcessor uniqueInstance -> a
     int operator_size -> b
     int[] boundColor -> c
-    com.utils.CeramicProcessor getInstance() -> a
+    com.utils.processor.CeramicProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.ChineseRadio -> com.c.h:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.ColdProcessor -> com.c.i:
-    com.utils.ColdProcessor uniqueInstance -> a
+com.utils.processor.ColdProcessor -> com.c.a.f:
+    com.utils.processor.ColdProcessor uniqueInstance -> a
     int[] cold -> b
-    com.utils.ColdProcessor getInstance() -> a
+    com.utils.processor.ColdProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.ComicProcessor -> com.c.j:
-    com.utils.ComicProcessor uniqueInstance -> a
-    com.utils.ComicProcessor getInstance() -> a
+com.utils.processor.ComicProcessor -> com.c.a.g:
+    com.utils.processor.ComicProcessor uniqueInstance -> a
+    com.utils.processor.ComicProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.Contrast2Processor -> com.c.k:
-    com.utils.Contrast2Processor uniqueInstance -> a
-    com.utils.Contrast2Processor getInstance() -> a
+com.utils.processor.Contrast2Processor -> com.c.a.h:
+    com.utils.processor.Contrast2Processor uniqueInstance -> a
+    com.utils.processor.Contrast2Processor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     double[] rgb2yiq(int) -> a
     int yiq2rgb(double[]) -> a
-com.utils.ContrastProcessor -> com.c.l:
-    com.utils.ContrastProcessor uniqueInstance -> a
-    com.utils.ContrastProcessor getInstance() -> a
+com.utils.processor.ContrastProcessor -> com.c.a.i:
+    com.utils.processor.ContrastProcessor uniqueInstance -> a
+    com.utils.processor.ContrastProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     double[] rgb2hsi(int) -> a
     int hsi2rgb(double[]) -> a
-com.utils.CrossProcessingProcessor -> com.c.m:
-    com.utils.CrossProcessingProcessor uniqueInstance -> a
-    com.utils.CrossProcessingProcessor getInstance() -> a
+com.utils.processor.CrossProcessingProcessor -> com.c.a.j:
+    com.utils.processor.CrossProcessingProcessor uniqueInstance -> a
+    com.utils.processor.CrossProcessingProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.DarkCornerProcessor -> com.c.n:
-    com.utils.DarkCornerProcessor uniqueInstance -> a
+com.utils.processor.DarkCornerProcessor -> com.c.a.k:
+    com.utils.processor.DarkCornerProcessor uniqueInstance -> a
     int ratio -> b
-    com.utils.DarkCornerProcessor getInstance() -> a
+    com.utils.processor.DarkCornerProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.DermabrasionProcessor -> com.c.o:
-    com.utils.DermabrasionProcessor uniqueInstance -> a
+com.utils.processor.DermabrasionProcessor -> com.c.a.l:
+    com.utils.processor.DermabrasionProcessor uniqueInstance -> a
     double factor -> b
     double distance_sigma -> c
     double range_sigma -> d
     int radius -> e
     double[][] dWeightTable -> f
     double[] sWeightTable -> g
-    com.utils.DermabrasionProcessor getInstance() -> a
+    com.utils.processor.DermabrasionProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     void generateDistanceWeightTable() -> b
     void generateSimilarityWeightTable() -> c
     int clamp(int) -> a
-com.utils.DiscShapeProcessor -> com.c.p:
-    com.utils.DiscShapeProcessor uniqueInstance -> a
+com.utils.processor.DiscShapeProcessor -> com.c.a.m:
+    com.utils.processor.DiscShapeProcessor uniqueInstance -> a
     int resultWidth -> b
     int resultHeight -> c
     java.lang.Boolean setResultWidth(int) -> a
     java.lang.Boolean setResultHeight(int) -> b
-    com.utils.DiscShapeProcessor getInstance() -> a
+    com.utils.processor.DiscShapeProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
-com.utils.DistortingMirrorProcessor -> com.c.q:
-    com.utils.DistortingMirrorProcessor uniqueInstance -> a
+com.utils.processor.DistortingMirrorProcessor -> com.c.a.n:
+    com.utils.processor.DistortingMirrorProcessor uniqueInstance -> a
     int multiple -> b
-    com.utils.DistortingMirrorProcessor getInstance() -> a
+    com.utils.processor.DistortingMirrorProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.EightyRadio -> com.c.r:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.EmbossProcessor -> com.c.s:
-    com.utils.EmbossProcessor uniqueInstance -> a
+com.utils.processor.EmbossProcessor -> com.c.a.o:
+    com.utils.processor.EmbossProcessor uniqueInstance -> a
     int increment -> b
-    com.utils.EmbossProcessor getInstance() -> a
+    com.utils.processor.EmbossProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.ErodeProcessor -> com.c.t:
-    com.utils.ErodeProcessor uniqueInstance -> a
+com.utils.processor.ErodeProcessor -> com.c.a.p:
+    com.utils.processor.ErodeProcessor uniqueInstance -> a
     int erode__width_size -> b
     int erode__height_size -> c
-    com.utils.ErodeProcessor getInstance() -> a
+    com.utils.processor.ErodeProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.ExposureProcessor -> com.c.u:
-    com.utils.ExposureProcessor uniqueInstance -> a
+com.utils.processor.ExposureProcessor -> com.c.a.q:
+    com.utils.processor.ExposureProcessor uniqueInstance -> a
     int threshold -> b
-    com.utils.ExposureProcessor getInstance() -> a
+    com.utils.processor.ExposureProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.FeatherProcessor -> com.c.v:
-    com.utils.FeatherProcessor uniqueInstance -> a
+com.utils.processor.FeatherProcessor -> com.c.a.r:
+    com.utils.processor.FeatherProcessor uniqueInstance -> a
     float size -> b
-    com.utils.FeatherProcessor getInstance() -> a
+    com.utils.processor.FeatherProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int clamp(int) -> a
-com.utils.FilmProcessor -> com.c.w:
-    com.utils.FilmProcessor uniqueInstance -> a
-    com.utils.FilmProcessor getInstance() -> a
+com.utils.processor.FilmProcessor -> com.c.a.s:
+    com.utils.processor.FilmProcessor uniqueInstance -> a
+    com.utils.processor.FilmProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.FocusProcessor -> com.c.x:
-    com.utils.FocusProcessor uniqueInstance -> a
+com.utils.processor.FocusProcessor -> com.c.a.t:
+    com.utils.processor.FocusProcessor uniqueInstance -> a
     float Size -> b
-    com.utils.FocusProcessor getInstance() -> a
+    com.utils.processor.FocusProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.FrameProcessor -> com.c.y:
-    com.utils.FrameProcessor uniqueInstance -> a
+com.utils.processor.FrameProcessor -> com.c.a.u:
+    com.utils.processor.FrameProcessor uniqueInstance -> a
     double opacity -> b
     android.content.Context context -> c
-    com.utils.FrameProcessor getInstance() -> a
+    com.utils.processor.FrameProcessor getInstance() -> a
     boolean setContext(android.content.Context) -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
-com.utils.FreezeProcessor -> com.c.z:
-    com.utils.FreezeProcessor uniqueInstance -> a
-    com.utils.FreezeProcessor getInstance() -> a
+com.utils.processor.FreezeProcessor -> com.c.a.v:
+    com.utils.processor.FreezeProcessor uniqueInstance -> a
+    com.utils.processor.FreezeProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int freeze(int) -> a
-com.utils.FreshRadio -> com.c.aa:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.FrostedGlassProcessor -> com.c.ab:
-    com.utils.FrostedGlassProcessor uniqueInstance -> a
+com.utils.processor.FrostedGlassProcessor -> com.c.a.w:
+    com.utils.processor.FrostedGlassProcessor uniqueInstance -> a
     int radius -> b
     float range -> c
-    com.utils.FrostedGlassProcessor getInstance() -> a
+    com.utils.processor.FrostedGlassProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.GammaProcessor -> com.c.ac:
-    com.utils.GammaProcessor uniqueInstance -> a
+com.utils.processor.GammaProcessor -> com.c.a.x:
+    com.utils.processor.GammaProcessor uniqueInstance -> a
     double gamma -> b
     int[] palette -> c
-    com.utils.GammaProcessor getInstance() -> a
+    com.utils.processor.GammaProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     void generateGammaPalette() -> b
-com.utils.GaussianBlurProcessor -> com.c.ad:
-    com.utils.GaussianBlurProcessor uniqueInstance -> a
+com.utils.processor.GaussianBlurProcessor -> com.c.a.y:
+    com.utils.processor.GaussianBlurProcessor uniqueInstance -> a
     int raduis -> b
     double sigma -> c
     double[] gaussianWeightMatrix -> d
-    com.utils.GaussianBlurProcessor getInstance() -> a
+    com.utils.processor.GaussianBlurProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     void blur(int[],int[],int,int) -> a
     void generateGaussianWeightMatrix() -> b
-com.utils.GeneralBlurProcessor -> com.c.ae:
-    com.utils.GeneralBlurProcessor uniqueInstance -> a
+com.utils.processor.GeneralBlurProcessor -> com.c.a.z:
+    com.utils.processor.GeneralBlurProcessor uniqueInstance -> a
     int raduis -> b
-    com.utils.GeneralBlurProcessor getInstance() -> a
+    com.utils.processor.GeneralBlurProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.GlassProcessor -> com.c.af:
-    com.utils.GlassProcessor uniqueInstance -> a
+com.utils.processor.GlassProcessor -> com.c.a.aa:
+    com.utils.processor.GlassProcessor uniqueInstance -> a
     int aasamples -> b
     int angle -> c
     int square_size -> d
     int curvature -> e
     int[][] m_aapoint -> f
-    com.utils.GlassProcessor getInstance() -> a
+    com.utils.processor.GlassProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     double angle2radian(int) -> a
-com.utils.GothicProcessor -> com.c.ag:
-    com.utils.GothicProcessor uniqueInstance -> a
+com.utils.processor.GothicProcessor -> com.c.a.ab:
+    com.utils.processor.GothicProcessor uniqueInstance -> a
     int[] gothic -> b
-    com.utils.GothicProcessor getInstance() -> a
+    com.utils.processor.GothicProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int min(int,int) -> a
     int max(int,int) -> b
-com.utils.GouacheProcessor -> com.c.ah:
-    com.utils.GouacheProcessor uniqueInstance -> a
+com.utils.processor.GouacheProcessor -> com.c.a.ac:
+    com.utils.processor.GouacheProcessor uniqueInstance -> a
     int radius -> b
     int intensity -> c
-    com.utils.GouacheProcessor getInstance() -> a
+    com.utils.processor.GouacheProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.GrayProcessor -> com.c.ai:
-    com.utils.GrayProcessor uniqueInstance -> a
-    com.utils.GrayProcessor getInstance() -> a
+com.utils.processor.GrayProcessor -> com.c.a.ad:
+    com.utils.processor.GrayProcessor uniqueInstance -> a
+    com.utils.processor.GrayProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.HttpSender -> com.c.aj:
-    com.utils.HttpSender uniqueInstance -> a
-    com.utils.HttpSender getInstance() -> a
-    void Httpget(java.lang.String,int,android.os.Handler) -> a
-    void get(java.lang.String,int,android.os.Handler) -> b
-    void access$0(com.utils.HttpSender,java.lang.String,int,android.os.Handler) -> a
-com.utils.HttpSender$RequestThread -> com.c.ak:
-    java.lang.String url -> b
-    android.os.Handler mHandler -> c
-    int requestCode -> d
-    com.utils.HttpSender this$0 -> a
-    void run() -> run
-com.utils.ImageCompressor -> com.c.al:
-    com.utils.ImageCompressor uniqueInstance -> a
-    com.utils.ImageCompressor getInstance() -> a
+com.utils.processor.ImageCompressor -> com.c.a.ae:
+    com.utils.processor.ImageCompressor uniqueInstance -> a
+    com.utils.processor.ImageCompressor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
-com.utils.InlayProcessor -> com.c.am:
-    com.utils.InlayProcessor uniqueInstance -> a
+com.utils.processor.InlayProcessor -> com.c.a.af:
+    com.utils.processor.InlayProcessor uniqueInstance -> a
     int operator_size -> b
-    com.utils.InlayProcessor getInstance() -> a
+    com.utils.processor.InlayProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.LOMOProcessor -> com.c.an:
-    com.utils.LOMOProcessor uniqueInstance -> a
-    com.utils.LOMOProcessor getInstance() -> a
+com.utils.processor.LOMOProcessor -> com.c.a.ag:
+    com.utils.processor.LOMOProcessor uniqueInstance -> a
+    com.utils.processor.LOMOProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.LaserProcessor -> com.c.ao:
-    com.utils.LaserProcessor uniqueInstance -> a
+com.utils.processor.LaserProcessor -> com.c.a.ah:
+    com.utils.processor.LaserProcessor uniqueInstance -> a
     float threshold -> b
     float strength -> c
-    com.utils.LaserProcessor getInstance() -> a
+    com.utils.processor.LaserProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int clamp(int) -> a
-com.utils.LightMusicRadio -> com.c.ap:
-    int start_song_id -> a
-    java.lang.String constructRadioUrl() -> a
-com.utils.MagnifierProcessor -> com.c.aq:
-    com.utils.MagnifierProcessor uniqueInstance -> a
+com.utils.processor.MagnifierProcessor -> com.c.a.ai:
+    com.utils.processor.MagnifierProcessor uniqueInstance -> a
     int multiple -> b
-    com.utils.MagnifierProcessor getInstance() -> a
+    com.utils.processor.MagnifierProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.MarbleProcessor -> com.c.ar:
-    com.utils.MarbleProcessor uniqueInstance -> a
+com.utils.processor.MarbleProcessor -> com.c.a.aj:
+    com.utils.processor.MarbleProcessor uniqueInstance -> a
     float[] sinTable -> b
     float[] cosTable -> c
     float xScale -> d
@@ -2330,7 +2301,7 @@ com.utils.MarbleProcessor -> com.c.ar:
     int N -> k
     int[] p -> l
     float[][] g2 -> m
-    com.utils.MarbleProcessor getInstance() -> a
+    com.utils.processor.MarbleProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     void generateNoiseArray() -> b
     void generateParamTable() -> c
@@ -2340,28 +2311,203 @@ com.utils.MarbleProcessor -> com.c.ar:
     int clamp(int) -> a
     float noise2(float,float) -> a
     int random() -> d
-com.utils.MistProcessor -> com.c.as:
-    com.utils.MistProcessor uniqueInstance -> a
+com.utils.processor.MistProcessor -> com.c.a.ak:
+    com.utils.processor.MistProcessor uniqueInstance -> a
     int max_intensity -> b
-    com.utils.MistProcessor getInstance() -> a
+    com.utils.processor.MistProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.MosaicProcessor -> com.c.at:
-    com.utils.MosaicProcessor uniqueInstance -> a
+com.utils.processor.MosaicProcessor -> com.c.a.al:
+    com.utils.processor.MosaicProcessor uniqueInstance -> a
     int mosaic_size -> b
-    com.utils.MosaicProcessor getInstance() -> a
+    com.utils.processor.MosaicProcessor getInstance() -> a
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.MotionProcessor -> com.c.au:
-    com.utils.MotionProcessor uniqueInstance -> a
+com.utils.processor.MotionProcessor -> com.c.a.am:
+    com.utils.processor.MotionProcessor uniqueInstance -> a
     float distance -> b
     float angle -> c
     float zoom -> d
-    com.utils.MotionProcessor getInstance() -> a
+    com.utils.processor.MotionProcessor getInstance() -> a
     boolean setDistance(float) -> a
     boolean setAngle(float) -> b
     boolean setZoom(float) -> c
     android.graphics.Bitmap process(android.graphics.Bitmap) -> a
     int clamp(int) -> a
-com.utils.Music -> com.c.av:
+com.utils.processor.NegativeProcessor -> com.c.a.an:
+    com.utils.processor.NegativeProcessor uniqueInstance -> a
+    com.utils.processor.NegativeProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.NostalgiaProcessor -> com.c.a.ao:
+    com.utils.processor.NostalgiaProcessor uniqueInstance -> a
+    com.utils.processor.NostalgiaProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int min(int,int) -> a
+    int max(int,int) -> b
+com.utils.processor.OilPaintingProcessor -> com.c.a.ap:
+    com.utils.processor.OilPaintingProcessor uniqueInstance -> a
+    int radius -> b
+    int distance -> c
+    com.utils.processor.OilPaintingProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.PaperCutProcessor -> com.c.a.aq:
+    com.utils.processor.PaperCutProcessor uniqueInstance -> a
+    int threshold -> b
+    int front_color -> c
+    int background_color -> d
+    com.utils.processor.PaperCutProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int max(int,int,int) -> a
+com.utils.processor.PenProcessor -> com.c.a.ar:
+    com.utils.processor.PenProcessor uniqueInstance -> a
+    int radius -> b
+    com.utils.processor.PenProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.PinkProcessor -> com.c.a.as:
+    com.utils.processor.PinkProcessor uniqueInstance -> a
+    int[] pink -> b
+    com.utils.processor.PinkProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int min(int,int) -> a
+    int max(int,int) -> b
+com.utils.processor.Processor -> com.c.a.at:
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.RainbowProcessor -> com.c.a.au:
+    com.utils.processor.RainbowProcessor uniqueInstance -> a
+    com.utils.processor.RainbowProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.ReflectionProcessor -> com.c.a.av:
+    com.utils.processor.ReflectionProcessor uniqueInstance -> a
+    int max_intensity -> b
+    com.utils.processor.ReflectionProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
+com.utils.processor.ShadowProcessor -> com.c.a.aw:
+    com.utils.processor.ShadowProcessor uniqueInstance -> a
+    int max_shift_intensity -> b
+    int shift_intensity -> c
+    com.utils.processor.ShadowProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.SharpenProcessor -> com.c.a.ax:
+    com.utils.processor.SharpenProcessor uniqueInstance -> a
+    int radius -> b
+    double[] laplacian -> c
+    com.utils.processor.SharpenProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.SketchProcessor -> com.c.a.ay:
+    com.utils.processor.SketchProcessor uniqueInstance -> a
+    int operator_size -> b
+    int threshold -> c
+    int front_color -> d
+    int background_color -> e
+    com.utils.processor.SketchProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.SmartSharpenProcessor -> com.c.a.az:
+    com.utils.processor.SmartSharpenProcessor uniqueInstance -> a
+    int degree -> b
+    com.utils.processor.SmartSharpenProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int min(int,int) -> a
+    int max(int,int) -> b
+com.utils.processor.SmearProcessor -> com.c.a.ba:
+    com.utils.processor.SmearProcessor uniqueInstance -> a
+    java.util.Random randomGenerator -> b
+    long seed -> c
+    float density -> d
+    int distance -> e
+    float mix -> f
+    com.utils.processor.SmearProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int mixColors(float,int,int) -> a
+com.utils.processor.SoftlightProcessor -> com.c.a.bb:
+    com.utils.processor.SoftlightProcessor uniqueInstance -> a
+    float opacity -> b
+    com.utils.processor.SoftlightProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.SudokuProcessor -> com.c.a.bc:
+    com.utils.processor.SudokuProcessor uniqueInstance -> a
+    int divider_color -> b
+    int divider_width -> c
+    com.utils.processor.SudokuProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
+com.utils.processor.SymmetryProcessor -> com.c.a.bd:
+    com.utils.processor.SymmetryProcessor uniqueInstance -> a
+    com.utils.processor.SymmetryProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.VignetteProcessor -> com.c.a.be:
+    com.utils.processor.VignetteProcessor uniqueInstance -> a
+    com.utils.processor.VignetteProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.WaterProcessor -> com.c.a.bf:
+    com.utils.processor.WaterProcessor uniqueInstance -> a
+    double wave -> b
+    double period -> c
+    com.utils.processor.WaterProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.WaterRippleProcessor -> com.c.a.bg:
+    com.utils.processor.WaterRippleProcessor uniqueInstance -> a
+    float wavelength -> b
+    float amplitude -> c
+    float phase -> d
+    float centerX -> e
+    float centerY -> f
+    float radius -> g
+    float radius2 -> h
+    float icenterX -> i
+    float icenterY -> j
+    com.utils.processor.WaterRippleProcessor getInstance() -> a
+    boolean setRadius(float) -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    int pixelChoose(int[],int,int,int,int) -> a
+    void generateWaterRipples(int,int,float[]) -> a
+    int bilinearInterpolate(float,float,int,int,int,int) -> a
+com.utils.processor.WhiteBalanceProcessor -> com.c.a.bh:
+    com.utils.processor.WhiteBalanceProcessor uniqueInstance -> a
+    com.utils.processor.WhiteBalanceProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.processor.WhiteningProcessor -> com.c.a.bi:
+    com.utils.processor.WhiteningProcessor uniqueInstance -> a
+    int beta -> b
+    com.utils.processor.WhiteningProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+    boolean isSkin(int,int,int) -> a
+    int clamp(int) -> a
+com.utils.processor.WindProcessor -> com.c.a.bj:
+    com.utils.processor.WindProcessor uniqueInstance -> a
+    int max_wind_intensity -> b
+    int wind_intensity -> c
+    com.utils.processor.WindProcessor getInstance() -> a
+    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
+com.utils.radio.CantoneseRadio -> com.c.b.a:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.CartoonRadio -> com.c.b.b:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.ChineseRadio -> com.c.b.c:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.EightyRadio -> com.c.b.d:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.FreshRadio -> com.c.b.e:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.HttpSender -> com.c.b.f:
+    com.utils.radio.HttpSender uniqueInstance -> a
+    com.utils.radio.HttpSender getInstance() -> a
+    void Httpget(java.lang.String,int,android.os.Handler) -> a
+    void get(java.lang.String,int,android.os.Handler) -> b
+    void access$0(com.utils.radio.HttpSender,java.lang.String,int,android.os.Handler) -> a
+com.utils.radio.HttpSender$RequestThread -> com.c.b.g:
+    java.lang.String url -> b
+    android.os.Handler mHandler -> c
+    int requestCode -> d
+    com.utils.radio.HttpSender this$0 -> a
+    void run() -> run
+com.utils.radio.LightMusicRadio -> com.c.b.h:
+    int start_song_id -> a
+    java.lang.String constructRadioUrl() -> a
+com.utils.radio.Music -> com.c.b.i:
     int song_id -> a
     java.lang.String name -> b
     java.lang.String player -> c
@@ -2372,51 +2518,13 @@ com.utils.Music -> com.c.av:
     java.lang.String getPlayer() -> c
     java.lang.String getUrl() -> d
     java.lang.String getCover() -> e
-com.utils.NegativeProcessor -> com.c.aw:
-    com.utils.NegativeProcessor uniqueInstance -> a
-    com.utils.NegativeProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.NewMusicRadio -> com.c.ax:
+com.utils.radio.NewMusicRadio -> com.c.b.j:
     int start_song_id -> a
     java.lang.String constructRadioUrl() -> a
-com.utils.NinetyRadio -> com.c.ay:
+com.utils.radio.NinetyRadio -> com.c.b.k:
     int start_song_id -> a
     java.lang.String constructRadioUrl() -> a
-com.utils.NostalgiaProcessor -> com.c.az:
-    com.utils.NostalgiaProcessor uniqueInstance -> a
-    com.utils.NostalgiaProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int min(int,int) -> a
-    int max(int,int) -> b
-com.utils.OilPaintingProcessor -> com.c.ba:
-    com.utils.OilPaintingProcessor uniqueInstance -> a
-    int radius -> b
-    int distance -> c
-    com.utils.OilPaintingProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.PaperCutProcessor -> com.c.bb:
-    com.utils.PaperCutProcessor uniqueInstance -> a
-    int threshold -> b
-    int front_color -> c
-    int background_color -> d
-    com.utils.PaperCutProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int max(int,int,int) -> a
-com.utils.PenProcessor -> com.c.bc:
-    com.utils.PenProcessor uniqueInstance -> a
-    int radius -> b
-    com.utils.PenProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.PinkProcessor -> com.c.bd:
-    com.utils.PinkProcessor uniqueInstance -> a
-    int[] pink -> b
-    com.utils.PinkProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int min(int,int) -> a
-    int max(int,int) -> b
-com.utils.Processor -> com.c.be:
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.Radio -> com.c.bf:
+com.utils.radio.Radio -> com.c.b.l:
     java.lang.String basic_url -> a
     java.lang.String url -> b
     int channel -> c
@@ -2428,117 +2536,10 @@ com.utils.Radio -> com.c.bf:
     java.lang.String constructRadioUrl() -> a
     java.lang.String constructRadioUrl(int) -> a
     void generateAlbum(org.json.JSONArray) -> a
-    com.utils.Music getMusic() -> c
-com.utils.RainbowProcessor -> com.c.bg:
-    com.utils.RainbowProcessor uniqueInstance -> a
-    com.utils.RainbowProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.ReflectionProcessor -> com.c.bh:
-    com.utils.ReflectionProcessor uniqueInstance -> a
-    int max_intensity -> b
-    com.utils.ReflectionProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
-com.utils.RockRadio -> com.c.bi:
+    com.utils.radio.Music getMusic() -> c
+com.utils.radio.RockRadio -> com.c.b.m:
     int start_song_id -> a
     java.lang.String constructRadioUrl() -> a
-com.utils.ShadowProcessor -> com.c.bj:
-    com.utils.ShadowProcessor uniqueInstance -> a
-    int max_shift_intensity -> b
-    int shift_intensity -> c
-    com.utils.ShadowProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.SharpenProcessor -> com.c.bk:
-    com.utils.SharpenProcessor uniqueInstance -> a
-    int radius -> b
-    double[] laplacian -> c
-    com.utils.SharpenProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.SketchProcessor -> com.c.bl:
-    com.utils.SketchProcessor uniqueInstance -> a
-    int operator_size -> b
-    int threshold -> c
-    int front_color -> d
-    int background_color -> e
-    com.utils.SketchProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.SmartSharpenProcessor -> com.c.bm:
-    com.utils.SmartSharpenProcessor uniqueInstance -> a
-    int degree -> b
-    com.utils.SmartSharpenProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int min(int,int) -> a
-    int max(int,int) -> b
-com.utils.SmearProcessor -> com.c.bn:
-    com.utils.SmearProcessor uniqueInstance -> a
-    java.util.Random randomGenerator -> b
-    long seed -> c
-    float density -> d
-    int distance -> e
-    float mix -> f
-    com.utils.SmearProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int mixColors(float,int,int) -> a
-com.utils.SoftlightProcessor -> com.c.bo:
-    com.utils.SoftlightProcessor uniqueInstance -> a
-    float opacity -> b
-    com.utils.SoftlightProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.SudokuProcessor -> com.c.bp:
-    com.utils.SudokuProcessor uniqueInstance -> a
-    int divider_color -> b
-    int divider_width -> c
-    com.utils.SudokuProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> a
-com.utils.SymmetryProcessor -> com.c.bq:
-    com.utils.SymmetryProcessor uniqueInstance -> a
-    com.utils.SymmetryProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.VignetteProcessor -> com.c.br:
-    com.utils.VignetteProcessor uniqueInstance -> a
-    com.utils.VignetteProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.WaterProcessor -> com.c.bs:
-    com.utils.WaterProcessor uniqueInstance -> a
-    double wave -> b
-    double period -> c
-    com.utils.WaterProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.WaterRippleProcessor -> com.c.bt:
-    com.utils.WaterRippleProcessor uniqueInstance -> a
-    float wavelength -> b
-    float amplitude -> c
-    float phase -> d
-    float centerX -> e
-    float centerY -> f
-    float radius -> g
-    float radius2 -> h
-    float icenterX -> i
-    float icenterY -> j
-    com.utils.WaterRippleProcessor getInstance() -> a
-    boolean setRadius(float) -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    int pixelChoose(int[],int,int,int,int) -> a
-    void generateWaterRipples(int,int,float[]) -> a
-    int bilinearInterpolate(float,float,int,int,int,int) -> a
-com.utils.WesternRadio -> com.c.bu:
+com.utils.radio.WesternRadio -> com.c.b.n:
     int start_song_id -> a
     java.lang.String constructRadioUrl() -> a
-com.utils.WhiteBalanceProcessor -> com.c.bv:
-    com.utils.WhiteBalanceProcessor uniqueInstance -> a
-    com.utils.WhiteBalanceProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-com.utils.WhiteningProcessor -> com.c.bw:
-    com.utils.WhiteningProcessor uniqueInstance -> a
-    int beta -> b
-    com.utils.WhiteningProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a
-    boolean isSkin(int,int,int) -> a
-    int clamp(int) -> a
-com.utils.WindProcessor -> com.c.bx:
-    com.utils.WindProcessor uniqueInstance -> a
-    int max_wind_intensity -> b
-    int wind_intensity -> c
-    com.utils.WindProcessor getInstance() -> a
-    android.graphics.Bitmap process(android.graphics.Bitmap) -> a

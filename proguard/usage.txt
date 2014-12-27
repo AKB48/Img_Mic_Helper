@@ -1802,7 +1802,7 @@ com.app.img_mic_helper.R$style
 com.config.ActivityFlag
 com.config.Config:
     10:10:public Config()
-com.custom_widget.FlowerProgressDialog:
+com.custom_widget.ArrowProgressDialog:
     72:76:public boolean setMessage(java.lang.String)
 com.tencent.mm.BuildConfig
 com.tencent.mm.algorithm.Base64
@@ -2240,61 +2240,93 @@ com.tencent.mm.sdk.storage.MStorage$IOnStorageLoaded
 com.tencent.mm.sdk.storage.MStorageEvent
 com.tencent.mm.sdk.storage.MStorageEvent$1
 com.tencent.mm.sdk.storage.package-info
-com.utils.BubbleProcessor:
+com.utils.processor.BubbleProcessor:
     62:71:public boolean setOpacity(double)
     81:81:public double getOpacity()
     112:112:public android.content.Context getContext()
-com.utils.DermabrasionProcessor:
-    65:66:public boolean setDistanceSigma(double)
-    76:76:public double getDistanceSigma()
-    87:88:public boolean setRangeSigma(double)
-    98:98:public double getRangeSigma()
-    110:119:public boolean setRadius(int)
-    129:129:public int getRadius()
-com.utils.DiscShapeProcessor:
-    72:72:public int getResultWidth()
-    103:103:public int getResultHeight()
-com.utils.FeatherProcessor:
-    60:69:public java.lang.Boolean setSize(float)
-    79:79:public float getSize()
-com.utils.FocusProcessor:
-    37:46:public boolean setSize(float)
-    56:56:public float getSize()
-com.utils.FrameProcessor:
+com.utils.processor.DermabrasionProcessor:
+    66:67:public boolean setDistanceSigma(double)
+    77:77:public double getDistanceSigma()
+    88:89:public boolean setRangeSigma(double)
+    99:99:public double getRangeSigma()
+    111:120:public boolean setRadius(int)
+    130:130:public int getRadius()
+com.utils.processor.DiscShapeProcessor:
+    73:73:public int getResultWidth()
+    104:104:public int getResultHeight()
+com.utils.processor.FeatherProcessor:
+    61:70:public java.lang.Boolean setSize(float)
+    80:80:public float getSize()
+com.utils.processor.FocusProcessor:
+    38:47:public boolean setSize(float)
+    57:57:public float getSize()
+com.utils.processor.FrameProcessor:
     61:70:public boolean setOpacity(double)
     80:80:public double getOpacity()
     111:111:public android.content.Context getContext()
-com.utils.GammaProcessor:
-    60:69:public boolean setgamma(double)
-    79:79:public double getGamma()
-com.utils.GlassProcessor:
-    45:54:public boolean setAASamples(int)
-    64:64:public int getAASamples()
-    76:85:public boolean setAngle(int)
-    95:95:public int getAngle()
-    107:116:public boolean setSquareSize(int)
-    126:126:public int getSquareSize()
-    139:152:public boolean setCurvature(int)
-    162:162:public int getCurvature()
-com.utils.LaserProcessor:
-    62:71:public boolean setThreshold(float)
-    81:81:public float getThreshold()
-    93:102:public boolean setStrength(float)
-    112:112:public float getStrength()
-com.utils.MarbleProcessor:
-    79:88:public boolean setxScale(float)
-    98:98:public float getxScale()
-    110:119:public boolean setyScale(float)
-    129:129:public float getyScale()
-    140:141:public boolean setAmount(float)
-    151:151:public float getAmount()
-    164:173:public boolean setTurbulence(float)
-    183:183:public float getTurbulence()
-com.utils.MotionProcessor:
-    84:84:public float getDistance()
-    106:106:public float getAngle()
-    128:128:public float getZoom()
-com.utils.Music:
+com.utils.processor.GammaProcessor:
+    61:70:public boolean setgamma(double)
+    80:80:public double getGamma()
+com.utils.processor.GlassProcessor:
+    46:55:public boolean setAASamples(int)
+    65:65:public int getAASamples()
+    77:86:public boolean setAngle(int)
+    96:96:public int getAngle()
+    108:117:public boolean setSquareSize(int)
+    127:127:public int getSquareSize()
+    140:153:public boolean setCurvature(int)
+    163:163:public int getCurvature()
+com.utils.processor.LaserProcessor:
+    63:72:public boolean setThreshold(float)
+    82:82:public float getThreshold()
+    94:103:public boolean setStrength(float)
+    113:113:public float getStrength()
+com.utils.processor.MarbleProcessor:
+    80:89:public boolean setxScale(float)
+    99:99:public float getxScale()
+    111:120:public boolean setyScale(float)
+    130:130:public float getyScale()
+    141:142:public boolean setAmount(float)
+    152:152:public float getAmount()
+    165:174:public boolean setTurbulence(float)
+    184:184:public float getTurbulence()
+com.utils.processor.MotionProcessor:
+    85:85:public float getDistance()
+    107:107:public float getAngle()
+    129:129:public float getZoom()
+com.utils.processor.SmearProcessor:
+    65:74:public java.lang.Boolean setDensity(float)
+    84:84:public float getDensity()
+    96:105:public java.lang.Boolean setDistance(int)
+    115:115:public int getDistance()
+    127:136:public java.lang.Boolean setMix(float)
+    146:146:public float getMix()
+com.utils.processor.SudokuProcessor:
+    60:69:public boolean setDividerColor(int)
+    79:79:public int getDividorColor()
+    91:100:public boolean setDividerWidth(int)
+    110:110:public int getDividerWidth()
+com.utils.processor.WaterProcessor:
+    63:72:public boolean setWave(double)
+    82:82:public double getWave()
+    94:103:public boolean setPeriod(double)
+    113:113:public double getPeriod()
+com.utils.processor.WaterRippleProcessor:
+    74:83:public boolean setWavelength(float)
+    93:93:public float getWavelength()
+    105:114:public boolean setAmplitude(float)
+    124:124:public float getAmplitude()
+    136:145:public boolean setPhase(float)
+    155:155:public float getPhase()
+    167:176:public boolean setCenterX(float)
+    186:186:public float getCenterX()
+    198:207:public boolean setCenterY(float)
+    217:217:public float getCenterY()
+    249:249:public float getRadius()
+com.utils.processor.WhiteningProcessor:
+    63:72:public boolean setBeta(int)
+    82:82:public int getBeta()
+com.utils.radio.Music:
     49:56:public Music(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
     68:69:public Music(int,java.lang.String,java.lang.String,java.lang.String)
     80:81:public Music(int,java.lang.String,java.lang.String)
@@ -2305,39 +2337,7 @@ com.utils.Music:
     198:199:public void setPlayer(java.lang.String)
     218:219:public void setUrl(java.lang.String)
     238:239:public void setCover(java.lang.String)
-com.utils.Radio:
+com.utils.radio.Radio:
     36:39:public Radio()
     73:82:public java.lang.Boolean setChannel(int)
     135:135:public char getPlayType()
-com.utils.SmearProcessor:
-    64:73:public java.lang.Boolean setDensity(float)
-    83:83:public float getDensity()
-    95:104:public java.lang.Boolean setDistance(int)
-    114:114:public int getDistance()
-    126:135:public java.lang.Boolean setMix(float)
-    145:145:public float getMix()
-com.utils.SudokuProcessor:
-    59:68:public boolean setDividerColor(int)
-    78:78:public int getDividorColor()
-    90:99:public boolean setDividerWidth(int)
-    109:109:public int getDividerWidth()
-com.utils.WaterProcessor:
-    62:71:public boolean setWave(double)
-    81:81:public double getWave()
-    93:102:public boolean setPeriod(double)
-    112:112:public double getPeriod()
-com.utils.WaterRippleProcessor:
-    73:82:public boolean setWavelength(float)
-    92:92:public float getWavelength()
-    104:113:public boolean setAmplitude(float)
-    123:123:public float getAmplitude()
-    135:144:public boolean setPhase(float)
-    154:154:public float getPhase()
-    166:175:public boolean setCenterX(float)
-    185:185:public float getCenterX()
-    197:206:public boolean setCenterY(float)
-    216:216:public float getCenterY()
-    248:248:public float getRadius()
-com.utils.WhiteningProcessor:
-    62:71:public boolean setBeta(int)
-    81:81:public int getBeta()

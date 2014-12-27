@@ -19,12 +19,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+/**
+ * This class is used to process the feedback of Wechat share from Wechat API.
+ * @author William
+ *
+ */
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 	
 	
     private IWXAPI api;
 	
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
         api.handleIntent(getIntent(), this);
     }
 
+    
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
@@ -41,11 +47,13 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
         api.handleIntent(intent, this);
 	}
 
+	
 	@Override
 	public void onReq(BaseReq req) {
 		
 	}
 
+	
 	@Override
 	public void onResp(BaseResp resp) {
 		int result = 0;

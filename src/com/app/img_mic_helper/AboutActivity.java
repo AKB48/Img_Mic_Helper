@@ -4,7 +4,7 @@
 package com.app.img_mic_helper;
 
 import com.app.img_mic_helper.R;
-import com.app.img_mic_helper.share.WXShare;
+import com.app.img_mic_helper.wxapi.WXShare;
 
 import android.app.ActionBar;
 import android.app.Activity;

@@ -478,15 +478,16 @@ public final class R {
         public static final int main_bg=0x7f02000b;
         public static final int music=0x7f02000c;
         public static final int music_background=0x7f02000d;
-        public static final int next=0x7f02000e;
-        public static final int progress_bar=0x7f02000f;
-        public static final int radio=0x7f020010;
-        public static final int save=0x7f020011;
-        public static final int slide=0x7f020012;
-        public static final int start=0x7f020013;
-        public static final int stop=0x7f020014;
-        public static final int thumb=0x7f020015;
-        public static final int wechat=0x7f020016;
+        public static final int music_background2=0x7f02000e;
+        public static final int next=0x7f02000f;
+        public static final int progress_bar=0x7f020010;
+        public static final int radio=0x7f020011;
+        public static final int save=0x7f020012;
+        public static final int slide=0x7f020013;
+        public static final int start=0x7f020014;
+        public static final int stop=0x7f020015;
+        public static final int thumb=0x7f020016;
+        public static final int wechat=0x7f020017;
     }
     public static final class id {
         public static final int about=0x7f0a000c;
@@ -536,13 +537,16 @@ public final class R {
         public static final int music_player=0x7f090002;
     }
     public static final class string {
+        public static final int about=0x7f070066;
         public static final int action_settings=0x7f070002;
+        public static final int album=0x7f070063;
         public static final int app_name=0x7f070000;
         public static final int art=0x7f07000f;
         public static final int black_white=0x7f070009;
         public static final int blur=0x7f070024;
         public static final int bright=0x7f070028;
         public static final int bubble=0x7f070036;
+        public static final int camera=0x7f070064;
         public static final int cancel=0x7f070053;
         public static final int cantonese=0x7f070047;
         public static final int cartoon=0x7f07004c;
@@ -600,6 +604,7 @@ public final class R {
         public static final int mist=0x7f07001f;
         public static final int mosaic=0x7f070015;
         public static final int motion_blur=0x7f07003f;
+        public static final int music=0x7f070065;
         public static final int negative=0x7f070011;
         public static final int new_music=0x7f070049;
         public static final int ninty=0x7f070046;

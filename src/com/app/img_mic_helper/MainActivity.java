@@ -3,6 +3,7 @@ package com.app.img_mic_helper;
 import java.io.File;
 import java.io.IOException;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -35,7 +36,9 @@ public class MainActivity extends Activity {
 	private Button from_album, from_camera, to_music, about; 
 	private Bitmap bitmap = null;
 	private String filePath = null;
+	private ActionBar actionBar;
 
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +47,22 @@ public class MainActivity extends Activity {
         // from_album button is to choose images from album
         from_album = (Button)this.findViewById(R.id.from_album);
         from_album.setOnClickListener(click_into_album);
+        
         // from_camera button is to achieve images from camera
         from_camera = (Button)this.findViewById(R.id.from_camera);
         from_camera.setOnClickListener(click_into_camera);
+        
         // to_music button is to use the music player function
         to_music = (Button)this.findViewById(R.id.to_music);
         to_music.setOnClickListener(click_into_music);
+        
         // about button is to show the information about this app
         about = (Button)this.findViewById(R.id.about);
         about.setOnClickListener(click_into_about);
+        
+        actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		
     }
 
     // from_album button click event
@@ -211,15 +221,23 @@ public class MainActivity extends Activity {
         return true;
     }
 
+	
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
+        else if (id == android.R.id.home)
+        {
+        	onBackPressed();
+        	return true;
+        }
+        
         return super.onOptionsItemSelected(item);
     }
     

@@ -100,5 +100,9 @@
     <string name="feather">羽化</string>
     <string name="frosted_glass">毛玻璃</string>
     <string name="processing">正在处理中，请稍等</string>
+    <string name="album">相册</string>
+    <string name="camera">相机</string>
+    <string name="music">音乐</string>
+    <string name="about">关于</string>
 
 </resources>

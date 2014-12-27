@@ -259,6 +259,7 @@ com.app.img_mic_helper.R$drawable: int image_return
 com.app.img_mic_helper.R$drawable: int main_bg
 com.app.img_mic_helper.R$drawable: int music
 com.app.img_mic_helper.R$drawable: int music_background
+com.app.img_mic_helper.R$drawable: int music_background2
 com.app.img_mic_helper.R$drawable: int next
 com.app.img_mic_helper.R$drawable: int progress_bar
 com.app.img_mic_helper.R$drawable: int radio
@@ -309,13 +310,16 @@ com.app.img_mic_helper.R$layout: int save_filename
 com.app.img_mic_helper.R$menu: int image_process
 com.app.img_mic_helper.R$menu: int main
 com.app.img_mic_helper.R$menu: int music_player
+com.app.img_mic_helper.R$string: int about
 com.app.img_mic_helper.R$string: int action_settings
+com.app.img_mic_helper.R$string: int album
 com.app.img_mic_helper.R$string: int app_name
 com.app.img_mic_helper.R$string: int art
 com.app.img_mic_helper.R$string: int black_white
 com.app.img_mic_helper.R$string: int blur
 com.app.img_mic_helper.R$string: int bright
 com.app.img_mic_helper.R$string: int bubble
+com.app.img_mic_helper.R$string: int camera
 com.app.img_mic_helper.R$string: int cancel
 com.app.img_mic_helper.R$string: int cantonese
 com.app.img_mic_helper.R$string: int cartoon
@@ -373,6 +377,7 @@ com.app.img_mic_helper.R$string: int marble
 com.app.img_mic_helper.R$string: int mist
 com.app.img_mic_helper.R$string: int mosaic
 com.app.img_mic_helper.R$string: int motion_blur
+com.app.img_mic_helper.R$string: int music
 com.app.img_mic_helper.R$string: int negative
 com.app.img_mic_helper.R$string: int new_music
 com.app.img_mic_helper.R$string: int ninty
