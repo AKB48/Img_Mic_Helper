@@ -259,7 +259,6 @@ com.app.img_mic_helper.R$drawable: int image_return
 com.app.img_mic_helper.R$drawable: int main_bg
 com.app.img_mic_helper.R$drawable: int music
 com.app.img_mic_helper.R$drawable: int music_background
-com.app.img_mic_helper.R$drawable: int music_background2
 com.app.img_mic_helper.R$drawable: int next
 com.app.img_mic_helper.R$drawable: int progress_bar
 com.app.img_mic_helper.R$drawable: int radio
